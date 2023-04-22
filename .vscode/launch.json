@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "WowDrApplication",
+            "request": "launch",
+            "mainClass": "WowDrApplication",
+            "projectName": "wow-dr"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-WowDrApplication<wow-dr>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "dressrooms.WowDrApplication",
+            "projectName": "wow-dr",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

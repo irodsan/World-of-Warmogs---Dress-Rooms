@@ -35,15 +35,27 @@ body {
 }
 
 h1 {
-    font-family: Friz Quadrata Std Medium ;
+    font-family: Friz Quadrata Std Medium;
     color: red;
 }
 
-button, input{
-    font-family: Friz Quadrata Std Medium ;
+.text_a {
+    font-family: Friz Quadrata Std Medium;
+    text-decoration: none;
+    color: red;
 }
 
-.table{
-    font-family: Friz Quadrata Std Medium ;
+.text_footer {
+    font-family: Friz Quadrata Std Medium;
+    text-decoration: none;
+    color: beige;
 }
 
+button,
+input {
+    font-family: Friz Quadrata Std Medium;
+}
+
+.table {
+    font-family: Friz Quadrata Std Medium;
+}

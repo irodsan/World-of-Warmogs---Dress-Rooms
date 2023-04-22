@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
-<head>
+  <head>
     <title>Modify user</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
     <link th:href="@{/styles/cssandjs/CSS.css}" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-</head>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-    <header></header>
+  <body>
+    <header th:insert="templates/header :: header"></header>
     <nav></nav>
 
-
     <div>
-        <input type="submit" value="Login" name="login" />
-        <input type="submit" value="Signup" name="signup" />
+      <input type="submit" value="Login" name="login" />
+      <input type="submit" value="Signup" name="signup" />
     </div>
 
     <form>
-        <a>Alias</a>
-        <input type="text" name="alias" value="" />
-        <br>
-        <a>Contraseña </a>
-        <input type="password" name="oldPassword" value="" />
-        <br>
-        <a>Contraseña</a>
-        <input type="password" name="newPassword" value="" />
-        <br>
-        <a>Confirmar contraseña</a>
-        <input type="password" name="newPasswordC" value="" />
-        <br>
-        <input type="submit" value="Aceptar" name="register" />
+      <a>Alias</a>
+      <input type="text" name="alias" value="" />
+      <br />
+      <a>Contraseña </a>
+      <input type="password" name="oldPassword" value="" />
+      <br />
+      <a>Contraseña</a>
+      <input type="password" name="newPassword" value="" />
+      <br />
+      <a>Confirmar contraseña</a>
+      <input type="password" name="newPasswordC" value="" />
+      <br />
+      <input type="submit" value="Aceptar" name="register" />
     </form>
 
-    <footer></footer>
-</body>
-
+    <footer th:insert="templates/footer :: footer"></footer>
+  </body>
 </html>

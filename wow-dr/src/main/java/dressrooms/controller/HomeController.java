@@ -7,38 +7,38 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import dressrooms.model.Conjunto;
+import dressrooms.model.Transmog;
 
 @Controller
 public class HomeController {
 
     @GetMapping("/tabla")
     public String mostrarTabla(Model model) {
-        List<Conjunto> lista = getConjunto();
+        List<Transmog> lista = getConjunto();
         model.addAttribute("conjuntos", lista);
         return "tabla";
     }
 
-    private List<Conjunto> getConjunto() {
-        List<Conjunto> lista = new LinkedList<Conjunto>();
+    private List<Transmog> getConjunto() {
+        List<Transmog> lista = new LinkedList<Transmog>();
 
         try {
-            Conjunto c1 = new Conjunto();
+            Transmog c1 = new Transmog();
             c1.setId(1);
             c1.setNombre("pieza1");
             c1.setRanura("ranura1");
 
-            Conjunto c2 = new Conjunto();
+            Transmog c2 = new Transmog();
             c2.setId(2);
             c2.setNombre("pieza2");
             c2.setRanura("ranura2");
 
-            Conjunto c3 = new Conjunto();
+            Transmog c3 = new Transmog();
             c3.setId(3);
             c3.setNombre("pieza3");
             c3.setRanura("ranura3");
 
-            Conjunto c4 = new Conjunto();
+            Transmog c4 = new Transmog();
             c4.setId(4);
             c4.setNombre("pieza4");
             c4.setRanura("ranura4");

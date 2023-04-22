@@ -1,12 +1,20 @@
 package dressrooms.model;
 
-public class Conjunto {
+public class Item {
 
     private Integer id;
     private String nombre;
     private String ranura;
+    private String tipo;
 
-    public Conjunto() {
+    public Item() {
+    }
+
+    public Item(Integer id, String nombre, String ranura, String tipo) {
+        this.id = id;
+        this.nombre = nombre;
+        this.ranura = ranura;
+        this.tipo = tipo;
     }
 
     public Integer getId() {
@@ -33,12 +41,21 @@ public class Conjunto {
         this.ranura = ranura;
     }
 
+    public String getTipo() {
+        return this.tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     @Override
     public String toString() {
         return "{" +
                 " id='" + getId() + "'" +
                 ", nombre='" + getNombre() + "'" +
                 ", ranura='" + getRanura() + "'" +
+                ", tipo='" + getTipo() + "'" +
                 "}";
     }
 

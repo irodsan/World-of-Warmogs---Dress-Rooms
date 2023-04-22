@@ -19,7 +19,6 @@
   <body>
     <header th:insert="templates/header :: header"></header>
     <nav></nav>
-    <h1>Prueba de fuentes</h1>
     <div>
       <input
         type="submit"
@@ -40,94 +39,214 @@
         onclick="location.href = 'modifyUser.html';"
       />
     </div>
-    <h1>Nombre de la transfiguración</h1>
-    <div>
-      <div>
-        <input type="text" name="searchHead" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_head.jpg" alt="" />
+    <h1 class="name">Nombre de la transfiguración</h1>
+
+    <div class="gear">
+      <div class="gear-left">
+        <div class="item">
+          <input type="text" name="searchHead" placeholder="Buscar" />
+          <img
+            src="../static/images/items/inventoryslot_head.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_head.jpg}"
+          />
+          <p class="text_a">Nombre del item</p>
+        </div>
+        <div class="item">
+          <input
+            type="text"
+            name="searchNeck"
+            value="Buscar"
+            disabled="disabled"
+          />
+          <img
+            src="../static/images/items/inventoryslot_neck.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_neck.jpg}"
+          />
+          <p class="text_a">Nombre del item</p>
+        </div>
+        <div class="item">
+          <input type="text" name="searchShoulder" placeholder="Buscar" />
+          <img
+            src="../static/images/items/inventoryslot_shoulder.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_shoulder.jpg}"
+          />
+          <p class="text_a">Nombre del item</p>
+        </div>
+        <div class="item">
+          <input type="text" name="searchShoulder" placeholder="Buscar" />
+          <img
+            src="../static/images/items/inventoryslot_shoulder.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_shoulder.jpg}"
+          />
+          <p class="text_a">Nombre del item</p>
+        </div>
+        <div class="item">
+          <input type="text" name="searchChest" placeholder="Buscar" />
+          <img
+            src="../static/images/items/inventoryslot_chest.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_chest.jpg}"
+          />
+          <p class="text_a">Nombre del item</p>
+        </div>
+        <div class="item">
+          <input type="text" name="searchTabard" placeholder="Buscar" />
+          <img
+            src="../static/images/items/inventoryslot_tabard.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_tabard.jpg}"
+          />
+          <p class="text_a">Nombre del item</p>
+        </div>
+        <div class="item">
+          <input type="text" name="searchShirt" placeholder="Buscar" />
+          <img
+            src="../static/images/items/inventoryslot_shirt.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_shirt.jpg}"
+          />
+          <p class="text_a">Nombre del item</p>
+        </div>
+        <div class="item">
+          <input type="text" name="searchWrists" placeholder="Buscar" />
+          <img
+            src="../static/images/items/inventoryslot_wrists.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_wrists.jpg}"
+          />
+          <p class="text_a">Nombre del item</p>
+        </div>
       </div>
-      <div>
-        <input
-          type="text"
-          name="searchNeck"
-          value="Buscar"
-          disabled="disabled"
+
+
+        <img class="character"
+          src="../static/images/character/Garrosh.png"
+          alt=""
+          th:src="@{images/character/Garrosh.png}"
         />
-        <img src="img/items/inventoryslot_neck.jpg" alt="" />
-      </div>
-      <div>
-        <input type="text" name="searchShoulder" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_shoulder.jpg" alt="" />
-      </div>
-      <div>
-        <input type="text" name="searchShoulder" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_shoulder.jpg" alt="" />
-      </div>
-      <div>
-        <input type="text" name="searchChest" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_chest.jpg" alt="" />
-      </div>
-      <div>
-        <input type="text" name="searchTabard" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_tabard.jpg" alt="" />
-      </div>
-      <div>
-        <input type="text" name="searchShirt" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_shirt.jpg" alt="" />
-      </div>
-      <div>
-        <input type="text" name="searchWrists" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_wrists.jpg" alt="" />
+
+
+      <div class="gear-right">
+        <div class="item">
+          <p class="text_a">Nombre del item</p>
+          <img
+            src="../static/images/items/inventoryslot_hands.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_hands.jpg}"
+          />
+          <input type="text" name="searchHands" placeholder="Buscar" />
+        </div>
+        <div class="item">
+          <p class="text_a">Nombre del item</p>
+          <img
+            src="../static/images/items/inventoryslot_waist.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_waist.jpg}"
+          />
+          <input type="text" name="searchWaist" placeholder="Buscar" />
+        </div>
+        <div class="item">
+          <p class="text_a">Nombre del item</p>
+          <img
+            src="../static/images/items/inventoryslot_legs.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_legs.jpg}"
+          />
+          <input type="text" name="searchLegs" placeholder="Buscar" />
+        </div>
+        <div class="item">
+          <p class="text_a">Nombre del item</p>
+          <img
+            src="../static/images/items/inventoryslot_feet.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_feet.jpg}"
+          />
+          <input type="text" name="searchFeet" placeholder="Buscar" />
+        </div>
+        <div class="item">
+          <p class="text_a">Nombre del item</p>
+          <img
+            src="../static/images/items/inventoryslot_finger.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_finger.jpg}"
+          />
+          <input
+            type="text"
+            name="searchFinger"
+            value="Buscar"
+            disabled="disabled"
+          />
+        </div>
+        <div class="item">
+          <p class="text_a">Nombre del item</p>
+          <img
+            src="../static/images/items/inventoryslot_finger.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_finger.jpg}"
+          />
+          <input
+            type="text"
+            name="searchFinger"
+            value="Buscar"
+            disabled="disabled"
+          />
+        </div>
+        <div class="item">
+          <p class="text_a">Nombre del item</p>
+          <img
+            src="../static/images/items/inventoryslot_trinket.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_trinket.jpg}"
+          />
+          <input
+            type="text"
+            name="searchTrinket"
+            value="Buscar"
+            disabled="disabled"
+          />
+        </div>
+        <div class="item">
+          <p class="text_a">Nombre del item</p>
+          <img
+            src="../static/images/items/inventoryslot_trinket.jpg"
+            alt=""
+            th:src="@{images/items/inventoryslot_trinket.jpg}"
+          />
+          <input
+            type="text"
+            name="searchTrinket"
+            value="Buscar"
+            disabled="disabled"
+          />
+        </div>
       </div>
     </div>
 
-    <div>
-      <div>
-        <input type="text" name="searchHands" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_hands.jpg" alt="" />
-      </div>
+    <div class="gear-bottom">
       <div>
         <input
           type="text"
-          name="searchWaist"
+          name="searchMainhand"
           value="Buscar"
           disabled="disabled"
         />
-        <img src="img/items/inventoryslot_waist.jpg" alt="" />
-      </div>
-      <div>
-        <input type="text" name="searchLegs" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_legs.jpg" alt="" />
-      </div>
-      <div>
-        <input type="text" name="searchFeet" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_feet.jpg" alt="" />
-      </div>
-      <div>
-        <input type="text" name="searchFinger" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_finger.jpg" alt="" />
-      </div>
-      <div>
-        <input type="text" name="searchFinger" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_finger.jpg" alt="" />
-      </div>
-      <div>
-        <input type="text" name="searchTrinket" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_trinket.jpg" alt="" />
-      </div>
-      <div>
-        <input type="text" name="searchTrinket" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_trinket.jpg" alt="" />
-      </div>
-    </div>
-    <div>
-      <div>
-        <input type="text" name="searchMainhand" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_mainhand.jpg" alt="" />
+        <img
+          src="../static/images/items/inventoryslot_mainhand.jpg"
+          alt=""
+          th:src="@{images/items/inventoryslot_mainhand.jpg}"
+        />
       </div>
       <div>
         <input type="text" name="searchOffhand" placeholder="Buscar" />
-        <img src="img/items/inventoryslot_offhand.jpg" alt="" />
+        <img
+          src="../static/images/items/inventoryslot_offhand.jpg"
+          alt=""
+          th:src="@{images/items/inventoryslot_offhand.jpg}"
+        />
       </div>
     </div>
 

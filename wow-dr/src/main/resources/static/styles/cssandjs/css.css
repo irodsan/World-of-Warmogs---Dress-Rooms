@@ -33,7 +33,7 @@ header img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width:35%;
+    width: 35%;
 }
 
 body {
@@ -58,11 +58,60 @@ h1 {
     color: beige;
 }
 
-button,
+
+/*Transmog*/
+.name {
+    text-align: center;
+}
+
 input {
     font-family: Friz Quadrata Std Medium;
 }
 
 .table {
     font-family: Friz Quadrata Std Medium;
+}
+
+
+.gear {
+    display: grid;
+    grid-template-columns: 37.5% 25% 37.5%;
+
+}
+
+
+.item {
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    padding: 1%;
+    column-gap: 1%;
+}
+
+.item img {
+    width: 70%;
+}
+
+.item input {
+    height: 50%;
+}
+
+
+.gear-left p {
+    text-align: left;
+}
+
+
+.gear-right p {
+    text-align: right;
+}
+
+.character {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gear-bottom {
+    float: left;
+    width: 100%;
 }

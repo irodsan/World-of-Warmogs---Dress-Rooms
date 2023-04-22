@@ -10,13 +10,53 @@ import org.springframework.web.bind.annotation.GetMapping;
 import dressrooms.model.Transmog;
 
 @Controller
-public class HomeController {
+public class MainController {
+
+    @GetMapping("/deleteUser")
+    public String mostrarDeleteUser(Model model) {
+        return "deleteUser";
+    }
+
+    @GetMapping("/index")
+    public String mostrarIndex(Model model) {
+        return "index";
+    }
+
+    @GetMapping("/login")
+    public String mostrarLogin(Model model) {
+        return "login";
+    }
+
+    @GetMapping("/modifyUser")
+    public String mostrarModifyUser(Model model) {
+        return "modifyUser";
+    }
+
+    @GetMapping("/register")
+    public String mostrarRegister(Model model) {
+        return "register";
+    }
+
+    @GetMapping("/signOut")
+    public String mostrarSignOut(Model model) {
+        return "signOut";
+    }
 
     @GetMapping("/tabla")
     public String mostrarTabla(Model model) {
         List<Transmog> lista = getConjunto();
         model.addAttribute("conjuntos", lista);
         return "tabla";
+    }
+
+    @GetMapping("/transmog")
+    public String mostrarTransmog(Model model) {
+        return "transmog";
+    }
+
+    @GetMapping("/userPanel")
+    public String mostrarUserPanel(Model model) {
+        return "userPanel";
     }
 
     private List<Transmog> getConjunto() {

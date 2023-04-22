@@ -19,12 +19,10 @@
     <tr>
       <th>ID</th>
       <th>Nombre</th>
-      <th>Ranura</th>
     </tr>
     <tr th:each="conjunto : ${conjuntos}">
       <td th:text="${conjunto.id}"></td>
       <td th:text="${conjunto.nombre}"></td>
-      <td th:text="${conjunto.ranura}"></td>
     </tr>
 
   </table>

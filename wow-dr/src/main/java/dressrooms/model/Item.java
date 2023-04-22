@@ -1,7 +1,14 @@
 package dressrooms.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "items")
 public class Item {
 
+    @Id
     private Integer id;
     private String nombre;
     private String ranura;

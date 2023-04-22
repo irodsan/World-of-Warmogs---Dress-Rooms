@@ -1,5 +1,10 @@
 package dressrooms.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "items_transmogs")
 public class ItemTransmog {
 
     private Integer id_item;

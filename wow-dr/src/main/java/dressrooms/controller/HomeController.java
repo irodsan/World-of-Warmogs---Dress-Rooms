@@ -26,22 +26,18 @@ public class HomeController {
             Transmog c1 = new Transmog();
             c1.setId(1);
             c1.setNombre("pieza1");
-            c1.setRanura("ranura1");
 
             Transmog c2 = new Transmog();
             c2.setId(2);
             c2.setNombre("pieza2");
-            c2.setRanura("ranura2");
 
             Transmog c3 = new Transmog();
             c3.setId(3);
             c3.setNombre("pieza3");
-            c3.setRanura("ranura3");
 
             Transmog c4 = new Transmog();
             c4.setId(4);
             c4.setNombre("pieza4");
-            c4.setRanura("ranura4");
 
             lista.add(c1);
             lista.add(c2);

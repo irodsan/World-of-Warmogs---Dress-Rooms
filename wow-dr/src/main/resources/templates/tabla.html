@@ -25,10 +25,13 @@
       <tr>
         <th>ID</th>
         <th>Nombre</th>
+        <th>Usuario</th>
       </tr>
       <tr th:each="conjunto : ${conjuntos}">
         <td th:text="${conjunto.id}"></td>
         <td th:text="${conjunto.nombre}"></td>
+        <td th:text="${conjunto.id_usuario}"></td>
+       
       </tr>
     </table>
     <footer th:insert="templates/footer :: footer"></footer>

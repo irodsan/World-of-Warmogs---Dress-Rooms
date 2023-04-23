@@ -19,28 +19,7 @@
 
   <body>
     <header th:insert="templates/header :: header"></header>
-    <nav>
-      <div>
-        <input
-          type="submit"
-          value="Login"
-          name="login"
-          onclick="location.href = 'login';"
-        />
-        <input
-          type="submit"
-          value="Sign up"
-          name="signUp"
-          onclick="location.href = 'register';"
-        />
-        <input
-          type="submit"
-          value="Config"
-          name="config"
-          onclick="location.href = 'modifyUser';"
-        />
-      </div>
-    </nav>
+    <nav th:insert="templates/nav :: nav"></nav>
     <h1>Prueba de fuentes</h1>
 
     <form>
@@ -49,35 +28,17 @@
     </form>
 
     <table class="table table-dark table-striped table-hover">
-      <tbody>
-        <tr>
-          <td>Transfiguración 1</td>
-          <td>****</td>
-        </tr>
-      </tbody>
-
-      <tbody>
-        <tr>
-          <td>Transfiguración 1</td>
-          <td>****</td>
-        </tr>
-      </tbody>
-
-      <tbody>
-        <tr>
-          <td>Transfiguración 1</td>
-          <td>****</td>
-        </tr>
-      </tbody>
-
-      <tbody>
-        <tr>
-          <td>Transfiguración 1</td>
-          <td>****</td>
-        </tr>
-      </tbody>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Usuario</th>
+      </tr>
+      <tr th:each="nuevo : ${nuevos}">
+        <td th:text="${nuevo.id}"></td>
+        <td th:text="${nuevo.nombre}"></td>
+        <td th:text="${nuevo.id_usuario}"></td>
+      </tr>
     </table>
-
     <footer th:insert="templates/footer :: footer"></footer>
   </body>
 </html>

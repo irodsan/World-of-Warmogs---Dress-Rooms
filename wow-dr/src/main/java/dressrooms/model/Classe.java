@@ -6,16 +6,16 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "classes")
-public class Classes {
+public class Classe {
 
     @Id
     private Integer id;
     private String nombre;
 
-    public Classes() {
+    public Classe() {
     }
 
-    public Classes(Integer id, String nombre) {
+    public Classe(Integer id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }

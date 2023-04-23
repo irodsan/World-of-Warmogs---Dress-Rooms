@@ -1,5 +1,6 @@
 package dressrooms.controller;
 
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -103,8 +104,8 @@ public class MainController {
             t.setId(5000);
             t.setId_usuario(4015);
             t.setNombre("TEST");
-            t.setClase(1);
-            t.setFecha("2023-04-23 16:56:14");
+            // t.setClase(1);
+            t.setFecha(new Date());
 
             Transmog t2 = new Transmog();
             System.out.println("Transfiguracion creada2");
@@ -112,8 +113,8 @@ public class MainController {
             t2.setId(5001);
             t2.setId_usuario(4015);
             t2.setNombre("TEST2");
-            t2.setClase(5);
-            t2.setFecha("2023-04-23 18:56:14");
+            // t2.setClase(5);
+            t2.setFecha(new Date());
             lista_T.add(t2);
             repoTransmogs.save(t2);
 

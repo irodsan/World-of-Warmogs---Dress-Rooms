@@ -1,5 +1,7 @@
 package dressrooms.model;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -13,10 +15,10 @@ public class Transmog {
     @Id
     private Integer id;
     private String nombre;
-    private String fecha;
+    private Date fecha;
     @OneToOne
     @JoinColumn(name = "id_clase")
-    private Integer id_clase;
+    private Classe clase;
     private Integer id_usuario;
     private Integer id_head;
     private Integer id_shoulder;
@@ -64,20 +66,20 @@ public class Transmog {
         this.nombre = nombre;
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return this.fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
-    public Integer getId_clase() {
-        return this.id_clase;
+    public Classe getClase() {
+        return this.clase;
     }
 
-    public void setId_clase(Integer id_clase) {
-        this.id_clase = id_clase;
+    public void setClase(Classe clase) {
+        this.clase = clase;
     }
 
     public Integer getId_usuario() {
@@ -198,7 +200,7 @@ public class Transmog {
                 " id='" + getId() + "'" +
                 ", nombre='" + getNombre() + "'" +
                 ", fecha='" + getFecha() + "'" +
-                ", id_clase='" + getId_clase() + "'" +
+                ", clase='" + getClase() + "'" +
                 ", id_usuario='" + getId_usuario() + "'" +
                 ", id_head='" + getId_head() + "'" +
                 ", id_shoulder='" + getId_shoulder() + "'" +

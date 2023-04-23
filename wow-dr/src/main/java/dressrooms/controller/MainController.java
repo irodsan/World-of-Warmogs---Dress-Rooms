@@ -91,7 +91,6 @@ public class MainController {
             System.out.println("Error: " + e.getMessage());
         }
         return lista;
-
     }
 
     private List<Transmog> getConjunto() {
@@ -126,31 +125,10 @@ public class MainController {
 
     public Iterable<Transmog> buscarNuevos() {
         Iterable<Transmog> transmogs = repoTransmogs.findAll(Sort.by("fecha"));
-        // Iterable<Transmog> transmogs = repoTransmogs.findAll
         for (Transmog t : transmogs) {
             System.out.println(t);
         }
         return transmogs;
-    }
-
-    private void createNew() {
-        List<Transmog> lista_T = new LinkedList<Transmog>();
-
-        try {
-            Transmog t = new Transmog();
-            System.out.println("Transfiguracion creada");
-            System.out.println(t);
-            t.setId(5000);
-            t.setId_usuario(4015);
-            t.setNombre("TEST");
-            t.setClase(1);
-            t.setFecha("2023-04-23 16:56:14");
-            lista_T.add(t);
-            repoTransmogs.save(t);
-
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        }
     }
 
 }

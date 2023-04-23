@@ -1,11 +1,9 @@
 package dressrooms;
 
-import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.domain.Sort;
 
 import dressrooms.model.Item;
 import dressrooms.model.Transmog;
@@ -16,7 +14,7 @@ import dressrooms.repository.TransmogRepository;
 public class WowDrApplication implements CommandLineRunner {
 
 	@Autowired
-	private ItemsRepository repo;
+	private ItemsRepository repoItems;
 	@Autowired
 	private TransmogRepository repoTransmogs;
 
@@ -25,7 +23,7 @@ public class WowDrApplication implements CommandLineRunner {
 	}
 
 	public void run(String... args) throws Exception {
-		System.out.println(repo);
+		System.out.println(repoItems);
 		buscarTodos();
 
 	}
@@ -36,12 +34,11 @@ public class WowDrApplication implements CommandLineRunner {
 		item.setNombre("Objeto 4015");
 		item.setRanura("Hombros");
 		item.setTipo("placas");
-		repo.save(item);
+		repoItems.save(item);
 	}
 
 	public void buscarTodos() {
 		Iterable<Transmog> transmogs = repoTransmogs.findAll();
-		// Iterable<Transmog> transmogs = repoTransmogs.findAll
 		for (Transmog t : transmogs) {
 			System.out.println(t);
 		}

@@ -13,15 +13,17 @@ public class Item {
     private String nombre;
     private String ranura;
     private String tipo;
+    private String quality;
 
     public Item() {
     }
 
-    public Item(Integer id, String nombre, String ranura, String tipo) {
+    public Item(Integer id, String nombre, String ranura, String tipo, String quality) {
         this.id = id;
         this.nombre = nombre;
         this.ranura = ranura;
         this.tipo = tipo;
+        this.quality = quality;
     }
 
     public Integer getId() {
@@ -56,6 +58,14 @@ public class Item {
         this.tipo = tipo;
     }
 
+    public String getQuality() {
+        return this.quality;
+    }
+
+    public void setQuality(String quality) {
+        this.quality = quality;
+    }
+
     @Override
     public String toString() {
         return "{" +
@@ -63,6 +73,7 @@ public class Item {
                 ", nombre='" + getNombre() + "'" +
                 ", ranura='" + getRanura() + "'" +
                 ", tipo='" + getTipo() + "'" +
+                ", quality='" + getQuality() + "'" +
                 "}";
     }
 

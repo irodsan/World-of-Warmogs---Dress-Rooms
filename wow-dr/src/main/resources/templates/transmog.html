@@ -50,7 +50,7 @@
             alt=""
             th:src="@{images/items/inventoryslot_head.jpg}"
           />
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
         </div>
         <div class="item">
           <input
@@ -64,7 +64,7 @@
             alt=""
             th:src="@{images/items/inventoryslot_neck.jpg}"
           />
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
         </div>
         <div class="item">
           <input type="text" name="searchShoulder" placeholder="Buscar" />
@@ -73,7 +73,7 @@
             alt=""
             th:src="@{images/items/inventoryslot_shoulder.jpg}"
           />
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
         </div>
         <div class="item">
           <input type="text" name="searchShoulder" placeholder="Buscar" />
@@ -82,7 +82,7 @@
             alt=""
             th:src="@{images/items/inventoryslot_shoulder.jpg}"
           />
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
         </div>
         <div class="item">
           <input type="text" name="searchChest" placeholder="Buscar" />
@@ -91,7 +91,7 @@
             alt=""
             th:src="@{images/items/inventoryslot_chest.jpg}"
           />
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
         </div>
         <div class="item">
           <input type="text" name="searchTabard" placeholder="Buscar" />
@@ -100,7 +100,7 @@
             alt=""
             th:src="@{images/items/inventoryslot_tabard.jpg}"
           />
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
         </div>
         <div class="item">
           <input type="text" name="searchShirt" placeholder="Buscar" />
@@ -109,7 +109,7 @@
             alt=""
             th:src="@{images/items/inventoryslot_shirt.jpg}"
           />
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
         </div>
         <div class="item">
           <input type="text" name="searchWrists" placeholder="Buscar" />
@@ -118,21 +118,20 @@
             alt=""
             th:src="@{images/items/inventoryslot_wrists.jpg}"
           />
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
         </div>
       </div>
 
-
-        <img class="character"
-          src="../static/images/character/Garrosh.png"
-          alt=""
-          th:src="@{images/character/Garrosh.png}"
-        />
-
+      <img
+        class="character"
+        src="../static/images/character/Garrosh.png"
+        alt=""
+        th:src="@{images/character/Garrosh.png}"
+      />
 
       <div class="gear-right">
         <div class="item">
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
           <img
             src="../static/images/items/inventoryslot_hands.jpg"
             alt=""
@@ -141,7 +140,7 @@
           <input type="text" name="searchHands" placeholder="Buscar" />
         </div>
         <div class="item">
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
           <img
             src="../static/images/items/inventoryslot_waist.jpg"
             alt=""
@@ -150,7 +149,7 @@
           <input type="text" name="searchWaist" placeholder="Buscar" />
         </div>
         <div class="item">
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
           <img
             src="../static/images/items/inventoryslot_legs.jpg"
             alt=""
@@ -159,7 +158,7 @@
           <input type="text" name="searchLegs" placeholder="Buscar" />
         </div>
         <div class="item">
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
           <img
             src="../static/images/items/inventoryslot_feet.jpg"
             alt=""
@@ -168,7 +167,7 @@
           <input type="text" name="searchFeet" placeholder="Buscar" />
         </div>
         <div class="item">
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
           <img
             src="../static/images/items/inventoryslot_finger.jpg"
             alt=""
@@ -182,7 +181,7 @@
           />
         </div>
         <div class="item">
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
           <img
             src="../static/images/items/inventoryslot_finger.jpg"
             alt=""
@@ -196,7 +195,7 @@
           />
         </div>
         <div class="item">
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
           <img
             src="../static/images/items/inventoryslot_trinket.jpg"
             alt=""
@@ -210,7 +209,7 @@
           />
         </div>
         <div class="item">
-          <p class="text_a">Nombre del item</p>
+          <p class="text_a  my-auto">Nombre del item</p>
           <img
             src="../static/images/items/inventoryslot_trinket.jpg"
             alt=""
@@ -227,26 +226,23 @@
     </div>
 
     <div class="gear-bottom">
-      <div>
-        <input
-          type="text"
-          name="searchMainhand"
-          value="Buscar"
-          disabled="disabled"
-        />
+      <div class="item" id="l">      
+        <p class="text_a  my-auto">Nombre del item</p>
         <img
           src="../static/images/items/inventoryslot_mainhand.jpg"
           alt=""
           th:src="@{images/items/inventoryslot_mainhand.jpg}"
         />
+
       </div>
-      <div>
-        <input type="text" name="searchOffhand" placeholder="Buscar" />
+      <div class="item" id="r">
+
         <img
           src="../static/images/items/inventoryslot_offhand.jpg"
           alt=""
           th:src="@{images/items/inventoryslot_offhand.jpg}"
         />
+        <p class="text_a  my-auto">Nombre del item</p>
       </div>
     </div>
 

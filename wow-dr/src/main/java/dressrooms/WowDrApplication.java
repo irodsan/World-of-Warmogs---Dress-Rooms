@@ -1,5 +1,7 @@
 package dressrooms;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -38,7 +40,7 @@ public class WowDrApplication implements CommandLineRunner {
 	}
 
 	public void buscarTodos() {
-		Iterable<Transmog> transmogs = repoTransmogs.findAll();
+		List<Transmog> transmogs = repoTransmogs.findAll();
 		for (Transmog t : transmogs) {
 			System.out.println(t);
 		}

@@ -26,7 +26,7 @@ public class MainController {
 
     @GetMapping("/index")
     public String mostrarIndex(Model model) {
-        Iterable<Transmog> nuevos = buscarNuevos();
+        List<Transmog> nuevos = buscarNuevos();
         model.addAttribute("nuevos", nuevos);
         return "index";
     }
@@ -123,8 +123,8 @@ public class MainController {
         return lista_T;
     }
 
-    public Iterable<Transmog> buscarNuevos() {
-        Iterable<Transmog> transmogs = repoTransmogs.findAll(Sort.by("fecha"));
+    public List<Transmog> buscarNuevos() {
+        List<Transmog> transmogs = repoTransmogs.findAll(Sort.by("fecha"));
         for (Transmog t : transmogs) {
             System.out.println(t);
         }

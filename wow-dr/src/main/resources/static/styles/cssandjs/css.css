@@ -158,9 +158,30 @@ input {
     text-align: right;
 }
 
-#Placas{
-    color:blueviolet;
+#LEGENDARY{
+    color:#FF8000;
 }
-#Tela{
-    color:yellow;
+
+#EPIC{
+    color:#C600FF;
+}
+
+#RARE{
+    color:#0081FF;
+}
+
+#UNCOMMON{
+    color:#1EFF00;
+}
+
+#COMMON{
+    color:#FFFFFF;
+}
+
+#HEIRLOOM{
+    color:#00CCFF;
+}
+
+#NON-EQUIP{
+    color:#888888;
 }

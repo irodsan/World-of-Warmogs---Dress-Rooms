@@ -2,6 +2,8 @@ package dressrooms.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -12,7 +14,9 @@ public class Transmog {
     private Integer id;
     private String nombre;
     private String fecha;
-    private Integer clase;
+    @OneToOne
+    @JoinColumn(name = "id_clase")
+    private Integer id_clase;
     private Integer id_usuario;
     private Integer id_head;
     private Integer id_shoulder;
@@ -68,12 +72,12 @@ public class Transmog {
         this.fecha = fecha;
     }
 
-    public Integer getClase() {
-        return this.clase;
+    public Integer getId_clase() {
+        return this.id_clase;
     }
 
-    public void setClase(Integer clase) {
-        this.clase = clase;
+    public void setId_clase(Integer id_clase) {
+        this.id_clase = id_clase;
     }
 
     public Integer getId_usuario() {
@@ -194,7 +198,7 @@ public class Transmog {
                 " id='" + getId() + "'" +
                 ", nombre='" + getNombre() + "'" +
                 ", fecha='" + getFecha() + "'" +
-                ", clase='" + getClase() + "'" +
+                ", id_clase='" + getId_clase() + "'" +
                 ", id_usuario='" + getId_usuario() + "'" +
                 ", id_head='" + getId_head() + "'" +
                 ", id_shoulder='" + getId_shoulder() + "'" +

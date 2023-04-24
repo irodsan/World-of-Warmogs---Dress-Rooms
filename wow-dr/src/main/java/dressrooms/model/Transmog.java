@@ -1,5 +1,6 @@
 package dressrooms.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -42,19 +43,19 @@ public class Transmog {
     private List<Item> items;
 
     public Transmog() {
-        this.id_head = 0;
-        this.id_shoulder = 0;
-        this.id_back = 0;
-        this.id_chest = 0;
-        this.id_shirt = 0;
-        this.id_tabard = 0;
-        this.id_wrists = 0;
-        this.id_hands = 0;
-        this.id_waist = 0;
-        this.id_legs = 0;
-        this.id_feet = 0;
-        this.id_mainhand = 0;
-        this.id_offhand = 0;
+        items = new ArrayList<>(13);
+
+        for (int i = 0; i < items.size(); i++) {
+            items.add(i, null);
+        }
+
+    }
+
+    public void agregar(Item tempItem) {
+        if (items == null) {
+            items = new ArrayList<>();
+        }
+        items.add(tempItem);
     }
 
     public Integer getId() {

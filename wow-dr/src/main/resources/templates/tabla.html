@@ -27,10 +27,10 @@
         <th>Nombre</th>
         <th>Usuario</th>
       </tr>
-      <tr th:each="conjunto : ${conjuntos}">
-        <td th:text="${conjunto.id}"></td>
-        <td th:text="${conjunto.nombre}"></td>
-        <td th:text="${conjunto.id_usuario}"></td>
+      <tr th:each="nuevo : ${nuevos}">
+        <td th:text="${nuevo.id}"></td>
+        <td th:text="${nuevo.nombre}"></td>
+        <td th:text="${nuevo.id_usuario}"></td>
        
       </tr>
     </table>

@@ -3,6 +3,7 @@ package dressrooms.controller;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -54,15 +55,26 @@ public class MainController {
 
     @GetMapping("/tabla")
     public String mostrarTabla(Model model) {
-        List<Transmog> conjuntos = getConjunto();
-        model.addAttribute("conjuntos", conjuntos);
+        List<Transmog> nuevos = buscarNuevos();
+        model.addAttribute("nuevos", nuevos);
         return "tabla";
+    }
+
+    public List<Transmog> buscarNuevos() {
+        List<Transmog> transmogs = repoTransmogs.findAll(Sort.by("fecha"));
+        for (Transmog t : transmogs) {
+            System.out.println(t);
+        }
+
+        return transmogs;
     }
 
     @GetMapping("/transmog")
     public String mostrarTransmog(Model model) {
-        List<Item> lista = getItems();
-        model.addAttribute("items", lista);
+        Transmog t = mostrarConjunto(5000);
+        System.out.println("MOSTRANDO TRANSMOG");
+        System.out.println(t);
+        model.addAttribute("t", t);
         return "transmog";
     }
 
@@ -94,42 +106,47 @@ public class MainController {
         return lista;
     }
 
-    private List<Transmog> getConjunto() {
-        List<Transmog> lista_T = new LinkedList<Transmog>();
-
-        try {
-            Transmog t = new Transmog();
-            System.out.println("Transfiguracion creada");
-            System.out.println(t);
-            t.setId(5000);
-            t.setId_usuario(4015);
-            t.setNombre("TEST");
-            // t.setClase(1);
-            t.setFecha(new Date());
-
-            Transmog t2 = new Transmog();
-            System.out.println("Transfiguracion creada2");
-            System.out.println(t);
-            t2.setId(5001);
-            t2.setId_usuario(4015);
-            t2.setNombre("TEST2");
-            // t2.setClase(5);
-            t2.setFecha(new Date());
-            lista_T.add(t2);
-            repoTransmogs.save(t2);
-
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+    private Transmog mostrarConjunto(int id) {
+        Transmog t = null;
+        Optional<Transmog> transmog = repoTransmogs.findById(id);
+        if (transmog.isPresent()) {
+            t = transmog.get();
         }
-        return lista_T;
+        return t;
     }
 
-    public List<Transmog> buscarNuevos() {
-        List<Transmog> transmogs = repoTransmogs.findAll(Sort.by("fecha"));
-        for (Transmog t : transmogs) {
-            System.out.println(t);
-        }
-        return transmogs;
-    }
-
+    /*
+     * private List<Transmog> getConjunto() {
+     * List<Transmog> lista_T = new LinkedList<Transmog>();
+     * 
+     * try {
+     * Transmog t = new Transmog();
+     * System.out.println("Transfiguracion creada");
+     * System.out.println(t);
+     * t.setId(5000);
+     * t.setId_usuario(4015);
+     * t.setNombre("TEST");
+     * // t.setClase(1);
+     * t.setFecha(new Date());
+     * lista_T.add(t);
+     * 
+     * Transmog t2 = new Transmog();
+     * System.out.println("Transfiguracion creada2");
+     * System.out.println(t);
+     * t2.setId(5001);
+     * t2.setId_usuario(4015);
+     * t2.setNombre("TEST222");
+     * // t2.setClase(5);
+     * t2.setFecha(new Date());
+     * lista_T.add(t2);
+     * repoTransmogs.save(t2);
+     * 
+     * } catch (Exception e) {
+     * System.out.println("Error: " + e.getMessage());
+     * }
+     * return lista_T;
+     * }
+     * 
+     * 
+     */
 }

@@ -39,7 +39,8 @@
         onclick="location.href = 'modifyUser.html';"
       />
     </div>
-    <h1 class="name">Nombre de la transfiguración</h1>
+
+    <h1 th:text="'Nombre: ' + ${t.getNombre()}">Nombre de la transfiguración</h1>
 
     <div class="gear">
       <div class="gear-left">

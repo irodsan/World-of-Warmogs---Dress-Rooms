@@ -1,15 +1,9 @@
 package dressrooms.model;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -38,24 +32,13 @@ public class Transmog {
     private Integer id_feet;
     private Integer id_mainhand;
     private Integer id_offhand;
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "transmogs", joinColumns = @JoinColumn(name = "id_transmog"), inverseJoinColumns = @JoinColumn(name = "id_item"))
-    private List<Item> items;
+    // @ManyToMany(fetch = FetchType.EAGER)
+    // @JoinTable(name = "transmogs", joinColumns = @JoinColumn(name =
+    // "id_transmog"), inverseJoinColumns = @JoinColumn(name = "id_item"))
+    // private List<Item> items;
 
     public Transmog() {
-        items = new ArrayList<>(13);
 
-        for (int i = 0; i < items.size(); i++) {
-            items.add(i, null);
-        }
-
-    }
-
-    public void agregar(Item tempItem) {
-        if (items == null) {
-            items = new ArrayList<>();
-        }
-        items.add(tempItem);
     }
 
     public Integer getId() {
@@ -202,14 +185,6 @@ public class Transmog {
         this.id_offhand = id_offhand;
     }
 
-    public List<Item> getItems() {
-        return this.items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
-
     @Override
     public String toString() {
         return "{" +
@@ -231,7 +206,6 @@ public class Transmog {
                 ", id_feet='" + getId_feet() + "'" +
                 ", id_mainhand='" + getId_mainhand() + "'" +
                 ", id_offhand='" + getId_offhand() + "'" +
-                ", items='" + getItems() + "'" +
                 "}";
     }
 

@@ -20,8 +20,6 @@
   <body>
     <nav th:insert="templates/nav :: nav"></nav>
     <header th:insert="templates/header :: header"></header>
-    
-    <h1>Prueba de fuentes</h1>
 
     <form>
       <input type="text" name="search" value="Busca tu transfiguración" />
@@ -32,12 +30,14 @@
       <tr>
         <th>ID</th>
         <th>Nombre</th>
-        <th>Usuario</th>
+        <th>Clase</th>
+        <th>Creado</th>
       </tr>
       <tr th:each="nuevo : ${nuevos}">
         <td th:text="${nuevo.id}"></td>
         <td th:text="${nuevo.nombre}"></td>
-        <td th:text="${nuevo.id_usuario}"></td>
+        <td th:class ="${nuevo.clase.nombre}" th:text="${nuevo.clase.nombre}"></td>
+        <td th:text="${nuevo.fecha}"></td>
       </tr>
     </table>
     <footer th:insert="templates/footer :: footer"></footer>

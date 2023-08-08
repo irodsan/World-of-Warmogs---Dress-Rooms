@@ -29,9 +29,9 @@
     src: local('Friz Quadrata Std Bold Italic'), url('Fonts/friz-quadrata-std-bold-italic-587033d6d4298.woff') format('woff');
 }
 
-nav{
-    float:right;
-    margin:0.5em;
+nav {
+    float: right;
+    margin: 0.5em;
 }
 
 header img {
@@ -85,7 +85,7 @@ input {
 
 }
 
-.gear img{
+.gear img {
     margin-left: auto;
     margin-right: auto;
 }
@@ -131,7 +131,7 @@ input {
     margin-left: auto;
     margin-right: auto;
     margin-top: 1em;
-    
+
 
 }
 
@@ -141,52 +141,108 @@ input {
     column-gap: 1%;
 }
 
-#r{ 
+#r {
     grid-template-columns: 15% 85%;
 }
 
-#l{ 
+#l {
     grid-template-columns: 85% 15%;
 }
 
-.gear-bottom img{
+.gear-bottom img {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-#r p{
+#r p {
     text-align: left;
 }
 
-#l p{
+#l p {
     text-align: right;
 }
 
-#LEGENDARY{
-    color:#FF8000;
+
+/*ITEM COLOR*/
+.LEGENDARY {
+    color: #FF8000;
 }
 
-#EPIC{
-    color:#C600FF;
+.EPIC {
+    color: #C600FF;
 }
 
-#RARE{
-    color:#0081FF;
+.RARE {
+    color: #0081FF;
 }
 
-#UNCOMMON{
-    color:#1EFF00;
+.UNCOMMON {
+    color: #1EFF00;
 }
 
-#COMMON{
-    color:#FFFFFF;
+.COMMON {
+    color: #FFFFFF;
 }
 
-#HEIRLOOM{
-    color:#00CCFF;
+.HEIRLOOM {
+    color: #00CCFF;
 }
 
-#NON-EQUIP{
-    color:#888888;
+.NON-EQUIP {
+    color: #888888;
+}
+
+/*CLASS COLOR*/
+
+.DK {
+    color: #C41F3B;
+}
+
+.DH {
+    color: #A330C9;
+}
+
+.Druida {
+    color: #FF7D0A;
+}
+
+.Evocador {
+    color: #33937F;
+}
+
+.Cazador {
+    color: #ABD473;
+}
+
+.Mago {
+    color: #69CCF0;
+}
+
+.Monje {
+    color: #00FF96;
+}
+
+.Paladín {
+    color: #F58CBA;
+}
+
+.Sacerdote {
+    color: #FFFFFF;
+}
+
+.Pícaro {
+    color: #FFF569;
+}
+
+.Chamán {
+    color: #0070DE;
+}
+
+.Brujo {
+    color: #9482C9;
+}
+
+.Guerrero {
+    color: #C79C6E;
 }

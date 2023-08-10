@@ -17,25 +17,20 @@
   </head>
 
   <body>
+    <nav th:insert="templates/nav :: nav"></nav>
     <header th:insert="templates/header :: header"></header>
-    <nav></nav>
-
-    <div>
-      <input type="submit" value="Login" name="login" />
-      <input type="submit" value="Signup" name="signup" />
-    </div>
 
     <form>
-      <a>Alias</a>
+      <a class="text_a">Alias</a>
       <input type="text" name="alias" value="" />
       <br />
-      <a>Email</a>
+      <a class="text_a">Email</a>
       <input type="text" name="email" value="" />
       <br />
-      <a>Contraseña</a>
+      <a class="text_a">Contraseña</a>
       <input type="password" name="password" value="" />
       <br />
-      <a>Confirmar contraseña</a>
+      <a class="text_a">Confirmar contraseña</a>
       <input type="password" name="password" value="" />
       <br />
       <input type="submit" value="Aceptar" name="register" />

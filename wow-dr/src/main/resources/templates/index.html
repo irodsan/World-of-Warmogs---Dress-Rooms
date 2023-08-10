@@ -22,8 +22,8 @@
     <header th:insert="templates/header :: header"></header>
 
     <form>
-      <input type="text" name="search" value="Busca tu transfiguración" />
-      <input type="submit" value="Buscar" name="search" />
+      <input type="text" name="search" placeholder="Busca tu transfiguración" class="search"/>
+      <input type="submit" value="Buscar" name="search" class=" btn wow-button"/>
     </form>
 
     <table class="table table-dark table-striped table-hover">
@@ -37,7 +37,7 @@
       </tr>
       <tr th:each="nuevo : ${nuevos}">
         <!-- <td><img src="../static/images/buttons/player.jpg" th:href="@{/transmog/{id} (id=${nuevo.id}) }"/></td> -->
-        <td><a src="../static/images/buttons/player.jpg" th:href="@{/transmog/{id} (id=${nuevo.id}) }" class="btn btn-success">View</a></td> -->
+        <td><a src="../static/images/buttons/player.jpg" th:href="@{/transmog/{id} (id=${nuevo.id}) }" class="btn wow-button">View</a></td> -->
         <td th:text="${nuevo.id}"></td>
         <td th:text="${nuevo.nombre}"></td>
         <td th:class ="${nuevo.clase.nombre}" th:text="${nuevo.clase.nombre}"></td>

@@ -55,6 +55,22 @@ body {
     height: auto;
 }
 
+.wow-button {
+    display: inline-block;
+    background-color: #C41E3A;
+    color: #fff;
+    font-weight: bold;
+    font-family: Friz Quadrata Std Medium;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.wow-button:hover {
+    background-color: #9C162E; /* Slightly darker red on hover */
+    transform: scale(1.05);
+}
 
 /*ITEM COLOR*/
 .LEGENDARY {
@@ -168,10 +184,13 @@ input {
     font-family: Friz Quadrata Std Medium;
 }
 
+.search{
+    width: 40%;
+}
+
 .table {
     font-family: Friz Quadrata Std Medium;
 }
-
 
 .gear {
     display: grid;
@@ -256,4 +275,7 @@ input {
 #l p {
     text-align: right;
 }
+
+
+
 

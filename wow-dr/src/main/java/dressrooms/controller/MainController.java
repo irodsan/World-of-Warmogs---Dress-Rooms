@@ -10,6 +10,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import dressrooms.model.Item;
 import dressrooms.model.Transmog;
@@ -69,9 +70,9 @@ public class MainController {
         return transmogs;
     }
 
-    @GetMapping("/transmog")
-    public String mostrarTransmog(Model model) {
-        Transmog t = mostrarConjunto(5000);
+    @GetMapping("/transmog/{id}")
+    public String mostrarTransmog(@PathVariable("id") int id, Model model) {
+        Transmog t = mostrarConjunto(id);
         System.out.println("MOSTRANDO TRANSMOG");
         System.out.println(t);
         model.addAttribute("t", t);

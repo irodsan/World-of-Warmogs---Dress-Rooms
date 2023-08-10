@@ -17,30 +17,10 @@
   </head>
 
   <body>
+    <nav th:insert="templates/nav :: nav"></nav>
     <header th:insert="templates/header :: header"></header>
-    <nav></nav>
-    <div>
-      <input
-        type="submit"
-        value="Login"
-        name="login"
-        onclick="location.href = 'login.html';"
-      />
-      <input
-        type="submit"
-        value="Sign up"
-        name="signUp"
-        onclick="location.href = 'register.html';"
-      />
-      <input
-        type="submit"
-        value="Config"
-        name="config"
-        onclick="location.href = 'modifyUser.html';"
-      />
-    </div>
 
-    <h1 th:text="'Nombre: ' + ${t.getNombre()}">Nombre de la transfiguración</h1>
+    <h1 th:text="'Nombre: ' + ${t.getNombre()}" class="name">Nombre de la transfiguración</h1>
 
     <div class="gear">
       <div class="gear-left">
@@ -49,7 +29,7 @@
           <img
             src="../static/images/items/inventoryslot_head.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_head.jpg}"
+            th:src="@{../images/items/inventoryslot_head.jpg}"
           />
           <p class="text_a  my-auto">Nombre del item</p>
         </div>
@@ -63,7 +43,7 @@
           <img
             src="../static/images/items/inventoryslot_neck.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_neck.jpg}"
+            th:src="@{../images/items/inventoryslot_neck.jpg}"
           />
           <p class="text_a  my-auto">Nombre del item</p>
         </div>
@@ -72,7 +52,7 @@
           <img
             src="../static/images/items/inventoryslot_shoulder.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_shoulder.jpg}"
+            th:src="@{../images/items/inventoryslot_shoulder.jpg}"
           />
           <p class="text_a  my-auto">Nombre del item</p>
         </div>
@@ -81,7 +61,7 @@
           <img
             src="../static/images/items/inventoryslot_shoulder.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_shoulder.jpg}"
+            th:src="@{../images/items/inventoryslot_shoulder.jpg}"
           />
           <p class="text_a  my-auto">Nombre del item</p>
         </div>
@@ -90,7 +70,7 @@
           <img
             src="../static/images/items/inventoryslot_chest.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_chest.jpg}"
+            th:src="@{../images/items/inventoryslot_chest.jpg}"
           />
           <p class="text_a  my-auto">Nombre del item</p>
         </div>
@@ -99,7 +79,7 @@
           <img
             src="../static/images/items/inventoryslot_tabard.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_tabard.jpg}"
+            th:src="@{../images/items/inventoryslot_tabard.jpg}"
           />
           <p class="text_a  my-auto">Nombre del item</p>
         </div>
@@ -108,7 +88,7 @@
           <img
             src="../static/images/items/inventoryslot_shirt.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_shirt.jpg}"
+            th:src="@{../images/items/inventoryslot_shirt.jpg}"
           />
           <p class="text_a  my-auto">Nombre del item</p>
         </div>
@@ -117,7 +97,7 @@
           <img
             src="../static/images/items/inventoryslot_wrists.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_wrists.jpg}"
+            th:src="@{../images/items/inventoryslot_wrists.jpg}"
           />
           <p class="text_a  my-auto">Nombre del item</p>
         </div>
@@ -127,7 +107,7 @@
         class="character"
         src="../static/images/character/Garrosh.png"
         alt=""
-        th:src="@{images/character/Garrosh.png}"
+        th:src="@{../images/character/Garrosh.png}"
       />
 
       <div class="gear-right">
@@ -136,7 +116,7 @@
           <img
             src="../static/images/items/inventoryslot_hands.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_hands.jpg}"
+            th:src="@{../images/items/inventoryslot_hands.jpg}"
           />
           <input type="text" name="searchHands" placeholder="Buscar" />
         </div>
@@ -145,7 +125,7 @@
           <img
             src="../static/images/items/inventoryslot_waist.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_waist.jpg}"
+            th:src="@{../images/items/inventoryslot_waist.jpg}"
           />
           <input type="text" name="searchWaist" placeholder="Buscar" />
         </div>
@@ -154,7 +134,7 @@
           <img
             src="../static/images/items/inventoryslot_legs.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_legs.jpg}"
+            th:src="@{../images/items/inventoryslot_legs.jpg}"
           />
           <input type="text" name="searchLegs" placeholder="Buscar" />
         </div>
@@ -163,7 +143,7 @@
           <img
             src="../static/images/items/inventoryslot_feet.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_feet.jpg}"
+            th:src="@{../images/items/inventoryslot_feet.jpg}"
           />
           <input type="text" name="searchFeet" placeholder="Buscar" />
         </div>
@@ -172,7 +152,7 @@
           <img
             src="../static/images/items/inventoryslot_finger.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_finger.jpg}"
+            th:src="@{../images/items/inventoryslot_finger.jpg}"
           />
           <input
             type="text"
@@ -186,7 +166,7 @@
           <img
             src="../static/images/items/inventoryslot_finger.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_finger.jpg}"
+            th:src="@{../images/items/inventoryslot_finger.jpg}"
           />
           <input
             type="text"
@@ -200,7 +180,7 @@
           <img
             src="../static/images/items/inventoryslot_trinket.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_trinket.jpg}"
+            th:src="@{../images/items/inventoryslot_trinket.jpg}"
           />
           <input
             type="text"
@@ -214,7 +194,7 @@
           <img
             src="../static/images/items/inventoryslot_trinket.jpg"
             alt=""
-            th:src="@{images/items/inventoryslot_trinket.jpg}"
+            th:src="@{../images/items/inventoryslot_trinket.jpg}"
           />
           <input
             type="text"
@@ -232,7 +212,7 @@
         <img
           src="../static/images/items/inventoryslot_mainhand.jpg"
           alt=""
-          th:src="@{images/items/inventoryslot_mainhand.jpg}"
+          th:src="@{../images/items/inventoryslot_mainhand.jpg}"
         />
 
       </div>
@@ -241,7 +221,7 @@
         <img
           src="../static/images/items/inventoryslot_offhand.jpg"
           alt=""
-          th:src="@{images/items/inventoryslot_offhand.jpg}"
+          th:src="@{../images/items/inventoryslot_offhand.jpg}"
         />
         <p class="text_a  my-auto">Nombre del item</p>
       </div>

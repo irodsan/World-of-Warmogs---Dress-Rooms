@@ -1,3 +1,4 @@
+/**FONTS FRIZ QUADRATA*/
 @font-face {
     font-family: 'Friz Quadrata Std Italic';
     font-style: normal;
@@ -29,11 +30,15 @@
     src: local('Friz Quadrata Std Bold Italic'), url('Fonts/friz-quadrata-std-bold-italic-587033d6d4298.woff') format('woff');
 }
 
+/*TEMPLATES*/
 nav {
     float: right;
     margin: 0.5em;
 }
 
+header{
+    text-align: center;
+}
 header img {
     display: block;
     margin-left: auto;
@@ -41,10 +46,99 @@ header img {
     width: 40em;
 }
 
+.text_footer{
+    text-align: center;
+}
+
 body {
     background-image: url('../../images/bg/leather.jpg');
     height: auto;
 }
+
+
+/*ITEM COLOR*/
+.LEGENDARY {
+    color: #FF8000;
+}
+
+.EPIC {
+    color: #C600FF;
+}
+
+.RARE {
+    color: #0081FF;
+}
+
+.UNCOMMON {
+    color: #1EFF00;
+}
+
+.COMMON {
+    color: #FFFFFF;
+}
+
+.HEIRLOOM {
+    color: #00CCFF;
+}
+
+.NON-EQUIP {
+    color: #888888;
+}
+
+/*CLASS COLOR*/
+
+.DK {
+    color: #C41F3B;
+}
+
+.DH {
+    color: #A330C9;
+}
+
+.Druida {
+    color: #FF7D0A;
+}
+
+.Evocador {
+    color: #33937F;
+}
+
+.Cazador {
+    color: #ABD473;
+}
+
+.Mago {
+    color: #69CCF0;
+}
+
+.Monje {
+    color: #00FF96;
+}
+
+.Paladín {
+    color: #F58CBA;
+}
+
+.Sacerdote {
+    color: #FFFFFF;
+}
+
+.Pícaro {
+    color: #FFF569;
+}
+
+.Chamán {
+    color: #0070DE;
+}
+
+.Brujo {
+    color: #9482C9;
+}
+
+.Guerrero {
+    color: #C79C6E;
+}
+
 
 h1 {
     font-family: Friz Quadrata Std Medium;
@@ -163,86 +257,3 @@ input {
     text-align: right;
 }
 
-
-/*ITEM COLOR*/
-.LEGENDARY {
-    color: #FF8000;
-}
-
-.EPIC {
-    color: #C600FF;
-}
-
-.RARE {
-    color: #0081FF;
-}
-
-.UNCOMMON {
-    color: #1EFF00;
-}
-
-.COMMON {
-    color: #FFFFFF;
-}
-
-.HEIRLOOM {
-    color: #00CCFF;
-}
-
-.NON-EQUIP {
-    color: #888888;
-}
-
-/*CLASS COLOR*/
-
-.DK {
-    color: #C41F3B;
-}
-
-.DH {
-    color: #A330C9;
-}
-
-.Druida {
-    color: #FF7D0A;
-}
-
-.Evocador {
-    color: #33937F;
-}
-
-.Cazador {
-    color: #ABD473;
-}
-
-.Mago {
-    color: #69CCF0;
-}
-
-.Monje {
-    color: #00FF96;
-}
-
-.Paladín {
-    color: #F58CBA;
-}
-
-.Sacerdote {
-    color: #FFFFFF;
-}
-
-.Pícaro {
-    color: #FFF569;
-}
-
-.Chamán {
-    color: #0070DE;
-}
-
-.Brujo {
-    color: #9482C9;
-}
-
-.Guerrero {
-    color: #C79C6E;
-}

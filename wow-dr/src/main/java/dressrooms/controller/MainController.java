@@ -8,7 +8,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import dressrooms.model.Transmog;
 import dressrooms.repository.TransmogRepository;
@@ -19,36 +18,11 @@ public class MainController {
     @Autowired
     private TransmogRepository repoTransmogs;
 
-    @GetMapping("/deleteUser")
-    public String mostrarDeleteUser(Model model) {
-        return "deleteUser";
-    }
-
     @GetMapping("/index")
     public String mostrarIndex(Model model) {
         List<Transmog> nuevos = buscarNuevos();
         model.addAttribute("nuevos", nuevos);
         return "index";
-    }
-
-    @GetMapping("/login")
-    public String mostrarLogin(Model model) {
-        return "login";
-    }
-
-    @GetMapping("/modifyUser")
-    public String mostrarModifyUser(Model model) {
-        return "modifyUser";
-    }
-
-    @GetMapping("/register")
-    public String mostrarRegister(Model model) {
-        return "register";
-    }
-
-    @GetMapping("/signOut")
-    public String mostrarSignOut(Model model) {
-        return "signOut";
     }
 
     @GetMapping("/tabla")
@@ -67,28 +41,6 @@ public class MainController {
         return transmogs;
     }
 
-    @GetMapping("/transmog/{id}")
-    public String mostrarTransmog(@PathVariable("id") int id, Model model) {
-        Transmog t = mostrarConjunto(id);
-        System.out.println("MOSTRANDO TRANSMOG");
-        System.out.println(t);
-        model.addAttribute("t", t);
-        return "transmog";
-    }
-
-    @GetMapping("/userPanel")
-    public String mostrarUserPanel(Model model) {
-        return "userPanel";
-    }
-
-    private Transmog mostrarConjunto(int id) {
-        Transmog t = null;
-        Optional<Transmog> transmog = repoTransmogs.findById(id);
-        if (transmog.isPresent()) {
-            t = transmog.get();
-        }
-        return t;
-    }
 }
 
 /*

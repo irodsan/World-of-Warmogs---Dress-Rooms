@@ -19,16 +19,13 @@
   <body>
     <header th:insert="commons/header :: header"></header>
 
-    <div>
-      <input type="submit" value="Login" name="login" />
-      <input type="submit" value="Signup" name="signup" />
-    </div>
-
     <a>PANEL DE USUARIO</a>
-    <form>
-      <input type="submit" value="Modificar datos" name="register" />
-      <input type="submit" value="Baja usuario" name="register" />
-    </form>
+    <ul>
+      <li><a class="btn wow-button" href="../modifyUser">Cambiar datos</a></li>
+      <li><a class="btn wow-button" href="../deleteUser">Eliminar cuenta</a></li>
+    </ul>
+
+
 
     <footer th:insert="commons/footer :: footer"></footer>
   </body>

@@ -1,7 +1,5 @@
 package dressrooms.controller;
 
-import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import dressrooms.model.Item;
 import dressrooms.model.Transmog;
 import dressrooms.repository.TransmogRepository;
 
@@ -84,29 +81,6 @@ public class MainController {
         return "userPanel";
     }
 
-    private List<Item> getItems() {
-        List<Item> lista = new LinkedList<Item>();
-        try {
-            Item item = new Item();
-            item.setId(4015);
-            item.setNombre("Objeto 4015");
-            item.setRanura("Hombros");
-            item.setTipo("Placas");
-
-            Item item2 = new Item();
-            item2.setId(1234);
-            item2.setNombre("Objeto 1234");
-            item2.setRanura("Cabeza");
-            item2.setTipo("Tela");
-
-            lista.add(item);
-            lista.add(item2);
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        }
-        return lista;
-    }
-
     private Transmog mostrarConjunto(int id) {
         Transmog t = null;
         Optional<Transmog> transmog = repoTransmogs.findById(id);
@@ -115,39 +89,64 @@ public class MainController {
         }
         return t;
     }
-
-    /*
-     * private List<Transmog> getConjunto() {
-     * List<Transmog> lista_T = new LinkedList<Transmog>();
-     * 
-     * try {
-     * Transmog t = new Transmog();
-     * System.out.println("Transfiguracion creada");
-     * System.out.println(t);
-     * t.setId(5000);
-     * t.setId_usuario(4015);
-     * t.setNombre("TEST");
-     * // t.setClase(1);
-     * t.setFecha(new Date());
-     * lista_T.add(t);
-     * 
-     * Transmog t2 = new Transmog();
-     * System.out.println("Transfiguracion creada2");
-     * System.out.println(t);
-     * t2.setId(5001);
-     * t2.setId_usuario(4015);
-     * t2.setNombre("TEST222");
-     * // t2.setClase(5);
-     * t2.setFecha(new Date());
-     * lista_T.add(t2);
-     * repoTransmogs.save(t2);
-     * 
-     * } catch (Exception e) {
-     * System.out.println("Error: " + e.getMessage());
-     * }
-     * return lista_T;
-     * }
-     * 
-     * 
-     */
 }
+
+/*
+ * private List<Item> getItems() {
+ * List<Item> lista = new LinkedList<Item>();
+ * try {
+ * Item item = new Item();
+ * item.setId(4015);
+ * item.setNombre("Objeto 4015");
+ * item.setRanura("Hombros");
+ * item.setTipo("Placas");
+ * 
+ * Item item2 = new Item();
+ * item2.setId(1234);
+ * item2.setNombre("Objeto 1234");
+ * item2.setRanura("Cabeza");
+ * item2.setTipo("Tela");
+ * 
+ * lista.add(item);
+ * lista.add(item2);
+ * } catch (Exception e) {
+ * System.out.println("Error: " + e.getMessage());
+ * }
+ * return lista;
+ * }
+ */
+
+/*
+ * private List<Transmog> getConjunto() {
+ * List<Transmog> lista_T = new LinkedList<Transmog>();
+ * 
+ * try {
+ * Transmog t = new Transmog();
+ * System.out.println("Transfiguracion creada");
+ * System.out.println(t);
+ * t.setId(5000);
+ * t.setId_usuario(4015);
+ * t.setNombre("TEST");
+ * // t.setClase(1);
+ * t.setFecha(new Date());
+ * lista_T.add(t);
+ * 
+ * Transmog t2 = new Transmog();
+ * System.out.println("Transfiguracion creada2");
+ * System.out.println(t);
+ * t2.setId(5001);
+ * t2.setId_usuario(4015);
+ * t2.setNombre("TEST222");
+ * // t2.setClase(5);
+ * t2.setFecha(new Date());
+ * lista_T.add(t2);
+ * repoTransmogs.save(t2);
+ * 
+ * } catch (Exception e) {
+ * System.out.println("Error: " + e.getMessage());
+ * }
+ * return lista_T;
+ * }
+ * 
+ * 
+ */

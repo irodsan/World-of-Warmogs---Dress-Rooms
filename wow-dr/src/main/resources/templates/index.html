@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <header th:replace="templates/header :: headerFragment"></header>
+    <header th:replace="commons/header :: headerFragment"></header>
   
     <form>
       <input type="text" name="search" placeholder="Busca tu transfiguración" class="search"/>
@@ -44,6 +44,6 @@
         
       </tr>
     </table>
-    <footer th:insert="templates/footer :: footer"></footer>
+    <footer th:insert="commons/footer :: footer"></footer>
   </body>
 </html>

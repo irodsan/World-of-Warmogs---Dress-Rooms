@@ -17,8 +17,7 @@
   </head>
 
   <body>
-    <nav th:insert="templates/nav :: nav"></nav>
-    <header th:insert="templates/header :: header"></header>
+    <header th:insert="commons/header :: header"></header>
 
     <h1 th:text="'Nombre: ' + ${t.getNombre()}" class="name">Nombre de la transfiguración</h1>
 
@@ -228,6 +227,6 @@
     </div>
 
 
-    <footer th:insert="templates/footer :: footer"></footer>
+    <footer th:insert="commons/footer :: footer"></footer>
   </body>
 </html>

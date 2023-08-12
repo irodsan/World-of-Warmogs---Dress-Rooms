@@ -31,10 +31,28 @@
 }
 
 /*TEMPLATES*/
-nav {
-    float: right;
-    margin: 0.5em;
+
+
+nav{
+position: fixed;
+    right: 10px;
+    top: 10px;
 }
+
+nav > ul {
+    display: flex;
+    list-style: none;
+}
+
+
+nav > ul > li > a {
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1em;
+
+}
+
+
 
 header{
     text-align: center;
@@ -190,6 +208,7 @@ input {
 
 .table {
     font-family: Friz Quadrata Std Medium;
+    vertical-align: middle;
 }
 
 .gear {

@@ -17,8 +17,7 @@
   </head>
 
   <body>
-    <nav th:insert="templates/nav :: nav"></nav>
-    <header th:insert="templates/header :: header"></header>
+    <header th:replace="templates/header :: headerFragment"></header>
 
     <form>
       <a>Alias</a>

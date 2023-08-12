@@ -17,23 +17,23 @@
   </head>
 
   <body>
-    <nav th:insert="templates/nav :: nav"></nav>
-    <header th:insert="templates/header :: header"></header>
-
+    <header th:replace="templates/header :: headerFragment"></header>
+    
     <form>
-      <a class="text_a">Alias</a>
-      <input type="text" name="alias" value="" />
-      <br />
-      <a class="text_a">Email</a>
-      <input type="text" name="email" value="" />
-      <br />
-      <a class="text_a">Contraseña</a>
-      <input type="password" name="password" value="" />
-      <br />
-      <a class="text_a">Confirmar contraseña</a>
-      <input type="password" name="password" value="" />
-      <br />
+      <label for="alias" class="text_a">Alias</label>
+      <input type="text" name="alias" value="" /><br />
+      
+      <label for="email" class="text_a">Email</label>
+      <input type="text" name="email" value="" /><br />
+      
+      <label for="password" class="text_a">Contraseña</label>
+      <input type="password" name="password" value="" /><br />
+
+      <label for="password" class="text_a">Confirmar contraseña</label>
+      <input type="password" name="password" value="" /><br />
+
       <input type="submit" value="Aceptar" name="register" />
+
     </form>
 
     <footer th:insert="templates/footer :: footer"></footer>

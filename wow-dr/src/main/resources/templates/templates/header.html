@@ -1,7 +1,11 @@
-<div th:fragment="header">
+
+
+<header th:fragment="headerFragment">
+  <nav th:replace="templates/nav :: navFragment"></nav>
   <img
     src="../static/images/logo/LogoFullSilver-removebg.png"
     alt="LogoFullSilver"
     th:src="@{../images/logo/LogoFullSilver-removebg.png}"
   />
-</div>
+
+</header>

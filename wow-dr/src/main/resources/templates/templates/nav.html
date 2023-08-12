@@ -1,25 +1,7 @@
-<nav>
-    <div>
-      <input
-        type="submit"
-        value="Login"
-        name="login"
-        class="btn wow-button"
-        onclick="location.href = '../login';"
-      />
-      <input
-        type="submit"
-        value="Sign up"
-        name="signUp"
-        class="btn wow-button"
-        onclick="location.href = '../register';"
-      />
-      <input
-        type="submit"
-        value="Config"
-        name="config"
-        class="btn wow-button"
-        onclick="location.href = '../modifyUser';"
-      />
-    </div>
-  </nav>
+<nav th:fragment="navFragment">
+  <ul>
+    <li><a class="btn wow-button" href="../login">Login</a></li>
+    <li><a class="btn wow-button" href="../register">Sign Up</a></li>
+    <li><a class="btn wow-button" href="../modifyUser">Config</a></li>
+  </ul>
+</nav>

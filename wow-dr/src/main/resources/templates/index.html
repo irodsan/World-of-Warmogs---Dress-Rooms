@@ -20,9 +20,9 @@
   <body>
     <header th:replace="commons/header :: headerFragment"></header>
   
-    <form>
-      <input type="text" name="search" placeholder="Busca tu transfiguración" class="search"/>
-      <input type="submit" value="Buscar" name="search" class=" btn wow-button"/>
+    <form th:action="@{/listado}" method="post">
+      <input type="text" name="nombre" placeholder="Busca tu transfiguración" class="search"/>
+      <input type="submit" value="Buscar" name="buscar" class="btn wow-button"/>
     </form>
 
     <table class="table table-dark table-striped table-hover">

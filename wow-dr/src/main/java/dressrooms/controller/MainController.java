@@ -1,13 +1,14 @@
 package dressrooms.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import dressrooms.model.Transmog;
 import dressrooms.repository.TransmogRepository;
@@ -34,6 +35,22 @@ public class MainController {
 
     public List<Transmog> buscarNuevos() {
         List<Transmog> transmogs = repoTransmogs.findAll(Sort.by("fecha"));
+        for (Transmog t : transmogs) {
+            System.out.println(t);
+        }
+
+        return transmogs;
+    }
+
+    @PostMapping("/listado")
+    public String mostrarResultados(Model model, @RequestParam String nombre) {
+        List<Transmog> res = buscarPorNombre(nombre);
+        model.addAttribute("res", res);
+        return "listado";
+    }
+
+    public List<Transmog> buscarPorNombre(String nombre) {
+        List<Transmog> transmogs = repoTransmogs.findByNombre(nombre);
         for (Transmog t : transmogs) {
             System.out.println(t);
         }

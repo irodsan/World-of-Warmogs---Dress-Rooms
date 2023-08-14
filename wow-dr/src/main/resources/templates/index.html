@@ -35,8 +35,7 @@
         
       </tr>
       <tr th:each="nuevo : ${nuevos}">
-        <!-- <td><img src="../static/images/buttons/player.jpg" th:href="@{/transmog/{id} (id=${nuevo.id}) }"/></td> -->
-        <td><a src="../static/images/buttons/player.jpg" th:href="@{/transmog/{id} (id=${nuevo.id}) }" class="btn wow-button">View</a></td> -->
+        <td><a src="../static/images/buttons/player.jpg" th:href="@{transmog/showTransmog/{id} (id=${nuevo.id}) }" class="btn wow-button">View</a></td>
         <td th:text="${nuevo.id}"></td>
         <td th:text="${nuevo.nombre}"></td>
         <td th:class ="${nuevo.clase.nombre}" th:text="${nuevo.clase.nombre}"></td>

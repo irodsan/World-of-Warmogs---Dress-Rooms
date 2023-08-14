@@ -39,8 +39,10 @@ public class ItemTransmog {
 
     @Override
     public String toString() {
-        return "{" +
-                " id_item='" + getId_item() + "'" +
+        return """
+                {\
+                 id_item='\
+                """ + getId_item() + "'" +
                 ", id_transmog='" + getId_transmog() + "'" +
                 "}";
     }

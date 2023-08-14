@@ -1,6 +1,7 @@
 package dressrooms.model;
 
 import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -187,8 +188,10 @@ public class Transmog {
 
     @Override
     public String toString() {
-        return "{" +
-                " id='" + getId() + "'" +
+        return """
+                {\
+                 id='\
+                """ + getId() + "'" +
                 ", nombre='" + getNombre() + "'" +
                 ", fecha='" + getFecha() + "'" +
                 ", clase='" + getClase() + "'" +

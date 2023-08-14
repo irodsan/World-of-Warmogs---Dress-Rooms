@@ -227,16 +227,33 @@ input {
     display: grid;
     grid-template-columns: 45% 10% 45%;
     padding: 0.5em;
-    column-gap: 0.5em;
     align-items: center;
 }
+
+.item-show p{
+    font-family: Friz Quadrata Std Medium;
+    text-decoration: none;
+    padding: 0.5em;
+}
+
 
 .item img {
     width: 3.5em;
 }
 
+.item-show img {
+    width: 3.5em;
+}
+
+
 .item input {
     height: 50%;
+    width: 15em;
+}
+
+/*TOCAR ESTO PARA PONER LA BARRA JUNTO LA IMAGEN*/
+.gear-left .item input{
+    left: auto;
 }
 
 
@@ -247,6 +264,24 @@ input {
 
 .gear-right p {
     text-align: right;
+}
+
+.gear-left .item-show {
+    display: grid;
+    grid-template-columns: min-content auto ;
+    padding: 0.5em;
+    column-gap: 0.5em;
+    align-items: center;
+    margin-left: 18.5em;
+}
+
+.gear-right .item-show {
+    display: grid;
+    grid-template-columns: auto min-content ;
+    padding: 0.5em;
+    column-gap: 0.5em;
+    align-items: center;
+    margin-right: 18.5em;
 }
 
 .character {
@@ -267,7 +302,7 @@ input {
 
 }
 
-.gear-bottom .item {
+.gear-bottom .item-show {
     display: grid;
     padding: 1%;
     column-gap: 1%;

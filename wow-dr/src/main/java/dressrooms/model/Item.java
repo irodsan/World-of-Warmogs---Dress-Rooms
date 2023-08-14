@@ -68,8 +68,10 @@ public class Item {
 
     @Override
     public String toString() {
-        return "{" +
-                " id='" + getId() + "'" +
+        return """
+                {\
+                 id='\
+                """ + getId() + "'" +
                 ", nombre='" + getNombre() + "'" +
                 ", ranura='" + getRanura() + "'" +
                 ", tipo='" + getTipo() + "'" +

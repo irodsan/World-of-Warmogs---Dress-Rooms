@@ -5,19 +5,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "classes")
-public class Classe {
+@Table(name = "profile")
+public class Profile {
 
     @Id
     private Integer id;
-    private String nombre;
+    private String perfil;
 
-    public Classe() {
-    }
-
-    public Classe(Integer id, String nombre) {
-        this.id = id;
-        this.nombre = nombre;
+    public Profile() {
     }
 
     public Integer getId() {
@@ -28,12 +23,12 @@ public class Classe {
         this.id = id;
     }
 
-    public String getNombre() {
-        return this.nombre;
+    public String getPerfil() {
+        return this.perfil;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
     }
 
     @Override
@@ -42,7 +37,7 @@ public class Classe {
                 {\
                  id='\
                 """ + getId() + "'" +
-                ", nombre='" + getNombre() + "'" +
+                ", perfil='" + getPerfil() + "'" +
                 "}";
     }
 

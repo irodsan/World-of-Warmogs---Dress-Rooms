@@ -42,7 +42,7 @@ public class MainController {
         return transmogs;
     }
 
-    @PostMapping("/listado")
+    @GetMapping("/listado")
     public String mostrarResultados(Model model, @RequestParam String nombre) {
         List<Transmog> res = buscarPorNombre(nombre);
         model.addAttribute("res", res);

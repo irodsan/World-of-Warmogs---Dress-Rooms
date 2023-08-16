@@ -1,0 +1,23 @@
+<div th:fragment="resultadosFragment">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Clase</th>
+        <th>Creado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="nuevo : ${resultados}">
+        <td th:text="${nuevo.id}"></td>
+        <td th:text="${nuevo.nombre}"></td>
+        <td
+          th:class="${nuevo.clase.nombre}"
+          th:text="${nuevo.clase.nombre}"
+        ></td>
+        <td th:text="${nuevo.fecha}"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

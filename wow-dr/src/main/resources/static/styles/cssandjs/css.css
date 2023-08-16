@@ -92,85 +92,85 @@ body {
 
 /*ITEM COLOR*/
 .LEGENDARY {
-    color: #FF8000;
+    color: #FF8000 !important;
 }
 
 .EPIC {
-    color: #C600FF;
+    color: #C600FF !important;
 }
 
 .RARE {
-    color: #0081FF;
+    color: #0081FF !important;
 }
 
 .UNCOMMON {
-    color: #1EFF00;
+    color: #1EFF00 !important;
 }
 
 .COMMON {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
 }
 
 .HEIRLOOM {
-    color: #00CCFF;
+    color: #00CCFF !important;
 }
 
 .NON-EQUIP {
-    color: #888888;
+    color: #888888 !important;
 }
 
 /*CLASS COLOR*/
 
 .DK {
-    color: #C41F3B;
+    color: #C41F3B !important;
 }
 
 .DH {
-    color: #A330C9;
+    color: #A330C9 !important;
 }
 
 .Druida {
-    color: #FF7D0A;
+    color: #FF7D0A !important;
 }
 
 .Evocador {
-    color: #33937F;
+    color: #33937F !important;
 }
 
 .Cazador {
-    color: #ABD473;
+    color: #ABD473 !important;  
 }
 
 .Mago {
-    color: #69CCF0;
+    color: #69CCF0 !important;
 }
 
 .Monje {
-    color: #00FF96;
+    color: #00FF96 !important;
 }
 
 .Paladín {
-    color: #F58CBA;
+    color: #F58CBA !important;
 }
 
 .Sacerdote {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
 }
 
 .Pícaro {
-    color: #FFF569;
+    color: #FFF569 !important;
 }
 
 .Chamán {
-    color: #0070DE;
+    color: #0070DE !important;
 }
 
 .Brujo {
-    color: #9482C9;
+    color: #9482C9 !important;
 }
 
 .Guerrero {
-    color: #C79C6E;
+    color: #C79C6E !important;
 }
 
 

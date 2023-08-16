@@ -12,10 +12,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import dressrooms.model.Classe;
 import dressrooms.model.Item;
+import dressrooms.model.ItemIcon;
 import dressrooms.model.Profile;
 import dressrooms.model.Transmog;
 import dressrooms.model.User;
 import dressrooms.model.UserProfile;
+import dressrooms.repository.ItemsIconsRepository;
 import dressrooms.repository.ItemsRepository;
 import dressrooms.repository.ProfileRepository;
 import dressrooms.repository.TransmogRepository;
@@ -26,6 +28,8 @@ public class WowDrApplication implements CommandLineRunner {
 
 	@Autowired
 	private ItemsRepository repoItems;
+	@Autowired
+	private ItemsIconsRepository repoItemsIcons;
 	@Autowired
 	private TransmogRepository repoTransmogs;
 	@Autowired
@@ -41,7 +45,9 @@ public class WowDrApplication implements CommandLineRunner {
 		// initAdminUser();
 		initProfiles();
 		guardarTransmog();
-		// System.out.println(getNombreItem(208193));
+		System.out.println(getNombreItem(208193));
+		System.out.println(obtenerIconoPorId(208193));
+		//
 
 	}
 
@@ -83,14 +89,22 @@ public class WowDrApplication implements CommandLineRunner {
 
 	public void guardarTransmog() {
 		Transmog t = new Transmog();
-		t.setId(5003);
+		t.setId(2);
 		t.setFecha(new Date());
 		t.setId_usuario(0);
-		t.setNombre("Transfi creada desde APP");
+		t.setNombre("Muellín Frost");
 		Classe c = new Classe();
-		c.setId(3);
+		c.setId(6);
 		t.setClase(c);
-		t.setId_mainhand(208193);
+		t.setId_head(139229);
+		t.setId_shoulder(139232);
+		t.setId_chest(null);
+		t.setId_hands(138352);
+		t.setId_waist(140912);
+		t.setId_legs(139230);
+		t.setId_feet(140884);
+		t.setId_mainhand(187056);
+		t.setId_offhand(187056);
 		repoTransmogs.save(t);
 	}
 
@@ -103,6 +117,15 @@ public class WowDrApplication implements CommandLineRunner {
 		System.out.println(nombre);
 		return nombre;
 
+	}
+
+	public String obtenerIconoPorId(Integer id) {
+		String urlIcon = "";
+		Optional<ItemIcon> itemIcon = repoItemsIcons.findById(id);
+		if (itemIcon.isPresent()) {
+			urlIcon = itemIcon.get().getUrl();
+		}
+		return urlIcon;
 	}
 
 }

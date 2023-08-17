@@ -1,6 +1,5 @@
 package dressrooms.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +13,11 @@ import dressrooms.model.Item;
 import dressrooms.model.ItemIcon;
 import dressrooms.model.Transmog;
 import dressrooms.model.User;
-import dressrooms.repository.ClasseRepository;
 import dressrooms.repository.ItemsIconsRepository;
 import dressrooms.repository.ItemsRepository;
 import dressrooms.repository.TransmogRepository;
 import dressrooms.repository.UserRepository;
+import dressrooms.service.IItemService;
 
 @Controller
 public class TransmogController {
@@ -31,6 +30,9 @@ public class TransmogController {
     private TransmogRepository repoTransmogs;
     @Autowired
     private UserRepository repoUsers;
+
+    @Autowired
+    public IItemService itemService;
 
     @GetMapping("transmog/showTransmog/{id}")
     public String mostrarTransmog(@PathVariable int id, Model model) {
@@ -66,6 +68,13 @@ public class TransmogController {
         return nombreItem;
     }
 
+    // USANDO SERVICE
+    /*
+     * public String obtenerCalidadPorId2(Integer id) {
+     * return itemService.obtenerCalidadPorId(id);
+     * }
+     */
+
     public String obtenerIconoPorId(Integer id) {
         String urlIcon = "";
         Optional<ItemIcon> itemIcon = repoItemsIcons.findById(id);
@@ -79,7 +88,7 @@ public class TransmogController {
         return c.getId();
     }
 
-    private Transmog mostrarConjunto(int id) {
+    public Transmog mostrarConjunto(int id) {
         Transmog t = null;
         Optional<Transmog> transmog = repoTransmogs.findById(id);
         if (transmog.isPresent()) {

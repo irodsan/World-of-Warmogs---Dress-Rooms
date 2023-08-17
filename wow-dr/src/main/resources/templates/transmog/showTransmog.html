@@ -23,90 +23,165 @@
       Nombre de la transfiguración
     </h1>
 
-    <h1 th:text="'Creado por: ' + ${@transmogController.obtenerUsuarioPorId(t.getId_usuario())}" class="name">
+    <h1
+      th:text="'Creado por: ' + ${@transmogController.obtenerUsuarioPorId(t.getId_usuario())}"
+      class="name"
+    >
       Nombre de la transfiguración
     </h1>
 
     <div class="gear">
       <div class="gear-left">
         <div class="item-show">
-          <img th:if="${t.getId_head() != null}"
-          th:src="${@transmogController.obtenerIconoPorId(t.getId_head())!= null  ? @transmogController.obtenerIconoPorId(t.getId_head()) : '../../images/items/inventoryslot_offhand.jpg'}"
-          alt="Imagen del socket head" />
-        <img th:unless="${t.getId_head() != null}" th:src="@{../../images/items/inventoryslot_head.jpg}">
-      
-      <p th:if="${t.getId_head() != null}"
-          th:class="${@transmogController.obtenerCalidadPorId(t.getId_head()) != null ? @transmogController.obtenerCalidadPorId(t.getId_head()) + ' my-auto' : 'my-auto'}">
-          <span th:text="${@transmogController.obtenerNombrePorId(t.getId_head())}">Nombre del item</span>
-        </p>
-        <p th:unless="${t.getId_head() != null}" class="my-auto text_a">Nombre del item</p>
+          <img
+            th:if="${t.getId_head() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(t.getId_head())!= null  ? @transmogController.obtenerIconoPorId(t.getId_head()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket head"
+          />
+          <img
+            th:unless="${t.getId_head() != null}"
+            th:src="@{../../images/items/inventoryslot_head.jpg}"
+          />
+
+          <p
+            th:if="${t.getId_head() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(t.getId_head()) != null ? @transmogController.obtenerCalidadPorId(t.getId_head()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(t.getId_head())}"
+              >Nombre del item</span
+            >
+          </p>
+          <p th:unless="${t.getId_head() != null}" class="my-auto text_a">
+            Nombre del item
+          </p>
         </div>
         <div class="item-show">
           <img
             th:src="@{../../images/items/inventoryslot_neck.jpg}"
             alt="Imagen del socket cuello"
           />
-          <p class="text_a my-auto">Nombre del item</p>
+          <p class="text_a my-auto">Item no transfigurable</p>
         </div>
         <div class="item-show">
-          <img th:if="${t.getId_shoulder() != null}"
-          th:src="${@transmogController.obtenerIconoPorId(t.getId_shoulder())!= null  ? @transmogController.obtenerIconoPorId(t.getId_shoulder()) : '../../images/items/inventoryslot_offhand.jpg'}"
-          alt="Imagen del socket shoulder" />
-        <img th:unless="${t.getId_shoulder() != null}" th:src="@{../../images/items/inventoryslot_shoulder.jpg}">
-      
-      <p th:if="${t.getId_shoulder() != null}"
-          th:class="${@transmogController.obtenerCalidadPorId(t.getId_shoulder()) != null ? @transmogController.obtenerCalidadPorId(t.getId_shoulder()) + ' my-auto' : 'my-auto'}">
-          <span th:text="${@transmogController.obtenerNombrePorId(t.getId_shoulder())}">Nombre del item</span>
-        </p>
-        <p th:unless="${t.getId_shoulder() != null}" class="my-auto text_a">Nombre del item</p>
+          <img
+            th:if="${t.getId_shoulder() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(t.getId_shoulder())!= null  ? @transmogController.obtenerIconoPorId(t.getId_shoulder()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket shoulder"
+          />
+          <img
+            th:unless="${t.getId_shoulder() != null}"
+            th:src="@{../../images/items/inventoryslot_shoulder.jpg}"
+          />
+
+          <p
+            th:if="${t.getId_shoulder() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(t.getId_shoulder()) != null ? @transmogController.obtenerCalidadPorId(t.getId_shoulder()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(t.getId_shoulder())}"
+              >Nombre del item</span
+            >
+          </p>
+          <p th:unless="${t.getId_shoulder() != null}" class="my-auto text_a">
+            Nombre del item
+          </p>
         </div>
         <div class="item-show">
-          <img th:if="${t.getId_shoulder() != null}"
-          th:src="${@transmogController.obtenerIconoPorId(t.getId_shoulder())!= null  ? @transmogController.obtenerIconoPorId(t.getId_shoulder()) : '../../images/items/inventoryslot_offhand.jpg'}"
-          alt="Imagen del socket shoulder" />
-        <img th:unless="${t.getId_shoulder() != null}" th:src="@{../../images/items/inventoryslot_shoulder.jpg}">
-      
-      <p th:if="${t.getId_shoulder() != null}"
-          th:class="${@transmogController.obtenerCalidadPorId(t.getId_shoulder()) != null ? @transmogController.obtenerCalidadPorId(t.getId_shoulder()) + ' my-auto' : 'my-auto'}">
-          <span th:text="${@transmogController.obtenerNombrePorId(t.getId_shoulder())}">Nombre del item</span>
-        </p>
-        <p th:unless="${t.getId_shoulder() != null}" class="my-auto text_a">Nombre del item</p>
+          <img
+            th:if="${t.getId_shoulder() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(t.getId_shoulder())!= null  ? @transmogController.obtenerIconoPorId(t.getId_shoulder()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket shoulder"
+          />
+          <img
+            th:unless="${t.getId_shoulder() != null}"
+            th:src="@{../../images/items/inventoryslot_shoulder.jpg}"
+          />
+
+          <p
+            th:if="${t.getId_shoulder() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(t.getId_shoulder()) != null ? @transmogController.obtenerCalidadPorId(t.getId_shoulder()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(t.getId_shoulder())}"
+              >Nombre del item</span
+            >
+          </p>
+          <p th:unless="${t.getId_shoulder() != null}" class="my-auto text_a">
+            Nombre del item
+          </p>
         </div>
         <div class="item-show">
-          <img th:if="${t.getId_chest() != null}"
-          th:src="${@transmogController.obtenerIconoPorId(t.getId_chest())!= null  ? @transmogController.obtenerIconoPorId(t.getId_chest()) : '../../images/items/inventoryslot_offhand.jpg'}"
-          alt="Imagen del socket chest" />
-        <img th:unless="${t.getId_chest() != null}" th:src="@{../../images/items/inventoryslot_chest.jpg}">
-      
-      <p th:if="${t.getId_chest() != null}"
-          th:class="${@transmogController.obtenerCalidadPorId(t.getId_chest()) != null ? @transmogController.obtenerCalidadPorId(t.getId_chest()) + ' my-auto' : 'my-auto'}">
-          <span th:text="${@transmogController.obtenerNombrePorId(t.getId_chest())}">Nombre del item</span>
-        </p>
-        <p th:unless="${t.getId_chest() != null}" class="my-auto text_a">Nombre del item</p>
+          <img
+            th:if="${t.getId_chest() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(t.getId_chest())!= null  ? @transmogController.obtenerIconoPorId(t.getId_chest()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket chest"
+          />
+          <img
+            th:unless="${t.getId_chest() != null}"
+            th:src="@{../../images/items/inventoryslot_chest.jpg}"
+          />
+
+          <p
+            th:if="${t.getId_chest() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(t.getId_chest()) != null ? @transmogController.obtenerCalidadPorId(t.getId_chest()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(t.getId_chest())}"
+              >Nombre del item</span
+            >
+          </p>
+          <p th:unless="${t.getId_chest() != null}" class="my-auto text_a">
+            Nombre del item
+          </p>
         </div>
         <div class="item-show">
-          <img th:if="${t.getId_tabard() != null}"
-          th:src="${@transmogController.obtenerIconoPorId(t.getId_tabard())!= null  ? @transmogController.obtenerIconoPorId(t.getId_tabard()) : '../../images/items/inventoryslot_offhand.jpg'}"
-          alt="Imagen del socket tabard" />
-        <img th:unless="${t.getId_tabard() != null}" th:src="@{../../images/items/inventoryslot_tabard.jpg}">
-      
-      <p th:if="${t.getId_tabard() != null}"
-          th:class="${@transmogController.obtenerCalidadPorId(t.getId_tabard()) != null ? @transmogController.obtenerCalidadPorId(t.getId_tabard()) + ' my-auto' : 'my-auto'}">
-          <span th:text="${@transmogController.obtenerNombrePorId(t.getId_tabard())}">Nombre del item</span>
-        </p>
-        <p th:unless="${t.getId_tabard() != null}" class="my-auto text_a">Nombre del item</p>
+          <img
+            th:if="${t.getId_tabard() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(t.getId_tabard())!= null  ? @transmogController.obtenerIconoPorId(t.getId_tabard()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket tabard"
+          />
+          <img
+            th:unless="${t.getId_tabard() != null}"
+            th:src="@{../../images/items/inventoryslot_tabard.jpg}"
+          />
+
+          <p
+            th:if="${t.getId_tabard() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(t.getId_tabard()) != null ? @transmogController.obtenerCalidadPorId(t.getId_tabard()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(t.getId_tabard())}"
+              >Nombre del item</span
+            >
+          </p>
+          <p th:unless="${t.getId_tabard() != null}" class="my-auto text_a">
+            Nombre del item
+          </p>
         </div>
         <div class="item-show">
-          <img th:if="${t.getId_shirt() != null}"
-          th:src="${@transmogController.obtenerIconoPorId(t.getId_shirt())!= null  ? @transmogController.obtenerIconoPorId(t.getId_shirt()) : '../../images/items/inventoryslot_offhand.jpg'}"
-          alt="Imagen del socket shirt" />
-        <img th:unless="${t.getId_shirt() != null}" th:src="@{../../images/items/inventoryslot_shirt.jpg}">
-      
-      <p th:if="${t.getId_shirt() != null}"
-          th:class="${@transmogController.obtenerCalidadPorId(t.getId_shirt()) != null ? @transmogController.obtenerCalidadPorId(t.getId_shirt()) + ' my-auto' : 'my-auto'}">
-          <span th:text="${@transmogController.obtenerNombrePorId(t.getId_shirt())}">Nombre del item</span>
-        </p>
-        <p th:unless="${t.getId_shirt() != null}" class="my-auto text_a">Nombre del item</p>
+          <img
+            th:if="${t.getId_shirt() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(t.getId_shirt())!= null  ? @transmogController.obtenerIconoPorId(t.getId_shirt()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket shirt"
+          />
+          <img
+            th:unless="${t.getId_shirt() != null}"
+            th:src="@{../../images/items/inventoryslot_shirt.jpg}"
+          />
+
+          <p
+            th:if="${t.getId_shirt() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(t.getId_shirt()) != null ? @transmogController.obtenerCalidadPorId(t.getId_shirt()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(t.getId_shirt())}"
+              >Nombre del item</span
+            >
+          </p>
+          <p th:unless="${t.getId_shirt() != null}" class="my-auto text_a">
+            Nombre del item
+          </p>
         </div>
 
         <div class="item-show">
@@ -238,28 +313,28 @@
           />
         </div>
         <div class="item-show">
-          <p class="text_a my-auto">Nombre del item</p>
+          <p class="text_a my-auto">Item no transfigurable</p>
           <img
             th:src="@{../../images/items/inventoryslot_finger.jpg}"
             alt="Imagen del socket anillo"
           />
         </div>
         <div class="item-show">
-          <p class="text_a my-auto">Nombre del item</p>
+          <p class="text_a my-auto">Item no transfigurable</p>
           <img
             th:src="@{../../images/items/inventoryslot_finger.jpg}"
             alt="Imagen del socket anillo"
           />
         </div>
         <div class="item-show">
-          <p class="text_a my-auto">Nombre del item</p>
+          <p class="text_a my-auto">Item no transfigurable</p>
           <img
             th:src="@{../../images/items/inventoryslot_trinket.jpg}"
             alt="Imagen del socket trinket"
           />
         </div>
         <div class="item-show">
-          <p class="text_a my-auto">Nombre del item</p>
+          <p class="text_a my-auto">Item no transfigurable</p>
           <img
             th:src="@{../../images/items/inventoryslot_trinket.jpg}"
             alt="Imagen del socket trinket"

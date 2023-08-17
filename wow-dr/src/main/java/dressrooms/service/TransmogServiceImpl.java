@@ -1,5 +1,6 @@
 package dressrooms.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,14 @@ public class TransmogServiceImpl implements ITransmogService {
             t = transmog.get();
         }
         return t;
+    }
+
+    public List<Transmog> buscarPorNombre(String nombre) {
+        List<Transmog> transmogs = repoTransmogs.findByNombreContainingIgnoreCase(nombre);
+        for (Transmog t : transmogs) {
+            System.out.println(t);
+        }
+        return transmogs;
     }
 
 }

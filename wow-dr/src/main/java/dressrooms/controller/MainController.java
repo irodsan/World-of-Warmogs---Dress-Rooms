@@ -55,11 +55,10 @@ public class MainController {
     }
 
     public List<Transmog> buscarPorNombre(String nombre) {
-        List<Transmog> transmogs = repoTransmogs.findByNombre(nombre);
+        List<Transmog> transmogs = repoTransmogs.findByNombreContainingIgnoreCase(nombre);
         for (Transmog t : transmogs) {
             System.out.println(t);
         }
-
         return transmogs;
     }
 

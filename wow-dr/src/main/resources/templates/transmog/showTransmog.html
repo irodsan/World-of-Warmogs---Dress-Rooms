@@ -23,7 +23,7 @@
       Nombre de la transfiguración
     </h1>
 
-    <h1 th:text="'Creado por: ' + ${t.getNombre()}" class="name">
+    <h1 th:text="'Creado por: ' + ${@transmogController.obtenerUsuarioPorId(t.getId_usuario())}" class="name">
       Nombre de la transfiguración
     </h1>
 
@@ -137,7 +137,7 @@
 
       <img
         class="character"
-        th:src="@{../../images/character/1.png}"
+        th:src="@{'../../images/character/' + ${@transmogController.obtenerPersonajePorClase(t.getClase())} + '.png'}"
         alt="Imagen del personaje"
       />
 

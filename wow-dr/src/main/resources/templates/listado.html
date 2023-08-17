@@ -23,11 +23,10 @@
           
         </tr>
         <tr th:each="encontrado : ${res}">
-          <!-- <td><img src="../static/images/buttons/player.jpg" th:href="@{/transmog/{id} (id=${nuevo.id}) }"/></td> -->
-          <td><a src="../static/images/buttons/player.jpg" th:href="@{/transmog/{id} (id=${encontrado.id}) }" class="btn wow-button">View</a></td> -->
+          <td><a src="../static/images/buttons/player.jpg" th:href="@{/transmog/{id} (id=${encontrado.id}) }" class="btn wow-button">View</a></td>
           <td th:text="${encontrado.id}"></td>
           <td th:text="${encontrado.nombre}"></td>
-          <td th:class ="${encontrado.clase.nombre}" th:text="${encontrado.clase.nombre}"></td>
+          <td th:class ="${encontrado.clase.nombre}" th:text="${@mainController.eliminarGuiones(encontrado.clase.nombre)}"></td>
           <td th:text="${encontrado.fecha}"></td>
           
         </tr>

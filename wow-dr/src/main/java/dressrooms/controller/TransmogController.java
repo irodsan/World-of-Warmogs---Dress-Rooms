@@ -9,12 +9,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import dressrooms.model.Classe;
 import dressrooms.model.Item;
 import dressrooms.model.ItemIcon;
 import dressrooms.model.Transmog;
+import dressrooms.model.User;
+import dressrooms.repository.ClasseRepository;
 import dressrooms.repository.ItemsIconsRepository;
 import dressrooms.repository.ItemsRepository;
 import dressrooms.repository.TransmogRepository;
+import dressrooms.repository.UserRepository;
 
 @Controller
 public class TransmogController {
@@ -25,12 +29,23 @@ public class TransmogController {
     private ItemsIconsRepository repoItemsIcons;
     @Autowired
     private TransmogRepository repoTransmogs;
+    @Autowired
+    private UserRepository repoUsers;
 
     @GetMapping("transmog/showTransmog/{id}")
     public String mostrarTransmog(@PathVariable int id, Model model) {
         Transmog t = mostrarConjunto(id);
         model.addAttribute("t", t);
         return "transmog/showTransmog";
+    }
+
+    public String obtenerUsuarioPorId(Integer id) {
+        String userName = "";
+        Optional<User> user = repoUsers.findById(id);
+        if (user.isPresent()) {
+            userName = user.get().getAlias();
+        }
+        return userName;
     }
 
     public String obtenerNombrePorId(Integer id) {
@@ -60,6 +75,10 @@ public class TransmogController {
         return urlIcon;
     }
 
+    public int obtenerPersonajePorClase(Classe c) {
+        return c.getId();
+    }
+
     private Transmog mostrarConjunto(int id) {
         Transmog t = null;
         Optional<Transmog> transmog = repoTransmogs.findById(id);
@@ -73,20 +92,6 @@ public class TransmogController {
     public String mostrarCreateTransmog(Model model) {
         System.out.println("MOSTRANDO CREATE");
         return "transmog/createTransmog";
-    }
-
-    public String itemClass(Integer id) {
-        String quality = obtenerCalidadPorId(id);
-        return quality != null ? quality + " my-auto" : "my-auto";
-    }
-
-    public String itemName(Integer id) {
-        return obtenerNombrePorId(id);
-    }
-
-    public String itemIcon(Integer id) {
-        String icon = obtenerIconoPorId(id);
-        return icon != null ? icon : "../../images/items/inventoryslot_offhand.jpg";
     }
 
 }

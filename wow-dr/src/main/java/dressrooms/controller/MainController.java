@@ -19,6 +19,11 @@ public class MainController {
     @Autowired
     private TransmogRepository repoTransmogs;
 
+    @GetMapping("/")
+    public String redirectToAnotherPage() {
+        return "redirect:/index";
+    }
+
     @GetMapping("/index")
     public String mostrarIndex(Model model) {
         List<Transmog> nuevos = buscarNuevos();
@@ -56,6 +61,11 @@ public class MainController {
         }
 
         return transmogs;
+    }
+
+    public String eliminarGuiones(String n) {
+        System.out.println("ELIMINANDO GUIONES");
+        return n.replace("_", " ");
     }
 
 }

@@ -10,6 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import dressrooms.controller.MainController;
 import dressrooms.model.Classe;
 import dressrooms.model.Item;
 import dressrooms.model.ItemIcon;

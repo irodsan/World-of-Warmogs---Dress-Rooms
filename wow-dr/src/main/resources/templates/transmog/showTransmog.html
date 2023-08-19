@@ -49,11 +49,11 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(t.getId_head())}"
-              >Nombre del item</span
+              ></span
             >
           </p>
-          <p th:unless="${t.getId_head() != null}" class="my-auto text_a">
-            Nombre del item
+          <p th:unless="${t.getId_head() != null}" class="my-auto text_a empty">
+            Sin objeto
           </p>
         </div>
         <div class="item-show">
@@ -61,7 +61,7 @@
             th:src="@{../../images/items/inventoryslot_neck.jpg}"
             alt="Imagen del socket cuello"
           />
-          <p class="text_a my-auto">Item no transfigurable</p>
+          <p class="text_a my-auto empty">Item no transfigurable</p>
         </div>
         <div class="item-show">
           <img
@@ -80,11 +80,11 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(t.getId_shoulder())}"
-              >Nombre del item</span
+              ></span
             >
           </p>
-          <p th:unless="${t.getId_shoulder() != null}" class="my-auto text_a">
-            Nombre del item
+          <p th:unless="${t.getId_shoulder() != null}" class="my-auto text_a empty">
+            Sin objeto
           </p>
         </div>
         <div class="item-show">
@@ -104,11 +104,11 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(t.getId_shoulder())}"
-              >Nombre del item</span
+              ></span
             >
           </p>
-          <p th:unless="${t.getId_shoulder() != null}" class="my-auto text_a">
-            Nombre del item
+          <p th:unless="${t.getId_shoulder() != null}" class="my-auto text_a empty">
+            Sin objeto
           </p>
         </div>
         <div class="item-show">
@@ -128,11 +128,11 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(t.getId_chest())}"
-              >Nombre del item</span
+              ></span
             >
           </p>
-          <p th:unless="${t.getId_chest() != null}" class="my-auto text_a">
-            Nombre del item
+          <p th:unless="${t.getId_chest() != null}" class="my-auto text_a empty">
+            Sin objeto
           </p>
         </div>
         <div class="item-show">
@@ -152,11 +152,11 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(t.getId_tabard())}"
-              >Nombre del item</span
+              ></span
             >
           </p>
-          <p th:unless="${t.getId_tabard() != null}" class="my-auto text_a">
-            Nombre del item
+          <p th:unless="${t.getId_tabard() != null}" class="my-auto text_a empty">
+            Sin objeto
           </p>
         </div>
         <div class="item-show">
@@ -176,11 +176,11 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(t.getId_shirt())}"
-              >Nombre del item</span
+              ></span
             >
           </p>
-          <p th:unless="${t.getId_shirt() != null}" class="my-auto text_a">
-            Nombre del item
+          <p th:unless="${t.getId_shirt() != null}" class="my-auto text_a empty">
+            Sin objeto
           </p>
         </div>
 
@@ -201,11 +201,11 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(t.getId_wrists())}"
-              >Nombre del item</span
+              ></span
             >
           </p>
-          <p th:unless="${t.getId_wrists() != null}" class="my-auto text_a">
-            Nombre del item
+          <p th:unless="${t.getId_wrists() != null}" class="my-auto text_a empty">
+            Sin objeto
           </p>
         </div>
       </div>
@@ -224,11 +224,11 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(t.getId_hands())}"
-              >Nombre del item</span
+              ></span
             >
           </p>
-          <p th:unless="${t.getId_hands() != null}" class="my-auto text_a">
-            Nombre del item
+          <p th:unless="${t.getId_hands() != null}" class="my-auto text_a empty">
+            Sin objeto
           </p>
           <img
             th:if="${t.getId_hands() != null}"
@@ -248,11 +248,11 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(t.getId_waist())}"
-              >Nombre del item</span
+              ></span
             >
           </p>
-          <p th:unless="${t.getId_waist() != null}" class="my-auto text_a">
-            Nombre del item
+          <p th:unless="${t.getId_waist() != null}" class="my-auto text_a empty">
+            Sin objeto
           </p>
           <img
             th:if="${t.getId_waist() != null}"
@@ -272,11 +272,11 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(t.getId_legs())}"
-              >Nombre del item</span
+              ></span
             >
           </p>
-          <p th:unless="${t.getId_legs() != null}" class="my-auto text_a">
-            Nombre del item
+          <p th:unless="${t.getId_legs() != null}" class="my-auto text_a empty">
+            Sin objeto
           </p>
           <img
             th:if="${t.getId_legs() != null}"
@@ -296,11 +296,11 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(t.getId_feet())}"
-              >Nombre del item</span
+              ></span
             >
           </p>
-          <p th:unless="${t.getId_feet() != null}" class="my-auto text_a">
-            Nombre del item
+          <p th:unless="${t.getId_feet() != null}" class="my-auto text_a empty">
+            Sin objeto
           </p>
           <img
             th:if="${t.getId_feet() != null}"
@@ -313,28 +313,28 @@
           />
         </div>
         <div class="item-show">
-          <p class="text_a my-auto">Item no transfigurable</p>
+          <p class="text_a my-auto empty">Item no transfigurable</p>
           <img
             th:src="@{../../images/items/inventoryslot_finger.jpg}"
             alt="Imagen del socket anillo"
           />
         </div>
         <div class="item-show">
-          <p class="text_a my-auto">Item no transfigurable</p>
+          <p class="text_a my-auto empty">Item no transfigurable</p>
           <img
             th:src="@{../../images/items/inventoryslot_finger.jpg}"
             alt="Imagen del socket anillo"
           />
         </div>
         <div class="item-show">
-          <p class="text_a my-auto">Item no transfigurable</p>
+          <p class="text_a my-auto empty">Item no transfigurable</p>
           <img
             th:src="@{../../images/items/inventoryslot_trinket.jpg}"
             alt="Imagen del socket trinket"
           />
         </div>
         <div class="item-show">
-          <p class="text_a my-auto">Item no transfigurable</p>
+          <p class="text_a my-auto empty">Item no transfigurable</p>
           <img
             th:src="@{../../images/items/inventoryslot_trinket.jpg}"
             alt="Imagen del socket trinket"
@@ -351,11 +351,11 @@
         >
           <span
             th:text="${@transmogController.obtenerNombrePorId(t.getId_mainhand())}"
-            >Nombre del item</span
+            ></span
           >
         </p>
-        <p th:unless="${t.getId_mainhand() != null}" class="my-auto text_a">
-          Nombre del item
+        <p th:unless="${t.getId_mainhand() != null}" class="my-auto text_a empty">
+          Sin objeto
         </p>
         <img
           th:if="${t.getId_mainhand() != null}"
@@ -384,11 +384,11 @@
         >
           <span
             th:text="${@transmogController.obtenerNombrePorId(t.getId_offhand())}"
-            >Nombre del item</span
+            ></span
           >
         </p>
-        <p th:unless="${t.getId_offhand() != null}" class="my-auto text_a">
-          Nombre del item
+        <p th:unless="${t.getId_offhand() != null}" class="my-auto text_a empty">
+          Sin objeto
         </p>
       </div>
     </div>

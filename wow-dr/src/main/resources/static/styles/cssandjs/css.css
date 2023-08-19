@@ -330,6 +330,9 @@ input {
     text-align: right;
 }
 
+.empty{
+    color: rgb(150, 148, 148);
+}
 
 
 

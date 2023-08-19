@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
-<head>    
+  <head>
     <title>List items</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
     <link th:href="@{/styles/cssandjs/CSS.css}" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-</head>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-    <h1>EQUIPOS</h1>
+  <body>
+    <header th:insert="~{commons/header :: header}"></header>
+    <h1>Transfiguraciones encontradas:</h1>
     <table class="table table-dark table-striped table-hover">
-        <tr>
-          <th>Boton</th>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Clase</th>
-          <th>Creado</th>
-          
-        </tr>
-        <tr th:each="encontrado : ${res}">
-          <td><a src="../static/images/buttons/player.jpg" th:href="@{/transmog/{id} (id=${encontrado.id}) }" class="btn wow-button">View</a></td>
-          <td th:text="${encontrado.id}"></td>
-          <td th:text="${encontrado.nombre}"></td>
-          <td th:class ="${encontrado.clase.nombre}" th:text="${@mainController.eliminarGuiones(encontrado.clase.nombre)}"></td>
-          <td th:text="${encontrado.fecha}"></td>
-          
-        </tr>
-      </table>
-</body>
-
+      <tr>
+        <th>Boton</th>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Clase</th>
+        <th>Creado</th>
+      </tr>
+      <tr th:each="encontrado : ${res}">
+        <td>
+          <a
+            src="../static/images/buttons/player.jpg"
+            th:href="@{/transmog/showTransmog/{id} (id=${encontrado.id}) }"
+            class="btn wow-button"
+            >View</a
+          >
+        </td>
+        <td th:text="${encontrado.id}"></td>
+        <td th:text="${encontrado.nombre}"></td>
+        <td
+          th:class="${encontrado.clase.nombre}"
+          th:text="${@mainController.eliminarGuiones(encontrado.clase.nombre)}"
+        ></td>
+        <td th:text="${encontrado.fecha}"></td>
+      </tr>
+    </table>
+    <footer th:insert="~{commons/footer :: footer}"></footer>
+  </body>
 </html>

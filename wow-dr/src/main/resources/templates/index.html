@@ -43,11 +43,11 @@
         <th>Clase</th>
         <th>Creado</th>
       </tr>
-      
-      <tr th:each="nuevo : ${nuevos}" >        
+
+      <tr th:each="nuevo : ${nuevos}">
         <td>
           <a
-            th:href="@{transmog/showTransmog/{id} (id=${nuevo.id}) }"
+            th:href="@{transmog/showTransmog/{id} (id=${nuevo.id})}"
             class="btn wow-button"
             >View</a
           >

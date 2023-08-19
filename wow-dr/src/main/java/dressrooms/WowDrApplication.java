@@ -1,7 +1,7 @@
 package dressrooms;
 
 import java.util.Date;
-import java.util.LinkedList;
+
 import java.util.List;
 
 import java.util.Optional;
@@ -10,14 +10,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import dressrooms.controller.MainController;
 import dressrooms.model.Classe;
 import dressrooms.model.Item;
 import dressrooms.model.ItemIcon;
 import dressrooms.model.Profile;
 import dressrooms.model.Transmog;
 import dressrooms.model.User;
-import dressrooms.model.UserProfile;
 import dressrooms.repository.ItemsIconsRepository;
 import dressrooms.repository.ItemsRepository;
 import dressrooms.repository.ProfileRepository;

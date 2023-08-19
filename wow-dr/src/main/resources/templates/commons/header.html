@@ -1,5 +1,5 @@
 <header th:fragment="headerFragment">
-  <nav th:replace="commons/nav :: navFragment"></nav>
+  <nav th:replace="~{commons/nav :: navFragment}"></nav>
   <a href="/">
     <img
       th:src="@{../../images/logo/LogoFullSilver-removebg.png}"

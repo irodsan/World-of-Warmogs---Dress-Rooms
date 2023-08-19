@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <header th:insert="commons/header :: header"></header>
+    <header th:insert="~{commons/header :: header}"></header>
 
     <h1 th:text="'Nombre: ' + ${t.getNombre()}" class="name">
       Nombre de la transfiguración
@@ -212,7 +212,7 @@
 
       <img
         class="character"
-        th:src="@{'../../images/character/' + ${@transmogController.obtenerPersonajePorClase(t.getClase())} + '.png'}"
+        th:src="@{'../../images/character/' + ${@transmogController.obtenerImagenPersonajePorClase(t.getClase())} + '.png'}"
         alt="Imagen del personaje"
       />
 
@@ -393,6 +393,6 @@
       </div>
     </div>
 
-    <footer th:insert="commons/footer :: footer"></footer>
+    <footer th:insert="~{commons/footer :: footer}"></footer>
   </body>
 </html>

@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <header th:replace="commons/header :: headerFragment"></header>
+    <header th:insert="~{commons/header :: header}"></header>
 
     <form th:action="@{/listado}" method="get">
       <input
@@ -61,19 +61,6 @@
         <td th:text="${nuevo.fecha}"></td>
       </tr>
     </table>
-    <footer th:insert="commons/footer :: footer"></footer>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script th:inline="javascript">
-      /* Agrega esto en el bloque de scripts JS */
-      $(document).ready(function () {
-        $("#myModal").on("show", function(){
-          $("#searchInput").val($("#inputmodal").val());
-
-        });
-      });
-    </script>
+    <footer th:insert="~{commons/footer :: footer}"></footer>
   </body>
 </html>

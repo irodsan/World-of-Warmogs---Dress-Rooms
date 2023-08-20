@@ -13,21 +13,22 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
-    <link th:href="@{/styles/cssandjs/CSS.css}" rel="stylesheet" />
+    <link th:href="@{/styles/cssandjs/css.css}" rel="stylesheet" />
   </head>
 
   <body>
     <header th:replace="commons/header :: headerFragment"></header>
 
-    <form>
-      <a class="text_a">Email</a>
-      <input type="text" name="email" value="" />
-      <br />
-      <a class="text_a">Contraseña</a>
-      <input type="password" name="password" value="" />
-      <br />
-      <input type="submit" value="Aceptar" name="register" />
-    </form>
+    <div class="login-container">
+      <h1>Login</h1>
+      <form th:action="@{/login}" method="post">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+          <button type="submit">Login</button>
+      </form>
+  </div>
 
     <footer th:insert="commons/footer :: footer"></footer>
   </body>

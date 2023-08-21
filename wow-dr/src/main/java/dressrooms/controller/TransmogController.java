@@ -29,7 +29,7 @@ public class TransmogController {
         return "transmog/showTransmog";
     }
 
-    @GetMapping("/createTransmog")
+    @GetMapping("/transmog/createTransmog")
     public String mostrarCreateTransmog(Model model) {
         return "transmog/createTransmog";
     }

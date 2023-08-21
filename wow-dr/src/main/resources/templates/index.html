@@ -33,34 +33,11 @@
         name="buscar"
         class="btn wow-button"
       />
+      <a th:href="@{/transmog/createTransmog}" class="btn wow-button"
+        >Crear Transfiguracion</a
+      >
     </form>
-
-    <table class="table table-dark table-striped table-hover">
-      <tr>
-        <th>Boton</th>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Clase</th>
-        <th>Creado</th>
-      </tr>
-
-      <tr th:each="nuevo : ${nuevos}">
-        <td>
-          <a
-            th:href="@{transmog/showTransmog/{id} (id=${nuevo.id})}"
-            class="btn wow-button"
-            >View</a
-          >
-        </td>
-        <td th:text="${nuevo.id}"></td>
-        <td th:text="${nuevo.nombre}"></td>
-        <td
-          th:class="${nuevo.clase.nombre}"
-          th:text="${@mainController.eliminarGuiones(nuevo.clase.nombre)}"
-        ></td>
-        <td th:text="${nuevo.fecha}"></td>
-      </tr>
-    </table>
+    <table th:replace="~{tabla :: tabla}"></table>
     <footer th:insert="~{commons/footer :: footer}"></footer>
   </body>
 </html>

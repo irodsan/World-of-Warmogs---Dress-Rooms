@@ -25,6 +25,11 @@ public class MainController {
      * return "redirect:/index";
      * }
      */
+    @GetMapping("/")
+    public String mostrarHome(Model model) {
+        mostrarTabla(model);
+        return "home";
+    }
 
     @GetMapping("/index")
     public String mostrarIndex(Model model) {

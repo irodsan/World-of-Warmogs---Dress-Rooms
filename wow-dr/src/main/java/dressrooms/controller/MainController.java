@@ -3,9 +3,11 @@ package dressrooms.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import dressrooms.model.Transmog;
@@ -17,17 +19,20 @@ public class MainController {
     @Autowired
     public ITransmogService transmogService;
 
-    @GetMapping("/")
-    public String redirectToAnotherPage() {
-        return "redirect:/index";
-    }
+    /*
+     * @GetMapping("/")
+     * public String redirectToAnotherPage() {
+     * return "redirect:/index";
+     * }
+     */
 
     @GetMapping("/index")
     public String mostrarIndex(Model model) {
-        List<Transmog> nuevos = transmogService.buscarNuevos();
-        model.addAttribute("nuevos", nuevos);
+        mostrarTabla(model);
         return "index";
     }
+
+    // @ModelAttribute("/index")
 
     @GetMapping("/tabla")
     public String mostrarTabla(Model model) {
@@ -47,6 +52,14 @@ public class MainController {
         List<Transmog> transmogs = transmogService.buscarPorNombre(nombre);
         return transmogs;
     }
+    /*
+     * @GetMapping("/index")
+     * public String mostrarIndex(Authentication auth) {
+     * String username = auth.getName();
+     * System.out.println("Nombre del usuario " + username);
+     * return "redirect:/";
+     * }
+     */
 
     public String eliminarGuiones(String n) {
         return n.replace("_", " ");

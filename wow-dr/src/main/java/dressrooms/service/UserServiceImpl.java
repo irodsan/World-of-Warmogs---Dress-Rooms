@@ -23,4 +23,9 @@ public class UserServiceImpl implements IUserService {
         return userName;
     }
 
+    @Override
+    public User buscarPorAlias(String alias) {
+        return repoUsers.findByAlias(alias);
+    }
+
 }

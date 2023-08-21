@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,13 +12,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import dressrooms.model.Transmog;
+import dressrooms.model.User;
 import dressrooms.service.ITransmogService;
+import dressrooms.service.IUserService;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class MainController {
 
     @Autowired
     public ITransmogService transmogService;
+
+    @Autowired
+    public IUserService userService;
 
     /*
      * @GetMapping("/")
@@ -32,9 +39,23 @@ public class MainController {
     }
 
     @GetMapping("/index")
-    public String mostrarIndex(Model model) {
-        mostrarTabla(model);
-        return "index";
+    public String mostrarIndex(Authentication auth, HttpSession session) {
+        String alias = auth.getName();
+        System.out.println("Nombre del usuario: " + alias);
+
+        for (GrantedAuthority rol : auth.getAuthorities()) {
+            System.out.println("Rol: " + rol.getAuthority());
+        }
+
+        if (session.getAttribute("Usuario") == null) {
+            User u = userService.buscarPorAlias(alias);
+            u.setPassword(null);
+            System.out.println("Usuario: " + u);
+            session.setAttribute("Usuario", u);
+
+        }
+
+        return "redirect:/";
     }
 
     // @ModelAttribute("/index")

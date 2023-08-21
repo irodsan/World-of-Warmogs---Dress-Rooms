@@ -5,4 +5,6 @@ import dressrooms.model.User;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
+    User findByAlias(String alias);
+
 }

@@ -1,5 +1,6 @@
 package dressrooms.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,18 @@ public class UserServiceImpl implements IUserService {
 
     @Autowired
     private UserRepository repoUsers;
+
+    public void guardar(User usuario) {
+        repoUsers.save(usuario);
+    }
+
+    public void eliminar(Integer idUsuario) {
+        repoUsers.deleteById(idUsuario);
+    }
+
+    public List<User> buscarTodos() {
+        return repoUsers.findAll();
+    }
 
     public String obtenerUsuarioPorId(Integer id) {
         String userName = "";

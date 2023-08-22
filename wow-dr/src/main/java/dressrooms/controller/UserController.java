@@ -1,20 +1,48 @@
 package dressrooms.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import dressrooms.model.Profile;
+import dressrooms.model.User;
+import dressrooms.service.IUserService;
 
 @Controller
 public class UserController {
+
+    @Autowired
+    private IUserService userService;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @GetMapping("/login")
     public String mostrarLogin(Model model) {
         return "login";
     }
 
-    @GetMapping("/register")
-    public String mostrarRegister(Model model) {
-        return "register";
+    @GetMapping("/signup")
+    public String mostrarRegister(@ModelAttribute User user) {
+        return "signup";
+    }
+
+    @PostMapping("/signup")
+    public String saveUser(User user) {
+
+        String passCrypt = passwordEncoder.encode(user.getPassword());
+        user.setPassword(passCrypt);
+
+        Profile profile = new Profile();
+        profile.setId(1);
+        user.addProfile(profile);
+        userService.guardar(user);
+
+        return "redirect:/login";
     }
 
     @GetMapping("/signOut")
@@ -36,5 +64,24 @@ public class UserController {
     public String mostrarDeleteUser(Model model) {
         return "deleteUser";
     }
+    /*
+     * @GetMapping("/demo-bcrypt")
+     * public String pruebaBcrypt() {
+     * String password = "1234";
+     * String encriptado = passwordEncoder.encode(password);
+     * System.out.println("Pass encriptada: " + encriptado);
+     * return "/demo";
+     * }
+     */
+    /*
+     * @GetMapping("/delete/{id}")
+     * public String eliminar(@PathVariable("id") int idUsuario, RedirectAttributes
+     * attributes) {
+     * // Eliminamos el usuario
+     * userService.eliminar(idUsuario);
+     * attributes.addFlashAttribute("msg", "El usuario fue eliminado!.");
+     * return "redirect:/usuarios/index";
+     * }
+     */
 
 }

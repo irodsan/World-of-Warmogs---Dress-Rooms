@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
@@ -36,7 +38,7 @@ public class DatabaseWebSecurity {
                 .requestMatchers("/images/**", "/styles/**").permitAll()
 
                 // Las vistas públicas no requieren autenticacion
-                .requestMatchers("/", "/listado", "/transmog/showTransmog/**").permitAll()
+                .requestMatchers("/", "/listado", "/signup", "/transmog/showTransmog/**").permitAll()
 
                 // Asignar permisos a URLs por roles
                 .requestMatchers("/deleteUser").hasAnyAuthority("Admin")
@@ -49,4 +51,10 @@ public class DatabaseWebSecurity {
 
         return http.build();
     }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
 }

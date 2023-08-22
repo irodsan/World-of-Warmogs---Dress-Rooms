@@ -42,7 +42,7 @@ public class WowDrApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// initAdminUser();
 		initProfiles();
-		guardarTransmog();
+		// guardarTransmog();
 		System.out.println(getNombreItem(208193));
 		System.out.println(obtenerIconoPorId(208193));
 		//

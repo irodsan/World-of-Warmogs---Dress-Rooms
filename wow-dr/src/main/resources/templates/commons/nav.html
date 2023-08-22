@@ -1,9 +1,26 @@
 <nav th:fragment="navFragment">
   <ul>
-    <!-- <li th:if="${#authentication.isAuthenticated()}"><a class="btn wow-button" href="../login">Login</a></li> -->
-    <li><a class="btn wow-button" th:href="@{/index}">Login</a></li>
-    <li sec:authorize="hasAnyAuthority('Admin', 'Usuario')"><a class="btn wow-button" href="../logout">LogOut</a></li>
-    <li><a class="btn wow-button" href="../register">Sign Up</a></li>
-    <li sec:authorize="hasAnyAuthority('Admin')"><a class="btn wow-button" href="../userPanel">Config</a></li>
+    <li th:if="${session.usuario != null}">
+      <img th:src="@{../../images/buttons/player.jpg}" class="imgUser">
+    </li>
+    <li th:if="${session.usuario != null}">
+      <a th:text="${session.usuario.alias}" class="text_a"></a>
+    </li>
+
+    <li sec:authorize="isAnonymous()">
+      <a class="btn wow-button" th:href="@{/index}">Login</a>
+    </li>
+
+    <li sec:authorize="isAnonymous()">
+      <a class="btn wow-button" href="../signup">Sign Up</a>
+    </li>
+
+    <li sec:authorize="isAuthenticated()">
+      <a class="btn wow-button" href="../logout">LogOut</a>
+    </li>
+
+    <li sec:authorize="hasAnyAuthority('Admin')">
+      <a class="btn wow-button" href="../userPanel">Config</a>
+    </li>
   </ul>
 </nav>

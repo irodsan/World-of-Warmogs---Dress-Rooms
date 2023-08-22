@@ -8,7 +8,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import dressrooms.model.Transmog;
@@ -51,7 +50,7 @@ public class MainController {
             User u = userService.buscarPorAlias(alias);
             u.setPassword(null);
             System.out.println("Usuario: " + u);
-            session.setAttribute("Usuario", u);
+            session.setAttribute("usuario", u);
 
         }
 

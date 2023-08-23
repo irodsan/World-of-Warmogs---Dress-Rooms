@@ -52,6 +52,21 @@ nav > ul > li > a {
 
 }
 
+.login{
+    position: relative;
+}
+
+.login > ul{
+
+    display: list-item;
+    list-style: none;
+}
+
+.login > ul > li {
+    flex-direction: column-reverse;
+    padding: 1em;
+}
+
 
 
 header{

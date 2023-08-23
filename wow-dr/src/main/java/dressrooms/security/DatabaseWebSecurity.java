@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Configuration
 @EnableWebSecurity
@@ -47,7 +48,7 @@ public class DatabaseWebSecurity {
                 .anyRequest().authenticated()
 
                 // El formulario de login no requiere autenticacion
-                .and().formLogin().permitAll();
+                .and().formLogin().loginPage("/login").permitAll();
 
         return http.build();
     }

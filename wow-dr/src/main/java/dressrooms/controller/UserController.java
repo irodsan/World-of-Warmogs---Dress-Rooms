@@ -2,6 +2,7 @@ package dressrooms.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import dressrooms.model.Profile;
 import dressrooms.model.User;
 import dressrooms.service.IUserService;
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class UserController {
@@ -22,8 +24,15 @@ public class UserController {
     private PasswordEncoder passwordEncoder;
 
     @GetMapping("/login")
-    public String mostrarLogin(Model model) {
+    public String mostrarLogin() {
         return "login";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
+        logoutHandler.logout(request, null, null);
+        return "redirect:/";
     }
 
     @GetMapping("/signup")

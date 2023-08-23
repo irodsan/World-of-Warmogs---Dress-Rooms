@@ -31,8 +31,6 @@
 }
 
 /*TEMPLATES*/
-
-
 nav{
 position: absolute;
     right: 10px;
@@ -52,20 +50,53 @@ nav > ul > li > a {
 
 }
 
-.login{
-    position: relative;
-}
-
-.login > ul{
-
-    display: list-item;
-    list-style: none;
-}
-
-.login > ul > li {
-    flex-direction: column-reverse;
-    padding: 1em;
-}
+/* Agrega estilos para centrar los campos del login y el botón */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .login {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Añadimos esto para centrar el contenido */
+  }
+  
+  .login h1 {
+    margin-bottom: 20px;
+  }
+  
+  .login ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .login li {
+    margin-bottom: 10px;
+  }
+  
+  /* Centramos los campos de entrada */
+  .login input[type="text"],
+  .login input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px; /* Ajusta este valor para cambiar la altura */
+    margin: 5px 0;
+  }
+  
+  /* Centramos el botón */
+  .login button {
+    display: block;
+    margin: 0 auto;
+  }
 
 
 

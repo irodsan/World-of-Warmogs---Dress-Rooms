@@ -8,6 +8,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link th:href="@{/styles/cssandjs/CSS.css}" rel="stylesheet" />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -19,14 +20,33 @@
   <body>
     <header th:insert="commons/header :: header"></header>
 
-    <form th:action="@{/transmog/createTransmog}" th:object="${transmog}" method="post">
+    <form
+      th:action="@{/transmog/createTransmog}"
+      th:object="${transmog}"
+      method="post"
+    >
       <label for="nombre" class="text_a">Nombre</label>
-      <input type="text" name="nombre" value="" th:field="*{nombre}"/><br />
+      <input type="text" name="nombre" value="" th:field="*{nombre}" /><br />
       <input type="submit" value="Aceptar" name="register" />
-    <h1 th:text="'Nombre: '" class="name">
-      Nombre de la transfiguración
-    </h1>
-  </form>
+
+      <label for="clase" class="text_a">Elige tu clase:</label>
+      <select id="clase" name="clase">
+        <option value=""></option>
+        <option class="Guerrero" value=1>Guerrero</option>
+        <option class="Paladín" value=2>Paladín</option>
+        <option class="Cazador" value=3>Cazador</option>
+        <option class="Pícaro" value=4>Pícaro</option>
+        <option class="Sacerdote" value=5>Sacerdote</option>
+        <option class="Caballero_de_la_Muerte" value=6>Caballero de la Muerte</option>
+        <option class="Chamán" value=7>Chamán</option>
+        <option class="Mago" value=8>Mago</option>
+        <option class="Brujo" value=9>Brujo</option>
+        <option class="Monje" value=10>Monje</option>
+        <option class="Druida" value=11>Druida</option>
+        <option class="Cazador_de_Demonios" value=12>Cazador de Demonios</option>
+        <option class="Evocador" value=13>Evocador</option>
+      </select>
+    </form>
 
     <div class="gear">
       <div class="gear-left">
@@ -101,12 +121,22 @@
         </div>
       </div>
 
+      <div id="imageContainer">
+        <img
+          class="character"
+          id="selectedImage"
+          th:src="@{../../images/character/}"
+          alt="Imagen del personaje"
+        />
+      </div>
+      <!--
       <img
         class="character"
+        id = "selectedImage"
         th:src="@{../../images/character/Garrosh.png}"
         alt="Imagen del personaje"
       />
-
+      -->
       <div class="gear-right">
         <div class="item">
           <p class="text_a my-auto">Nombre del item</p>

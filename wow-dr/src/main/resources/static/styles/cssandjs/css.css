@@ -384,3 +384,10 @@ input {
     width: 70%;
 }
 
+select {
+    background-color: #211916; /* Cambia este valor al color que desees */
+    padding: 5px; /* Agrega un poco de espacio para mejorar la apariencia */
+    border: 1px solid #ccc; /* Agrega un borde para resaltar el campo */
+    border-radius: 4px; /* Agrega esquinas redondeadas */
+    color: white;
+}

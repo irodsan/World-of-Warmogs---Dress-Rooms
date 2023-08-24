@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import dressrooms.model.Classe;
 import dressrooms.model.Transmog;
@@ -54,8 +55,8 @@ public class TransmogController {
     }
 
     @PostMapping("/transmog/createTransmog")
-    public String saveTransmog(Authentication auth, Transmog transmog) {
-        Optional<Classe> c = classeRepository.findById(4);
+    public String saveTransmog(Authentication auth, Transmog transmog, @RequestParam("clase") int claseId) {
+        Optional<Classe> c = classeRepository.findById(claseId);
         transmog.setClase(c.get());
         transmog.setFecha(new Date());
         System.out.println("Nombre: " + transmog.getNombre());

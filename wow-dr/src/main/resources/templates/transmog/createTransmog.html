@@ -19,9 +19,14 @@
   <body>
     <header th:insert="commons/header :: header"></header>
 
+    <form th:action="@{/transmog/createTransmog}" th:object="${transmog}" method="post">
+      <label for="nombre" class="text_a">Nombre</label>
+      <input type="text" name="nombre" value="" th:field="*{nombre}"/><br />
+      <input type="submit" value="Aceptar" name="register" />
     <h1 th:text="'Nombre: '" class="name">
       Nombre de la transfiguración
     </h1>
+  </form>
 
     <div class="gear">
       <div class="gear-left">

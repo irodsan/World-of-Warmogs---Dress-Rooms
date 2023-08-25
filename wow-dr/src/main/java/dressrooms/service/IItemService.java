@@ -1,7 +1,6 @@
 package dressrooms.service;
 
 import java.util.List;
-
 import dressrooms.model.Item;
 
 public interface IItemService {

@@ -36,13 +36,8 @@ public class Transmog {
     private Integer id_feet;
     private Integer id_mainhand;
     private Integer id_offhand;
-    // @ManyToMany(fetch = FetchType.EAGER)
-    // @JoinTable(name = "transmogs", joinColumns = @JoinColumn(name =
-    // "id_transmog"), inverseJoinColumns = @JoinColumn(name = "id_item"))
-    // private List<Item> items;
 
     public Transmog() {
-
     }
 
     public Integer getId() {

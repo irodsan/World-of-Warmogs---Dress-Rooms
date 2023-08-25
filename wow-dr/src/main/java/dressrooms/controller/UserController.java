@@ -73,15 +73,7 @@ public class UserController {
     public String mostrarDeleteUser(Model model) {
         return "deleteUser";
     }
-    /*
-     * @GetMapping("/demo-bcrypt")
-     * public String pruebaBcrypt() {
-     * String password = "1234";
-     * String encriptado = passwordEncoder.encode(password);
-     * System.out.println("Pass encriptada: " + encriptado);
-     * return "/demo";
-     * }
-     */
+
     /*
      * @GetMapping("/delete/{id}")
      * public String eliminar(@PathVariable("id") int idUsuario, RedirectAttributes

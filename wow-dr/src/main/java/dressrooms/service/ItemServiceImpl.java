@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import dressrooms.model.Item;
 import dressrooms.model.ItemIcon;
-import dressrooms.model.User;
 import dressrooms.repository.ItemsIconsRepository;
 import dressrooms.repository.ItemsRepository;
 

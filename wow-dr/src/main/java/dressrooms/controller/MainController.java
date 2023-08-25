@@ -31,12 +31,6 @@ public class MainController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    /*
-     * @GetMapping("/")
-     * public String redirectToAnotherPage() {
-     * return "redirect:/index";
-     * }
-     */
     @GetMapping("/")
     public String mostrarHome(Model model) {
         mostrarTabla(model);
@@ -63,8 +57,6 @@ public class MainController {
         return "redirect:/";
     }
 
-    // @ModelAttribute("/index")
-
     @GetMapping("/tabla")
     public String mostrarTabla(Model model) {
         List<Transmog> nuevos = transmogService.buscarNuevos();
@@ -83,14 +75,6 @@ public class MainController {
         List<Transmog> transmogs = transmogService.buscarPorNombre(nombre);
         return transmogs;
     }
-    /*
-     * @GetMapping("/index")
-     * public String mostrarIndex(Authentication auth) {
-     * String username = auth.getName();
-     * System.out.println("Nombre del usuario " + username);
-     * return "redirect:/";
-     * }
-     */
 
     public String eliminarGuiones(String n) {
         return n.replace("_", " ");

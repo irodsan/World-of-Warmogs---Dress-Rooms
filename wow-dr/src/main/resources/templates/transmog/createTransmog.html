@@ -48,90 +48,184 @@
         <option value="WEAPONOFFHAND">Arma Secundaria</option>
       </select>
     </form>
-
-    <span th:text = "${session.transmog}" >fecha</span>
-
-    <p
-    th:if="${session.transmog.getId_head() != null}"
-    th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_head()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_head()) + ' my-auto' : 'my-auto'}"
-  >
-    <span
-      th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_head())}"
-      ></span
-    >
-  </p>
-
     
     <div class="gear">
       <div class="gear-left">
-        <div class="item">
-          <input type="text" name="searchHead" placeholder="Buscar" />
+        <div class="item-show">
           <img
+            th:if="${session.transmog.getId_head() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(session.transmog.getId_head())!= null  ? @transmogController.obtenerIconoPorId(session.transmog.getId_head()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket head"
+          />
+          <img
+            th:unless="${session.transmog.getId_head() != null}"
             th:src="@{../../images/items/inventoryslot_head.jpg}"
-            alt="Imagen del socket cabeza"
           />
-          <p class="text_a my-auto">Nombre del item</p>
+
+          <p
+            th:if="${session.transmog.getId_head() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_head()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_head()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_head())}"
+              ></span
+            >
+          </p>
+          <p th:unless="${session.transmog.getId_head() != null}" class="my-auto text_a empty">
+            Sin objeto
+          </p>
         </div>
-        <div class="item">
-          <input
-            type="text"
-            name="searchNeck"
-            value="Buscar"
-            disabled="disabled"
-          />
+        <div class="item-show">
           <img
             th:src="@{../../images/items/inventoryslot_neck.jpg}"
             alt="Imagen del socket cuello"
           />
-          <p class="text_a my-auto">Nombre del item</p>
+          <p class="text_a my-auto empty">Item no transfigurable</p>
         </div>
-        <div class="item">
-          <input type="text" name="searchShoulder" placeholder="Buscar" />
+        <div class="item-show">
           <img
-            th:src="@{../../images/items/inventoryslot_shoulder.jpg}"
-            alt="Imagen del socket hombro"
+            th:if="${session.transmog.getId_shoulder() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(session.transmog.getId_shoulder())!= null  ? @transmogController.obtenerIconoPorId(session.transmog.getId_shoulder()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket shoulder"
           />
-          <p class="text_a my-auto">Nombre del item</p>
-        </div>
-        <div class="item">
-          <input type="text" name="searchShoulder" placeholder="Buscar" />
           <img
+            th:unless="${session.transmog.getId_shoulder() != null}"
             th:src="@{../../images/items/inventoryslot_shoulder.jpg}"
-            alt="Imagen del socket hombro"
           />
-          <p class="text_a my-auto">Nombre del item</p>
+
+          <p
+            th:if="${session.transmog.getId_shoulder() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_shoulder()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_shoulder()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_shoulder())}"
+              ></span
+            >
+          </p>
+          <p th:unless="${session.transmog.getId_shoulder() != null}" class="my-auto text_a empty">
+            Sin objeto
+          </p>
         </div>
-        <div class="item">
-          <input type="text" name="searchChest" placeholder="Buscar" />
+        <div class="item-show">
           <img
+            th:if="${session.transmog.getId_back() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(session.transmog.getId_back())!= null  ? @transmogController.obtenerIconoPorId(session.transmog.getId_back()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket chest"
+          />
+          <img
+            th:unless="${session.transmog.getId_back() != null}"
             th:src="@{../../images/items/inventoryslot_chest.jpg}"
-            alt="Imagen del socket peccho"
           />
-          <p class="text_a my-auto">Nombre del item</p>
+
+          <p
+            th:if="${session.transmog.getId_back() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_back()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_back()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_back())}"
+              ></span
+            >
+          </p>
+          <p th:unless="${session.transmog.getId_back() != null}" class="my-auto text_a empty">
+            Sin objeto
+          </p>
         </div>
-        <div class="item">
-          <input type="text" name="searchTabard" placeholder="Buscar" />
+        <div class="item-show">
           <img
+            th:if="${session.transmog.getId_chest() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(session.transmog.getId_chest())!= null  ? @transmogController.obtenerIconoPorId(session.transmog.getId_chest()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket chest"
+          />
+          <img
+            th:unless="${session.transmog.getId_chest() != null}"
+            th:src="@{../../images/items/inventoryslot_chest.jpg}"
+          />
+
+          <p
+            th:if="${session.transmog.getId_chest() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_chest()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_chest()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_chest())}"
+              ></span
+            >
+          </p>
+          <p th:unless="${session.transmog.getId_chest() != null}" class="my-auto text_a empty">
+            Sin objeto
+          </p>
+        </div>
+        <div class="item-show">
+          <img
+            th:if="${session.transmog.getId_tabard() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(session.transmog.getId_tabard())!= null  ? @transmogController.obtenerIconoPorId(session.transmog.getId_tabard()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket tabard"
+          />
+          <img
+            th:unless="${session.transmog.getId_tabard() != null}"
             th:src="@{../../images/items/inventoryslot_tabard.jpg}"
-            alt="Imagen del socket tabardo"
           />
-          <p class="text_a my-auto">Nombre del item</p>
+
+          <p
+            th:if="${session.transmog.getId_tabard() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_tabard()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_tabard()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_tabard())}"
+              ></span
+            >
+          </p>
+          <p th:unless="${session.transmog.getId_tabard() != null}" class="my-auto text_a empty">
+            Sin objeto
+          </p>
         </div>
-        <div class="item">
-          <input type="text" name="searchShirt" placeholder="Buscar" />
+        <div class="item-show">
           <img
+            th:if="${session.transmog.getId_shirt() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(session.transmog.getId_shirt())!= null  ? @transmogController.obtenerIconoPorId(session.transmog.getId_shirt()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket shirt"
+          />
+          <img
+            th:unless="${session.transmog.getId_shirt() != null}"
             th:src="@{../../images/items/inventoryslot_shirt.jpg}"
-            alt="Imagen del socket camisa"
           />
-          <p class="text_a my-auto">Nombre del item</p>
+
+          <p
+            th:if="${session.transmog.getId_shirt() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_shirt()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_shirt()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_shirt())}"
+              ></span
+            >
+          </p>
+          <p th:unless="${session.transmog.getId_shirt() != null}" class="my-auto text_a empty">
+            Sin objeto
+          </p>
         </div>
-        <div class="item">
-          <input type="text" name="searchWrists" placeholder="Buscar" />
+
+        <div class="item-show">
           <img
-            th:src="@{../../images/items/inventoryslot_wrists.jpg}"
-            alt="Imagen del socket muñecas"
+            th:if="${session.transmog.getId_wrists() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(session.transmog.getId_wrists())!= null  ? @transmogController.obtenerIconoPorId(session.transmog.getId_wrists()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket wrists"
           />
-          <p class="text_a my-auto">Nombre del item</p>
+          <img
+            th:unless="${session.transmog.getId_wrists() != null}"
+            th:src="@{../../images/items/inventoryslot_wrists.jpg}"
+          />
+
+          <p
+            th:if="${session.transmog.getId_wrists() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_wrists()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_wrists()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_wrists())}"
+              ></span
+            >
+          </p>
+          <p th:unless="${session.transmog.getId_wrists() != null}" class="my-auto text_a empty">
+            Sin objeto
+          </p>
         </div>
       </div>
 
@@ -183,151 +277,181 @@
       />
       -->
       <div class="gear-right">
-        <div class="item">
-          <p class="text_a my-auto">Nombre del item</p>
+        <div class="item-show">
+          <p
+            th:if="${session.transmog.getId_hands() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_hands()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_hands()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_hands())}"
+              ></span
+            >
+          </p>
+          <p th:unless="${session.transmog.getId_hands() != null}" class="my-auto text_a empty">
+            Sin objeto
+          </p>
           <img
+            th:if="${session.transmog.getId_hands() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(session.transmog.getId_hands())!= null  ? @transmogController.obtenerIconoPorId(session.transmog.getId_hands()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket hands"
+          />
+          <img
+            th:unless="${session.transmog.getId_hands() != null}"
             th:src="@{../../images/items/inventoryslot_hands.jpg}"
-            alt="Imagen del socket manos"
           />
-          <input type="text" name="searchHands" placeholder="Buscar" />
         </div>
-        <div class="item">
-          <p class="text_a my-auto">Nombre del item</p>
+
+        <div class="item-show">
+          <p
+            th:if="${session.transmog.getId_waist() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_waist()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_waist()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_waist())}"
+              ></span
+            >
+          </p>
+          <p th:unless="${session.transmog.getId_waist() != null}" class="my-auto text_a empty">
+            Sin objeto
+          </p>
           <img
+            th:if="${session.transmog.getId_waist() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(session.transmog.getId_waist())!= null  ? @transmogController.obtenerIconoPorId(session.transmog.getId_waist()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket waist"
+          />
+          <img
+            th:unless="${session.transmog.getId_waist() != null}"
             th:src="@{../../images/items/inventoryslot_waist.jpg}"
-            alt="Imagen del socket cinturon"
           />
-          <input type="text" name="searchWaist" placeholder="Buscar" />
         </div>
-        <div class="item">
-          <p class="text_a my-auto">Nombre del item</p>
+
+        <div class="item-show">
+          <p
+            th:if="${session.transmog.getId_legs() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_legs()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_legs()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_legs())}"
+              ></span
+            >
+          </p>
+          <p th:unless="${session.transmog.getId_legs() != null}" class="my-auto text_a empty">
+            Sin objeto
+          </p>
           <img
+            th:if="${session.transmog.getId_legs() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(session.transmog.getId_legs())!= null  ? @transmogController.obtenerIconoPorId(session.transmog.getId_legs()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket legs"
+          />
+          <img
+            th:unless="${session.transmog.getId_legs() != null}"
             th:src="@{../../images/items/inventoryslot_legs.jpg}"
-            alt="Imagen del socket piernas"
           />
-          <input type="text" name="searchLegs" placeholder="Buscar" />
         </div>
-        <div class="item">
-          <p class="text_a my-auto">Nombre del item</p>
+
+        <div class="item-show">
+          <p
+            th:if="${session.transmog.getId_feet() != null}"
+            th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_feet()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_feet()) + ' my-auto' : 'my-auto'}"
+          >
+            <span
+              th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_feet())}"
+              ></span
+            >
+          </p>
+          <p th:unless="${session.transmog.getId_feet() != null}" class="my-auto text_a empty">
+            Sin objeto
+          </p>
           <img
+            th:if="${session.transmog.getId_feet() != null}"
+            th:src="${@transmogController.obtenerIconoPorId(session.transmog.getId_feet())!= null  ? @transmogController.obtenerIconoPorId(session.transmog.getId_feet()) : '../../images/items/inventoryslot_offhand.jpg'}"
+            alt="Imagen del socket feet"
+          />
+          <img
+            th:unless="${session.transmog.getId_feet() != null}"
             th:src="@{../../images/items/inventoryslot_feet.jpg}"
-            alt="Imagen del socket pies"
           />
-          <input type="text" name="searchFeet" placeholder="Buscar" />
         </div>
-        <div class="item">
-          <p class="text_a my-auto">Nombre del item</p>
+        <div class="item-show">
+          <p class="text_a my-auto empty">Item no transfigurable</p>
           <img
             th:src="@{../../images/items/inventoryslot_finger.jpg}"
             alt="Imagen del socket anillo"
           />
-          <input
-            type="text"
-            name="searchFinger"
-            value="Buscar"
-            disabled="disabled"
-          />
         </div>
-        <div class="item">
-          <p class="text_a my-auto">Nombre del item</p>
+        <div class="item-show">
+          <p class="text_a my-auto empty">Item no transfigurable</p>
           <img
             th:src="@{../../images/items/inventoryslot_finger.jpg}"
             alt="Imagen del socket anillo"
           />
-          <input
-            type="text"
-            name="searchFinger"
-            value="Buscar"
-            disabled="disabled"
-          />
         </div>
-        <div class="item">
-          <p class="text_a my-auto">Nombre del item</p>
+        <div class="item-show">
+          <p class="text_a my-auto empty">Item no transfigurable</p>
           <img
             th:src="@{../../images/items/inventoryslot_trinket.jpg}"
             alt="Imagen del socket trinket"
           />
-          <input
-            type="text"
-            name="searchTrinket"
-            value="Buscar"
-            disabled="disabled"
-          />
         </div>
-        <div class="item">
-          <p class="text_a my-auto">Nombre del item</p>
+        <div class="item-show">
+          <p class="text_a my-auto empty">Item no transfigurable</p>
           <img
             th:src="@{../../images/items/inventoryslot_trinket.jpg}"
             alt="Imagen del socket trinket"
-          />
-          <input
-            type="text"
-            name="searchTrinket"
-            value="Buscar"
-            disabled="disabled"
           />
         </div>
       </div>
     </div>
 
     <div class="gear-bottom">
-      <div class="item" id="l">
-        <p class="text_a my-auto">Nombre del item</p>
+      <div class="item-show" id="l">
+        <p
+          th:if="${session.transmog.getId_mainhand() != null}"
+          th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_mainhand()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_mainhand()) + ' my-auto' : 'my-auto'}"
+        >
+          <span
+            th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_mainhand())}"
+            ></span
+          >
+        </p>
+        <p th:unless="${session.transmog.getId_mainhand() != null}" class="my-auto text_a empty">
+          Sin objeto
+        </p>
         <img
-          th:src="@{../../images/items/inventoryslot_mainhand.jpg}"
+          th:if="${session.transmog.getId_mainhand() != null}"
+          th:src="${@transmogController.obtenerIconoPorId(session.transmog.getId_mainhand())!= null  ? @transmogController.obtenerIconoPorId(session.transmog.getId_mainhand()) : '../../images/items/inventoryslot_offhand.jpg'}"
           alt="Imagen del socket mainhand"
         />
-      </div>
-      <div class="item" id="r">
         <img
-          th:src="@{../../images/items/inventoryslot_offhand.jpg}"
+          th:unless="${session.transmog.getId_mainhand() != null}"
+          th:src="@{../../images/items/inventoryslot_mainhand.jpg}"
+        />
+      </div>
+
+      <div class="item-show" id="r">
+        <img
+          th:if="${session.transmog.getId_offhand() != null}"
+          th:src="${@transmogController.obtenerIconoPorId(session.transmog.getId_offhand())!= null  ? @transmogController.obtenerIconoPorId(session.transmog.getId_offhand()) : '../../images/items/inventoryslot_offhand.jpg'}"
           alt="Imagen del socket offhand"
         />
-        <p class="text_a my-auto">Nombre del item</p>
+        <img
+          th:unless="${session.transmog.getId_offhand() != null}"
+          th:src="@{../../images/items/inventoryslot_offhand.jpg}"
+        />
+        <p
+          th:if="${session.transmog.getId_offhand() != null}"
+          th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_offhand()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_offhand()) + ' my-auto' : 'my-auto'}"
+        >
+          <span
+            th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_offhand())}"
+            ></span
+          >
+        </p>
+        <p th:unless="${session.transmog.getId_offhand() != null}" class="my-auto text_a empty">
+          Sin objeto
+        </p>
       </div>
     </div>
-
-    <form
-      th:action="@{/transmog/createTransmog}"
-      th:object="${transmog}"
-      method="post"
-    >
-      <label for="nombre" class="text_a">Nombre</label>
-      <input
-        type="text"
-        name="nombre"
-        value=""
-        th:field="${transmog.nombre}"
-      /><br />
-      <label for="clase" class="text_a">Elige tu clase:</label>
-      <select id="clase" name="clase">
-        <option value=""></option>
-        <option class="Guerrero" value="1">Guerrero</option>
-        <option class="Paladín" value="2">Paladín</option>
-        <option class="Cazador" value="3">Cazador</option>
-        <option class="Pícaro" value="4">Pícaro</option>
-        <option class="Sacerdote" value="5">Sacerdote</option>
-        <option class="Caballero_de_la_Muerte" value="6">
-          Caballero de la Muerte
-        </option>
-        <option class="Chamán" value="7">Chamán</option>
-        <option class="Mago" value="8">Mago</option>
-        <option class="Brujo" value="9">Brujo</option>
-        <option class="Monje" value="10">Monje</option>
-        <option class="Druida" value="11">Druida</option>
-        <option class="Cazador_de_Demonios" value="12">
-          Cazador de Demonios
-        </option>
-        <option class="Evocador" value="13">Evocador</option>
-      </select>
-      <input
-        type="submit"
-        value="Aceptar"
-        name="register"
-        class="btn wow-button"
-      />
-    </form>
-
     <footer th:insert="commons/footer :: footer"></footer>
   </body>
 </html>

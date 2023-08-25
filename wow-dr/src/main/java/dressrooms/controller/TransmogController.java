@@ -62,8 +62,6 @@ public class TransmogController {
             transmog.setFecha(new Date());
             session.setAttribute("transmog", transmog);
         }
-
-        System.out.println("PASA POR EL MOSTRARCREATE");
         return "transmog/createTransmog";
     }
 
@@ -74,26 +72,18 @@ public class TransmogController {
         Optional<Classe> c = classeRepository.findById(claseId);
         transmog.setClase(c.get());
 
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Alias del usuario: " + auth.getName());
         User u = userRepository.findByAlias(auth.getName());
-        System.out.println("YELMO PUESTO  DESPUES DE ADDITEM: " + transmog.getId_head());
         transmog.setNombre(nombre);
         transmog.setId_usuario(u.getId());
         transmogRepository.save(transmog);
-        System.out.println("ID DEL YELMO: " + transmog.getId_head());
+        session.removeAttribute("transmog");
+
         return "redirect:/";
     }
 
     @PostMapping("/transmog/listItem")
-    public String listItem(Model model, String searchItem, String ranura, HttpSession session) {
-        System.out.println("nombre buscado: " + searchItem);
-        Transmog transmog = (Transmog) session.getAttribute("transmog");
-        System.out.println("EN LISTITEM: " + transmog.getFecha());
+    public String listItem(Model model, String searchItem, String ranura) {
         List<Item> items = itemsRepository.findByNombreContainingIgnoreCaseAndRanura(searchItem, ranura);
-        for (var item : items) {
-            System.out.println(item.toString());
-        }
         model.addAttribute("items", items);
         return "transmog/listItem";
     }
@@ -101,12 +91,10 @@ public class TransmogController {
     @PostMapping("/transmog/addItem")
     public String addItem(Model model, @RequestParam Integer idItem, HttpSession session) {
         Transmog transmog = (Transmog) session.getAttribute("transmog");
-        System.out.println("ID DEL ITEM: " + idItem);
         String ranura = itemService.obtenerRanuraPorId(idItem);
 
         if (ranura.equals("HEAD")) {
             transmog.setId_head(idItem);
-            System.out.println("YELMO PUESTO EN ADDITEM: " + transmog.getId_head());
         }
 
         if (ranura.equals("SHOULDER")) {
@@ -115,27 +103,26 @@ public class TransmogController {
 
         if (ranura.equals("CHEST")) {
             transmog.setId_chest(idItem);
-            ;
+        }
+
+        if (ranura.equals("CLOAK")) {
+            transmog.setId_back(idItem);
         }
 
         if (ranura.equals("TABARD")) {
             transmog.setId_tabard(idItem);
-            ;
         }
 
         if (ranura.equals("BODY")) {
             transmog.setId_shirt(idItem);
-            ;
         }
 
         if (ranura.equals("WRIST")) {
             transmog.setId_wrists(idItem);
-            ;
         }
 
         if (ranura.equals("HAND")) {
             transmog.setId_hands(idItem);
-            ;
         }
 
         if (ranura.equals("WAIST")) {

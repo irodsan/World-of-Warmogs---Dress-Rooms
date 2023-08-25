@@ -8,7 +8,10 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <link th:href="@{/styles/cssandjs/CSS.css}" rel="stylesheet" />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -19,35 +22,31 @@
 
   <body>
     <header th:insert="commons/header :: header"></header>
-
-    <form
-      th:action="@{/transmog/createTransmog}"
-      th:object="${transmog}"
-      method="post"
-    >
-      <label for="nombre" class="text_a">Nombre</label>
-      <input type="text" name="nombre" value="" th:field="*{nombre}" /><br />
-      <input type="submit" value="Aceptar" name="register" />
-
-      <label for="clase" class="text_a">Elige tu clase:</label>
-      <select id="clase" name="clase">
+    <form th:action="@{/transmog/listItem}" th:object="${item}" method="post">
+      <input type="text" name="searchItem" placeholder="Buscar" />
+      <input
+        type="submit"
+        value="Buscar"
+        name="register"
+        class="btn wow-button"
+      />
+      <label for="clase" class="text_a">Pieza de equipo:</label>
+      <select id="ranura" name="ranura">
         <option value=""></option>
-        <option class="Guerrero" value=1>Guerrero</option>
-        <option class="Paladín" value=2>Paladín</option>
-        <option class="Cazador" value=3>Cazador</option>
-        <option class="Pícaro" value=4>Pícaro</option>
-        <option class="Sacerdote" value=5>Sacerdote</option>
-        <option class="Caballero_de_la_Muerte" value=6>Caballero de la Muerte</option>
-        <option class="Chamán" value=7>Chamán</option>
-        <option class="Mago" value=8>Mago</option>
-        <option class="Brujo" value=9>Brujo</option>
-        <option class="Monje" value=10>Monje</option>
-        <option class="Druida" value=11>Druida</option>
-        <option class="Cazador_de_Demonios" value=12>Cazador de Demonios</option>
-        <option class="Evocador" value=13>Evocador</option>
+        <option value="HEAD">Cabeza</option>
+        <option value="SHOULDER">Hombros</option>
+        <option value="CHEST">Pecho</option>
+        <option value="TABARD">Tabardo</option>
+        <option value="BODY">Camisa</option>
+        <option value="WRIST">Muñecas</option>
+        <option value="HAND">Manos</option>
+        <option value="WAIST">Cintura</option>
+        <option value="LEGS">Piernas</option>
+        <option value="FEET">Pies</option>
+        <option value="WEAPON">Arma Principal</option>
+        <option value="WEAPONOFFHAND">Arma Secundaria</option>
       </select>
     </form>
-
     <div class="gear">
       <div class="gear-left">
         <div class="item">
@@ -121,14 +120,45 @@
         </div>
       </div>
 
-      <div id="imageContainer">
-        <img
-          class="character"
-          id="selectedImage"
-          th:src="@{../../images/character/}"
-          alt="Imagen del personaje"
+      <form
+        th:action="@{/transmog/createTransmog}"
+        th:object="${transmog}"
+        method="post"
+      >
+        <label for="nombre" class="text_a">Nombre</label>
+        <input
+          type="text"
+          name="nombre"
+          value=""
+          th:field="${transmog.nombre}"
+        /><br />
+        <select id="clase" name="clase">
+          <option value="">-Elige tu clase-</option>
+          <option class="Guerrero" value="1">Guerrero</option>
+          <option class="Paladín" value="2">Paladín</option>
+          <option class="Cazador" value="3">Cazador</option>
+          <option class="Pícaro" value="4">Pícaro</option>
+          <option class="Sacerdote" value="5">Sacerdote</option>
+          <option class="Caballero_de_la_Muerte" value="6">
+            Caballero de la Muerte
+          </option>
+          <option class="Chamán" value="7">Chamán</option>
+          <option class="Mago" value="8">Mago</option>
+          <option class="Brujo" value="9">Brujo</option>
+          <option class="Monje" value="10">Monje</option>
+          <option class="Druida" value="11">Druida</option>
+          <option class="Cazador_de_Demonios" value="12">
+            Cazador de Demonios
+          </option>
+          <option class="Evocador" value="13">Evocador</option>
+        </select>
+        <input
+          type="submit"
+          value="Aceptar"
+          name="register"
+          class="btn wow-button"
         />
-      </div>
+      </form>
       <!--
       <img
         class="character"
@@ -241,6 +271,47 @@
         <p class="text_a my-auto">Nombre del item</p>
       </div>
     </div>
+
+    <form
+      th:action="@{/transmog/createTransmog}"
+      th:object="${transmog}"
+      method="post"
+    >
+      <label for="nombre" class="text_a">Nombre</label>
+      <input
+        type="text"
+        name="nombre"
+        value=""
+        th:field="${transmog.nombre}"
+      /><br />
+      <label for="clase" class="text_a">Elige tu clase:</label>
+      <select id="clase" name="clase">
+        <option value=""></option>
+        <option class="Guerrero" value="1">Guerrero</option>
+        <option class="Paladín" value="2">Paladín</option>
+        <option class="Cazador" value="3">Cazador</option>
+        <option class="Pícaro" value="4">Pícaro</option>
+        <option class="Sacerdote" value="5">Sacerdote</option>
+        <option class="Caballero_de_la_Muerte" value="6">
+          Caballero de la Muerte
+        </option>
+        <option class="Chamán" value="7">Chamán</option>
+        <option class="Mago" value="8">Mago</option>
+        <option class="Brujo" value="9">Brujo</option>
+        <option class="Monje" value="10">Monje</option>
+        <option class="Druida" value="11">Druida</option>
+        <option class="Cazador_de_Demonios" value="12">
+          Cazador de Demonios
+        </option>
+        <option class="Evocador" value="13">Evocador</option>
+      </select>
+      <input
+        type="submit"
+        value="Aceptar"
+        name="register"
+        class="btn wow-button"
+      />
+    </form>
 
     <footer th:insert="commons/footer :: footer"></footer>
   </body>

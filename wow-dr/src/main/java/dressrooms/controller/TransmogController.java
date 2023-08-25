@@ -1,6 +1,7 @@
 package dressrooms.controller;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +17,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import dressrooms.model.Classe;
 import dressrooms.model.Transmog;
 import dressrooms.model.User;
+import dressrooms.model.Item;
 import dressrooms.repository.ClasseRepository;
+import dressrooms.repository.ItemsRepository;
 import dressrooms.repository.TransmogRepository;
 import dressrooms.repository.UserRepository;
 import dressrooms.service.IItemService;
 import dressrooms.service.ITransmogService;
 import dressrooms.service.IUserService;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class TransmogController {
@@ -42,6 +46,9 @@ public class TransmogController {
     @Autowired
     public UserRepository userRepository;
 
+    @Autowired
+    public ItemsRepository itemsRepository;
+
     @GetMapping("transmog/showTransmog/{id}")
     public String mostrarTransmog(@PathVariable int id, Model model) {
         Transmog t = mostrarConjunto(id);
@@ -50,22 +57,108 @@ public class TransmogController {
     }
 
     @GetMapping("/transmog/createTransmog")
-    public String mostrarCreateTransmog(@ModelAttribute Transmog transmog) {
+    public String mostrarCreateTransmog(@ModelAttribute Transmog transmog, HttpSession session) {
+        if (session.getAttribute("transmog") == null) {
+            transmog.setFecha(new Date());
+            session.setAttribute("transmog", transmog);
+        }
+
+        System.out.println("PASA POR EL MOSTRARCREATE");
         return "transmog/createTransmog";
     }
 
     @PostMapping("/transmog/createTransmog")
-    public String saveTransmog(Authentication auth, Transmog transmog, @RequestParam("clase") int claseId) {
+    public String saveTransmog(Authentication auth, HttpSession session,
+            @RequestParam("clase") int claseId, @RequestParam("nombre") String nombre) {
+        Transmog transmog = (Transmog) session.getAttribute("transmog");
         Optional<Classe> c = classeRepository.findById(claseId);
         transmog.setClase(c.get());
-        transmog.setFecha(new Date());
-        System.out.println("Nombre: " + transmog.getNombre());
+
+        System.out.println("Nombre: " + nombre);
         System.out.println("Alias del usuario: " + auth.getName());
         User u = userRepository.findByAlias(auth.getName());
-
+        System.out.println("YELMO PUESTO  DESPUES DE ADDITEM: " + transmog.getId_head());
+        transmog.setNombre(nombre);
         transmog.setId_usuario(u.getId());
         transmogRepository.save(transmog);
-        return "transmog/createTransmog";
+        System.out.println("ID DEL YELMO: " + transmog.getId_head());
+        return "redirect:/";
+    }
+
+    @PostMapping("/transmog/listItem")
+    public String listItem(Model model, String searchItem, String ranura, HttpSession session) {
+        System.out.println("nombre buscado: " + searchItem);
+        Transmog transmog = (Transmog) session.getAttribute("transmog");
+        System.out.println("EN LISTITEM: " + transmog.getFecha());
+        List<Item> items = itemsRepository.findByNombreContainingIgnoreCaseAndRanura(searchItem, ranura);
+        for (var item : items) {
+            System.out.println(item.toString());
+        }
+        model.addAttribute("items", items);
+        return "transmog/listItem";
+    }
+
+    @PostMapping("/transmog/addItem")
+    public String addItem(Model model, @RequestParam Integer idItem, HttpSession session) {
+        Transmog transmog = (Transmog) session.getAttribute("transmog");
+        System.out.println("ID DEL ITEM: " + idItem);
+        String ranura = itemService.obtenerRanuraPorId(idItem);
+
+        if (ranura.equals("HEAD")) {
+            transmog.setId_head(idItem);
+            System.out.println("YELMO PUESTO EN ADDITEM: " + transmog.getId_head());
+        }
+
+        if (ranura.equals("SHOULDER")) {
+            transmog.setId_shoulder(idItem);
+        }
+
+        if (ranura.equals("CHEST")) {
+            transmog.setId_chest(idItem);
+            ;
+        }
+
+        if (ranura.equals("TABARD")) {
+            transmog.setId_tabard(idItem);
+            ;
+        }
+
+        if (ranura.equals("BODY")) {
+            transmog.setId_shirt(idItem);
+            ;
+        }
+
+        if (ranura.equals("WRIST")) {
+            transmog.setId_wrists(idItem);
+            ;
+        }
+
+        if (ranura.equals("HAND")) {
+            transmog.setId_hands(idItem);
+            ;
+        }
+
+        if (ranura.equals("WAIST")) {
+            transmog.setId_waist(idItem);
+        }
+
+        if (ranura.equals("LEGS")) {
+            transmog.setId_legs(idItem);
+        }
+
+        if (ranura.equals("FEET")) {
+            transmog.setId_feet(idItem);
+        }
+
+        if (ranura.equals("WEAPON")) {
+            transmog.setId_mainhand(idItem);
+        }
+
+        if (ranura.equals("WEAPONOFFHAND")) {
+            transmog.setId_offhand(idItem);
+        }
+
+        return "redirect:/transmog/createTransmog";
     }
 
     public String obtenerUsuarioPorId(Integer id) {

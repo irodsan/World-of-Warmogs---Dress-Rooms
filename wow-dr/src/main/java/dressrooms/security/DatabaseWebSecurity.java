@@ -39,7 +39,9 @@ public class DatabaseWebSecurity {
                 .requestMatchers("/images/**", "/styles/**").permitAll()
 
                 // Las vistas públicas no requieren autenticacion
-                .requestMatchers("/", "/listado", "/signup", "/bcrypt/{texto}", "/transmog/showTransmog/**").permitAll()
+                .requestMatchers("/", "/listado", "/signup", "/bcrypt/{texto}", "/transmog/listItem",
+                        "/transmog/showTransmog/**")
+                .permitAll()
 
                 // Asignar permisos a URLs por roles
                 .requestMatchers("/deleteUser").hasAnyAuthority("Admin")

@@ -48,6 +48,20 @@
         <option value="WEAPONOFFHAND">Arma Secundaria</option>
       </select>
     </form>
+
+    <span th:text = "${session.transmog}" >fecha</span>
+
+    <p
+    th:if="${session.transmog.getId_head() != null}"
+    th:class="${@transmogController.obtenerCalidadPorId(session.transmog.getId_head()) != null ? @transmogController.obtenerCalidadPorId(session.transmog.getId_head()) + ' my-auto' : 'my-auto'}"
+  >
+    <span
+      th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_head())}"
+      ></span
+    >
+  </p>
+
+    
     <div class="gear">
       <div class="gear-left">
         <div class="item">

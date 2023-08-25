@@ -44,9 +44,17 @@
         <option value="WAIST">Cintura</option>
         <option value="LEGS">Piernas</option>
         <option value="FEET">Pies</option>
-        <option value="WEAPON">Arma Principal</option>
-        <option value="WEAPONOFFHAND">Arma Secundaria</option>
+        <option value="WEAPON">Arma</option>
+        <option value="SHIELD">Escudo</option>
       </select>
+    </form>
+    <form th:action="@{/transmog/limpiar}" th:object="${item}" method="post">
+      <input
+        type="submit"
+        value="LIMPIAR"
+        name="register"
+        class="btn wow-button"
+      />
     </form>
     
     <div class="gear">

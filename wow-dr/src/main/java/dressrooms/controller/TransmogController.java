@@ -138,13 +138,39 @@ public class TransmogController {
         }
 
         if (ranura.equals("WEAPON")) {
-            transmog.setId_mainhand(idItem);
+            if (transmog.getId_mainhand() == null) {
+                transmog.setId_mainhand(idItem);
+            } else {
+                transmog.setId_offhand(idItem);
+            }
         }
 
-        if (ranura.equals("WEAPONOFFHAND")) {
+        if (ranura.equals("SHIELD")) {
             transmog.setId_offhand(idItem);
         }
 
+        return "redirect:/transmog/createTransmog";
+    }
+
+    @PostMapping("/transmog/limpiar")
+    public String limpiar(Model model, HttpSession session) {
+        Transmog t = (Transmog) session.getAttribute("transmog");
+        t.setClase(null);
+        t.setId_head(null);
+        t.setId_shoulder(null);
+        t.setId_back(null);
+        t.setId_chest(null);
+        t.setId_tabard(null);
+        t.setId_shirt(null);
+        t.setId_wrists(null);
+        t.setId_hands(null);
+        t.setId_waist(null);
+        t.setId_legs(null);
+        t.setId_feet(null);
+        t.setId_mainhand(null);
+        t.setId_offhand(null);
+
+        session.setAttribute("transmog", t);
         return "redirect:/transmog/createTransmog";
     }
 

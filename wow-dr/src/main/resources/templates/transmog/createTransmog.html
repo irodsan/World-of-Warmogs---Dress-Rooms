@@ -22,41 +22,6 @@
 
   <body>
     <header th:insert="commons/header :: header"></header>
-    <form th:action="@{/transmog/listItem}" th:object="${item}" method="post">
-      <input type="text" name="searchItem" placeholder="Buscar" />
-      <input
-        type="submit"
-        value="Buscar"
-        name="register"
-        class="btn wow-button"
-      />
-      <label for="clase" class="text_a">Pieza de equipo:</label>
-      <select id="ranura" name="ranura">
-        <option value=""></option>
-        <option value="HEAD">Cabeza</option>
-        <option value="SHOULDER">Hombros</option>
-        <option value="CLOAK">Espalda</option>
-        <option value="CHEST">Pecho</option>
-        <option value="TABARD">Tabardo</option>
-        <option value="BODY">Camisa</option>
-        <option value="WRIST">Muñecas</option>
-        <option value="HAND">Manos</option>
-        <option value="WAIST">Cintura</option>
-        <option value="LEGS">Piernas</option>
-        <option value="FEET">Pies</option>
-        <option value="WEAPON">Arma</option>
-        <option value="SHIELD">Escudo</option>
-      </select>
-    </form>
-    <form th:action="@{/transmog/limpiar}" th:object="${item}" method="post">
-      <input
-        type="submit"
-        value="LIMPIAR"
-        name="register"
-        class="btn wow-button"
-      />
-    </form>
-    
     <div class="gear">
       <div class="gear-left">
         <div class="item-show">
@@ -76,10 +41,12 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_head())}"
-              ></span
-            >
+            ></span>
           </p>
-          <p th:unless="${session.transmog.getId_head() != null}" class="my-auto text_a empty">
+          <p
+            th:unless="${session.transmog.getId_head() != null}"
+            class="my-auto text_a empty"
+          >
             Sin objeto
           </p>
         </div>
@@ -107,10 +74,12 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_shoulder())}"
-              ></span
-            >
+            ></span>
           </p>
-          <p th:unless="${session.transmog.getId_shoulder() != null}" class="my-auto text_a empty">
+          <p
+            th:unless="${session.transmog.getId_shoulder() != null}"
+            class="my-auto text_a empty"
+          >
             Sin objeto
           </p>
         </div>
@@ -131,10 +100,12 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_back())}"
-              ></span
-            >
+            ></span>
           </p>
-          <p th:unless="${session.transmog.getId_back() != null}" class="my-auto text_a empty">
+          <p
+            th:unless="${session.transmog.getId_back() != null}"
+            class="my-auto text_a empty"
+          >
             Sin objeto
           </p>
         </div>
@@ -155,10 +126,12 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_chest())}"
-              ></span
-            >
+            ></span>
           </p>
-          <p th:unless="${session.transmog.getId_chest() != null}" class="my-auto text_a empty">
+          <p
+            th:unless="${session.transmog.getId_chest() != null}"
+            class="my-auto text_a empty"
+          >
             Sin objeto
           </p>
         </div>
@@ -179,10 +152,12 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_tabard())}"
-              ></span
-            >
+            ></span>
           </p>
-          <p th:unless="${session.transmog.getId_tabard() != null}" class="my-auto text_a empty">
+          <p
+            th:unless="${session.transmog.getId_tabard() != null}"
+            class="my-auto text_a empty"
+          >
             Sin objeto
           </p>
         </div>
@@ -203,10 +178,12 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_shirt())}"
-              ></span
-            >
+            ></span>
           </p>
-          <p th:unless="${session.transmog.getId_shirt() != null}" class="my-auto text_a empty">
+          <p
+            th:unless="${session.transmog.getId_shirt() != null}"
+            class="my-auto text_a empty"
+          >
             Sin objeto
           </p>
         </div>
@@ -228,62 +205,68 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_wrists())}"
-              ></span
-            >
+            ></span>
           </p>
-          <p th:unless="${session.transmog.getId_wrists() != null}" class="my-auto text_a empty">
+          <p
+            th:unless="${session.transmog.getId_wrists() != null}"
+            class="my-auto text_a empty"
+          >
             Sin objeto
           </p>
         </div>
       </div>
 
-      <form
-        th:action="@{/transmog/createTransmog}"
-        th:object="${transmog}"
-        method="post"
+      <div>
+        <form
+          th:action="@{/transmog/listItem}"
+          th:object="${item}"
+          method="post"
+        >
+          <input type="text" name="searchItem" placeholder="Nombre del objeto" id="searchItem" required/>
+
+      <!--
+          <label for="clase" class="text_a">Pieza de equipo:</label>-->
+          <select id="ranura" name="ranura" required>
+            <option value="">-Ranura-</option>
+            <option value="HEAD">Cabeza</option>
+            <option value="SHOULDER">Hombros</option>
+            <option value="CLOAK">Espalda</option>
+            <option value="CHEST">Pecho</option>
+            <option value="TABARD">Tabardo</option>
+            <option value="BODY">Camisa</option>
+            <option value="WRIST">Muñecas</option>
+            <option value="HAND">Manos</option>
+            <option value="WAIST">Cintura</option>
+            <option value="LEGS">Piernas</option>
+            <option value="FEET">Pies</option>
+            <option value="WEAPON">Arma</option>
+            <option value="SHIELD">Escudo</option>
+          </select>
+          <input
+            type="submit"
+            value="Buscar"
+            name="register"
+            class="btn wow-button"
+          />
+        </form>     
+      </br></br></br>
+      <div class="center-screen">
+        <form
+        th:action="@{/transmog/limpiar}"
+        th:object="${item}"
+        method="post" 
+        id="limpiar"
       >
-        <label for="nombre" class="text_a">Nombre</label>
-        <input
-          type="text"
-          name="nombre"
-          value=""
-          th:field="${transmog.nombre}"
-        /><br />
-        <select id="clase" name="clase">
-          <option value="">-Elige tu clase-</option>
-          <option class="Guerrero" value="1">Guerrero</option>
-          <option class="Paladín" value="2">Paladín</option>
-          <option class="Cazador" value="3">Cazador</option>
-          <option class="Pícaro" value="4">Pícaro</option>
-          <option class="Sacerdote" value="5">Sacerdote</option>
-          <option class="Caballero_de_la_Muerte" value="6">
-            Caballero de la Muerte
-          </option>
-          <option class="Chamán" value="7">Chamán</option>
-          <option class="Mago" value="8">Mago</option>
-          <option class="Brujo" value="9">Brujo</option>
-          <option class="Monje" value="10">Monje</option>
-          <option class="Druida" value="11">Druida</option>
-          <option class="Cazador_de_Demonios" value="12">
-            Cazador de Demonios
-          </option>
-          <option class="Evocador" value="13">Evocador</option>
-        </select>
         <input
           type="submit"
-          value="Aceptar"
+          value="Limpiar Transfiguración"
           name="register"
-          class="btn wow-button"
+          class="btn btn-center wow-button "
         />
       </form>
-      <!--
-      <img
-        class="character"
-        id = "selectedImage"
-        th:src="@{../../images/character/Garrosh.png}"
-        alt="Imagen del personaje"
-      />
-      -->
+      </div>
+      </div>
+
       <div class="gear-right">
         <div class="item-show">
           <p
@@ -292,10 +275,12 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_hands())}"
-              ></span
-            >
+            ></span>
           </p>
-          <p th:unless="${session.transmog.getId_hands() != null}" class="my-auto text_a empty">
+          <p
+            th:unless="${session.transmog.getId_hands() != null}"
+            class="my-auto text_a empty"
+          >
             Sin objeto
           </p>
           <img
@@ -316,10 +301,12 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_waist())}"
-              ></span
-            >
+            ></span>
           </p>
-          <p th:unless="${session.transmog.getId_waist() != null}" class="my-auto text_a empty">
+          <p
+            th:unless="${session.transmog.getId_waist() != null}"
+            class="my-auto text_a empty"
+          >
             Sin objeto
           </p>
           <img
@@ -340,10 +327,12 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_legs())}"
-              ></span
-            >
+            ></span>
           </p>
-          <p th:unless="${session.transmog.getId_legs() != null}" class="my-auto text_a empty">
+          <p
+            th:unless="${session.transmog.getId_legs() != null}"
+            class="my-auto text_a empty"
+          >
             Sin objeto
           </p>
           <img
@@ -364,10 +353,12 @@
           >
             <span
               th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_feet())}"
-              ></span
-            >
+            ></span>
           </p>
-          <p th:unless="${session.transmog.getId_feet() != null}" class="my-auto text_a empty">
+          <p
+            th:unless="${session.transmog.getId_feet() != null}"
+            class="my-auto text_a empty"
+          >
             Sin objeto
           </p>
           <img
@@ -419,10 +410,12 @@
         >
           <span
             th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_mainhand())}"
-            ></span
-          >
+          ></span>
         </p>
-        <p th:unless="${session.transmog.getId_mainhand() != null}" class="my-auto text_a empty">
+        <p
+          th:unless="${session.transmog.getId_mainhand() != null}"
+          class="my-auto text_a empty"
+        >
           Sin objeto
         </p>
         <img
@@ -452,14 +445,62 @@
         >
           <span
             th:text="${@transmogController.obtenerNombrePorId(session.transmog.getId_offhand())}"
-            ></span
-          >
+          ></span>
         </p>
-        <p th:unless="${session.transmog.getId_offhand() != null}" class="my-auto text_a empty">
+        <p
+          th:unless="${session.transmog.getId_offhand() != null}"
+          class="my-auto text_a empty"
+        >
           Sin objeto
         </p>
       </div>
     </div>
+
+    <div id="guardarTransfiguracion">
+    <form
+          th:action="@{/transmog/createTransmog}"
+          th:object="${transmog}"
+          method="post"
+        >
+          <input
+            type="text"
+            name="nombre"
+            value=""
+            placeholder="Nombre transfiguración"
+            required
+            id="nombreTransfiguracion"
+            th:field="${transmog.nombre}"
+          />
+          <select id="clase" name="clase" required>
+            <option value="">-Elige tu clase-</option>
+            <option class="Guerrero" value="1">Guerrero</option>
+            <option class="Paladín" value="2">Paladín</option>
+            <option class="Cazador" value="3">Cazador</option>
+            <option class="Pícaro" value="4">Pícaro</option>
+            <option class="Sacerdote" value="5">Sacerdote</option>
+            <option class="Caballero_de_la_Muerte" value="6">
+              Caballero de la Muerte
+            </option>
+            <option class="Chamán" value="7">Chamán</option>
+            <option class="Mago" value="8">Mago</option>
+            <option class="Brujo" value="9">Brujo</option>
+            <option class="Monje" value="10">Monje</option>
+            <option class="Druida" value="11">Druida</option>
+            <option class="Cazador_de_Demonios" value="12">
+              Cazador de Demonios
+            </option>
+            <option class="Evocador" value="13">Evocador</option>
+          </select>
+          <input
+            type="submit"
+            value="Guardar"
+            name="register"
+            class="btn wow-button"
+          />
+        </form>
+      </div>
+
+
     <footer th:insert="commons/footer :: footer"></footer>
   </body>
 </html>

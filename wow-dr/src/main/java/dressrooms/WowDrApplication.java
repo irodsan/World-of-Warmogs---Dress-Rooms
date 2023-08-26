@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import dressrooms.model.Profile;
-
 import dressrooms.model.User;
 import dressrooms.repository.ProfileRepository;
 import dressrooms.repository.UserRepository;

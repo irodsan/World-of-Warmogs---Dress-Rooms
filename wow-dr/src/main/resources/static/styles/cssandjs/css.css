@@ -71,6 +71,10 @@ nav>ul>li>a {
     /* Añadimos esto para centrar el contenido */
 }
 
+h1{
+    font-size: 2rem;
+    margin: 10px;
+}
 .login h1 {
     margin-bottom: 20px;
 }

@@ -86,4 +86,9 @@ public class MainController {
         return texto + "ENCRIPTADO: " + passwordEncoder.encode(texto);
     }
 
+    @GetMapping("/userPanel")
+    public String mostrarUserPanel(Model model) {
+        return "/userPanel";
+    }
+
 }

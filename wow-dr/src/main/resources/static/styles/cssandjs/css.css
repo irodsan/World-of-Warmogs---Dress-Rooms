@@ -438,11 +438,11 @@ select {
 }
 
 .atras {
+    position: relative; /* Agregamos posicionamiento relativo */
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centramos horizontalmente */
     align-items: center;
     padding: 10px;
-    ;
 }
 
 .atras>h1 {
@@ -450,7 +450,8 @@ select {
 }
 
 .atras>a {
-    height: 100%;
+    position: absolute; /* Posicionamiento absoluto para el botón */
+    right: 0; /* Colocar el botón en el lado derecho */
 }
 
 .fromCreateTransmog {

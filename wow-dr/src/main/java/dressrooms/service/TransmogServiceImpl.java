@@ -1,5 +1,6 @@
 package dressrooms.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,11 +16,11 @@ import dressrooms.repository.TransmogRepository;
 public class TransmogServiceImpl implements ITransmogService {
 
     @Autowired
-    private TransmogRepository repoTransmogs;
+    private TransmogRepository transmogRepository;
 
     public Transmog mostrarConjunto(int id) {
         Transmog t = null;
-        Optional<Transmog> transmog = repoTransmogs.findById(id);
+        Optional<Transmog> transmog = transmogRepository.findById(id);
         if (transmog.isPresent()) {
             t = transmog.get();
         }
@@ -27,7 +28,7 @@ public class TransmogServiceImpl implements ITransmogService {
     }
 
     public List<Transmog> buscarPorNombre(String nombre) {
-        List<Transmog> transmogs = repoTransmogs.findByNombreContainingIgnoreCase(nombre);
+        List<Transmog> transmogs = transmogRepository.findByNombreContainingIgnoreCase(nombre);
         return transmogs;
     }
 
@@ -36,8 +37,23 @@ public class TransmogServiceImpl implements ITransmogService {
     }
 
     public List<Transmog> buscarNuevos() {
-        List<Transmog> transmogs = repoTransmogs.findAll(Sort.by("fecha"));
+        List<Transmog> transmogs = transmogRepository.findAll(Sort.by("fecha"));
         return transmogs;
+    }
+
+    public void eliminarTransmogs(List<Transmog> transmogs) {
+        transmogRepository.deleteAll(transmogs);
+    }
+
+    public List<Transmog> buscarTransmogsPorIdUsuario(Integer id) {
+        List<Transmog> allTransmogs = transmogRepository.findAll();
+        List<Transmog> userTransmogs = new ArrayList<>();
+        for (var t : allTransmogs) {
+            if (t.getId_usuario() == id) {
+                userTransmogs.add(t);
+            }
+        }
+        return userTransmogs;
     }
 
 }

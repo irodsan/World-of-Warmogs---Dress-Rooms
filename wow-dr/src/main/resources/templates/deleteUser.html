@@ -18,30 +18,43 @@
 
   <body>
     <header th:replace="~{commons/header :: header}"></header>
-    <table border="1">
+    <div class="atras">
+      <h1>Usuarios registrados:</h1>
+      <a th:href="@{/}" class="btn wow-button">Atrás</a>
+    </div>
+    <table class="table table-dark table-striped table-hover">
       <thead>
         <tr>
-          USUARIOS
-        </tr>
-        <tr>
+          <th>ID</th>
           <th>Alias</th>
           <th>Email</th>
-          <th>Borrar</th>
+          <th>Acción</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Uusario_1</td>
-          <td>Email1@email.com</td>
+        <tr th:each="user : ${users}">
           <td>
-            <input type="submit" value="X" name="delete" />
+            <a th:text="${user.id}"></a>
           </td>
-        </tr>
-        <tr>
-          <td>Uusario_2</td>
-          <td>Email2@email.com</td>
           <td>
-            <input type="submit" value="X" name="delete" />
+            <a th:text="${user.alias}"></a>
+          </td>
+          <td>
+            <a th:text="${user.email}"></a>
+          </td>
+          <td>
+            <form
+              th:action="@{/deleteUser/delete}"
+              th:object="${user}"
+              method="post"
+            >
+              <input type="hidden" name="idUser" th:value="${user.id}" />
+              <input
+                type="submit"
+                value="Eliminar usuario"
+                class="btn wow-button"
+              />
+            </form>
           </td>
         </tr>
       </tbody>

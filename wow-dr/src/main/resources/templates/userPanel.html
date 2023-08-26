@@ -19,12 +19,20 @@
   <body>
     <header th:replace="~{commons/header :: header}"></header>
 
-    <a>PANEL DE USUARIO</a>
-    <ul>
-      <li><a class="btn wow-button" href="../modifyUser">Cambiar datos</a></li>
-      <li><a class="btn wow-button" href="../deleteUser">Eliminar cuenta</a></li>
-    </ul>
-    
+    <div class="atras">
+      <h1>Panel de administración</h1>
+      <a th:href="@{/}" class="btn wow-button">Atrás</a>
+    </div>
+    <div class="login-container">
+      <div class="login">
+        <ul>
+          <li>
+            <a class="btn wow-button" href="../deleteUser">Eliminar cuentas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <footer th:replace="~{commons/footer :: footer}"></footer>
   </body>
 </html>

@@ -18,7 +18,10 @@
 
   <body>
     <header th:replace="~{commons/header :: header}"></header>
-    <h1>Transfiguraciones encontradas:</h1>
+    <div class="atras">
+      <h1>Transfiguraciones encontradas:</h1>
+      <a th:href="@{/}" class="btn wow-button">Atrás</a>
+    </div>
     <table class="table table-dark table-striped table-hover">
       <tr>
         <th></th>

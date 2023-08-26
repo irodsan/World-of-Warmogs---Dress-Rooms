@@ -51,7 +51,6 @@ public class MainController {
             u.setPassword(null);
             System.out.println("Usuario: " + u);
             session.setAttribute("usuario", u);
-
         }
 
         return "redirect:/";
@@ -74,6 +73,22 @@ public class MainController {
     public List<Transmog> buscarPorNombre(String nombre) {
         List<Transmog> transmogs = transmogService.buscarPorNombre(nombre);
         return transmogs;
+    }
+
+    @GetMapping("/listadoUsuario")
+    public String mostrarResultadosUsuario(Model model, Authentication auth, HttpSession session) {
+        System.out.println("ENTRA EN METODO");
+        String alias = auth.getName();
+        User user = new User();
+        if (session.getAttribute("Usuario") == null) {
+            user = userService.buscarPorAlias(alias);
+            user.setPassword(null);
+            System.out.println("Usuario: " + user);
+            session.setAttribute("usuario", user);
+        }
+        List<Transmog> res = transmogService.buscarTransmogsPorIdUsuario(user.getId());
+        model.addAttribute("res", res);
+        return "listado";
     }
 
     public String eliminarGuiones(String n) {

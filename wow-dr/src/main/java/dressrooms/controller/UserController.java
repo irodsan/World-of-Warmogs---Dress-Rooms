@@ -1,5 +1,7 @@
 package dressrooms.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -8,9 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import dressrooms.model.Profile;
 import dressrooms.model.User;
+import dressrooms.service.ITransmogService;
 import dressrooms.service.IUserService;
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -22,6 +26,9 @@ public class UserController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private ITransmogService transmogService;
 
     @GetMapping("/login")
     public String mostrarLogin() {
@@ -71,18 +78,17 @@ public class UserController {
 
     @GetMapping("/deleteUser")
     public String mostrarDeleteUser(Model model) {
+        List<User> users = userService.buscarTodos();
+        model.addAttribute("users", users);
         return "deleteUser";
     }
 
-    /*
-     * @GetMapping("/delete/{id}")
-     * public String eliminar(@PathVariable("id") int idUsuario, RedirectAttributes
-     * attributes) {
-     * // Eliminamos el usuario
-     * userService.eliminar(idUsuario);
-     * attributes.addFlashAttribute("msg", "El usuario fue eliminado!.");
-     * return "redirect:/usuarios/index";
-     * }
-     */
+    @PostMapping("/deleteUser/delete")
+    public String deleteUser(@RequestParam Integer idUser) {
+        System.out.println("ID USUARIOA  ELIMIANR: " + idUser);
+        transmogService.eliminarTransmogs(transmogService.buscarTransmogsPorIdUsuario(idUser));
+        userService.eliminar(idUser);
+        return "redirect:/deleteUser";
+    }
 
 }

@@ -14,4 +14,8 @@ public interface ITransmogService {
 
     public List<Transmog> buscarNuevos();
 
+    public void eliminarTransmogs(List<Transmog> transmogs);
+
+    public List<Transmog> buscarTransmogsPorIdUsuario(Integer id);
+
 }

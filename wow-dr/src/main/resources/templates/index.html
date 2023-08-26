@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <header th:insert="~{commons/header :: header}"></header>
+    <header th:replace="~{commons/header :: header}"></header>
 
     <form th:action="@{/listado}" method="get">
       <input
@@ -38,6 +38,6 @@
       >
     </form>
     <table th:replace="~{tabla :: tabla}"></table>
-    <footer th:insert="~{commons/footer :: footer}"></footer>
+    <footer th:replace="~{commons/footer :: footer}"></footer>
   </body>
 </html>

@@ -17,16 +17,14 @@
   </head>
 
   <body>
-    <header th:insert="commons/header :: header"></header>
+    <header th:replace="~{commons/header :: header}"></header>
 
     <a>PANEL DE USUARIO</a>
     <ul>
       <li><a class="btn wow-button" href="../modifyUser">Cambiar datos</a></li>
       <li><a class="btn wow-button" href="../deleteUser">Eliminar cuenta</a></li>
     </ul>
-
-
-
-    <footer th:insert="commons/footer :: footer"></footer>
+    
+    <footer th:replace="~{commons/footer :: footer}"></footer>
   </body>
 </html>

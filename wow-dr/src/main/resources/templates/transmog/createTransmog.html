@@ -21,7 +21,7 @@
   </head>
 
   <body>
-    <header th:insert="commons/header :: header"></header>
+    <header th:replace="~{commons/header :: header}"></header>
     <div class="gear">
       <div class="gear-left">
         <div class="item-show">
@@ -221,11 +221,9 @@
           th:action="@{/transmog/listItem}"
           th:object="${item}"
           method="post"
+          class="formSearhItem"
         >
           <input type="text" name="searchItem" placeholder="Nombre del objeto" id="searchItem" required/>
-
-      <!--
-          <label for="clase" class="text_a">Pieza de equipo:</label>-->
           <select id="ranura" name="ranura" required>
             <option value="">-Ranura-</option>
             <option value="HEAD">Cabeza</option>
@@ -461,6 +459,7 @@
           th:action="@{/transmog/createTransmog}"
           th:object="${transmog}"
           method="post"
+          class="fromCreateTransmog"
         >
           <input
             type="text"
@@ -472,7 +471,7 @@
             th:field="${transmog.nombre}"
           />
           <select id="clase" name="clase" required>
-            <option value="">-Elige tu clase-</option>
+            <option value="">-Clase-</option>
             <option class="Guerrero" value="1">Guerrero</option>
             <option class="Paladín" value="2">Paladín</option>
             <option class="Cazador" value="3">Cazador</option>
@@ -501,6 +500,6 @@
       </div>
 
 
-    <footer th:insert="commons/footer :: footer"></footer>
+      <footer th:replace="~{commons/footer :: footer}"></footer>
   </body>
 </html>

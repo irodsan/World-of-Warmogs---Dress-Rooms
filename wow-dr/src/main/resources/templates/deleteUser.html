@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <header th:insert="commons/header :: header"></header>
+    <header th:replace="~{commons/header :: header}"></header>
     <table border="1">
       <thead>
         <tr>
@@ -46,6 +46,6 @@
         </tr>
       </tbody>
     </table>
-    <footer th:insert="commons/footer :: footer"></footer>
+    <footer th:replace="~{commons/footer :: footer}"></footer>
   </body>
 </html>

@@ -17,26 +17,34 @@
   </head>
 
   <body>
-    <header th:replace="commons/header :: headerFragment"></header>
+    <header th:replace="~{commons/header :: header}"></header>
 
     <div class="login-container">
       <form th:action="@{/login}" method="post" class="login">
         <ul>
-          <li></li>
-          <label class="text_a" for="username">Username</label>
-          <input type="text" id="username" name="username" required>
-        </li>
-        <li>
-          <label class="text_a" for="password">Password</label>
-          <input type="password" id="password" name="password" required>
-        </li>
-        <li>
-          <button class="btn wow-button" type="submit">Enter!</button>
-        </li>
+          <li>
+            <label class="text_a" for="username">Alias</label>
+            <input type="text" id="username" name="username" required />
+            <br />
+          </li>
+          <li>
+            <label class="text_a" for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required />
+            <br />
+          </li>
+          <li>
+            <input
+              type="submit"
+              value="Entra!"
+              name="register"
+              class="btn wow-button"
+            />
+            <br />
+          </li>
         </ul>
       </form>
-  </div>
+    </div>
 
-    <footer th:insert="commons/footer :: footer"></footer>
+    <footer th:replace="~{commons/footer :: footer}"></footer>
   </body>
 </html>

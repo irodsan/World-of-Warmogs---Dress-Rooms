@@ -1,26 +1,23 @@
 <nav th:fragment="navFragment">
   <ul>
     <li th:if="${session.usuario != null}">
-      <img th:src="@{../../images/buttons/player.jpg}" class="imgUser">
-    </li>
-    <li th:if="${session.usuario != null}">
       <a th:text="${session.usuario.alias}" class="text_a"></a>
     </li>
 
     <li sec:authorize="isAnonymous()">
-      <a class="btn wow-button" th:href="@{/index}">Login</a>
+      <a class="btn wow-button" th:href="@{/index}">Iniciar sesión</a>
     </li>
 
     <li sec:authorize="isAnonymous()">
-      <a class="btn wow-button" href="../signup">Sign Up</a>
+      <a class="btn wow-button" th:href="@{/signup}">Registrarse</a>
     </li>
 
     <li sec:authorize="isAuthenticated()">
-      <a class="btn wow-button" href="../logout">LogOut</a>
+      <a class="btn wow-button" th:href="@{/logout}">Salir</a>
     </li>
 
     <li sec:authorize="hasAnyAuthority('Admin')">
-      <a class="btn wow-button" href="../userPanel">Config</a>
+      <a class="btn wow-button" th:href="@{/userPanel}">Config</a>
     </li>
   </ul>
 </nav>

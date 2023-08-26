@@ -18,9 +18,9 @@
   </head>
 
   <body>
-    <header th:insert="~{commons/header :: header}"></header>
+    <header th:replace="~{commons/header :: header}"></header>
 
-    <form th:action="@{/listado}" method="get">
+    <form th:action="@{/listado}" method="get" class="listado">
       <input
         type="text"
         name="nombre"
@@ -37,7 +37,7 @@
         >Crear Transfiguracion</a
       >
     </form>
-    <table th:replace="~{tabla :: tabla}"></table>
-    <footer th:insert="~{commons/footer :: footer}"></footer>
+    <table th:replace="~{tabla :: tabla}" class="tabla"></table>
+    <footer th:replace="~{commons/footer :: footer}"></footer>
   </body>
 </html>

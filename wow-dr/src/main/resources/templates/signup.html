@@ -17,21 +17,53 @@
   </head>
 
   <body>
-    <header th:replace="commons/header :: headerFragment"></header>
-    
-    <form th:action="@{/signup}" th:object="${user}" method="post">
-      <label for="alias" class="text_a">Alias</label>
-      <input type="text" name="alias" value="" th:field="*{alias}"/><br />
-      
-      <label for="email" class="text_a">Email</label>
-      <input type="text" name="email" value="" th:field="*{email}"/><br />
-      
-      <label for="password" class="text_a">Contraseña</label>
-      <input type="password" name="password" value="" th:field="*{password}"/><br />
-
-      <input type="submit" value="Aceptar" name="register" />
-
-    </form>
-    <footer th:insert="commons/footer :: footer"></footer>
+    <header th:insert="~{commons/header :: header}"></header>
+    <div class="login-container">
+      <form
+        th:action="@{/signup}"
+        th:object="${user}"
+        method="post"
+        class="login"
+      >
+        <ul>
+          <li>
+            <label for="alias" class="text_a">Alias</label>
+            <input
+              type="text"
+              name="alias"
+              value=""
+              th:field="*{alias}"
+            /><br />
+          </li>
+          <li>
+            <label for="email" class="text_a">Email</label>
+            <input
+              type="text"
+              name="email"
+              value=""
+              th:field="*{email}"
+            /><br />
+          </li>
+          <li>
+            <label for="password" class="text_a">Contraseña</label>
+            <input
+              type="password"
+              name="password"
+              value=""
+              th:field="*{password}"
+            /><br />
+          </li>
+          <li>
+            <input
+              type="submit"
+              value="Únete!"
+              name="register"
+              class="btn wow-button"
+            />
+          </li>
+        </ul>
+      </form>
+    </div>
+    <footer th:insert="~{commons/footer :: footer}"></footer>
   </body>
 </html>

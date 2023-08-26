@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <header th:insert="commons/header :: header"></header>
+    <header th:replace="~{commons/header :: header}"></header>
     <nav></nav>
 
     <div>
@@ -31,6 +31,6 @@
       <input type="submit" value="Aceptar" name="register" />
     </form>
 
-    <footer th:insert="commons/footer :: footer"></footer>
+    <footer th:replace="~{commons/footer :: footer}"></footer>
   </body>
 </html>

@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <header th:replace="commons/header :: headerFragment"></header>
+    <header th:replace="~{commons/header :: header}"></header>
 
     <form>
       <a>Alias</a>
@@ -35,6 +35,6 @@
       <input type="submit" value="Aceptar" name="register" />
     </form>
 
-    <footer th:insert="commons/footer :: footer"></footer>
+    <footer th:replace="~{commons/footer :: footer}"></footer>
   </body>
 </html>

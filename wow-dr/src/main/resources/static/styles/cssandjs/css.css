@@ -31,19 +31,20 @@
 }
 
 /*TEMPLATES*/
-nav{
-position: absolute;
+nav {
+    position: absolute;
     right: 10px;
     top: 10px;
 }
 
-nav > ul {
+nav>ul {
     display: flex;
     list-style: none;
+    align-items: center;
 }
 
 
-nav > ul > li > a {
+nav>ul>li>a {
     flex-direction: row;
     align-items: center;
     margin-left: 1em;
@@ -58,51 +59,54 @@ nav > ul > li > a {
     justify-content: center;
     margin: 0;
     padding: 0;
-  }
-  
-  .login {
+}
+
+.login {
     width: 300px;
     padding-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 5px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Añadimos esto para centrar el contenido */
-  }
-  
-  .login h1 {
+    text-align: center;
+    /* Añadimos esto para centrar el contenido */
+}
+
+.login h1 {
     margin-bottom: 20px;
-  }
-  
-  .login ul {
+}
+
+.login ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .login li {
+}
+
+.login li {
     margin-bottom: 10px;
-  }
-  
-  /* Centramos los campos de entrada */
-  .login input[type="text"],
-  .login input[type="password"] {
+}
+
+/* Centramos los campos de entrada */
+.login input[type="text"],
+.login input[type="password"] {
     width: 100%;
     box-sizing: border-box;
-    padding: 5px; /* Ajusta este valor para cambiar la altura */
+    padding: 5px;
+    /* Ajusta este valor para cambiar la altura */
     margin: 5px 0;
-  }
-  
-  /* Centramos el botón */
-  .login button {
+}
+
+/* Centramos el botón */
+.login button {
     display: block;
     margin: 0 auto;
-  }
+}
 
 
 
-header{
+header {
     text-align: center;
 }
+
 header img {
     display: block;
     margin-left: auto;
@@ -110,7 +114,7 @@ header img {
     width: 40em;
 }
 
-.text_footer{
+.text_footer {
     text-align: center;
 }
 
@@ -132,7 +136,8 @@ body {
 }
 
 .wow-button:hover {
-    background-color: #9C162E; /* Slightly darker red on hover */
+    background-color: #9C162E;
+    /* Slightly darker red on hover */
     transform: scale(1.05);
 }
 
@@ -184,7 +189,7 @@ body {
 }
 
 .Cazador {
-    color: #ABD473 !important;  
+    color: #ABD473 !important;
 }
 
 .Mago {
@@ -248,7 +253,7 @@ input {
     font-family: Friz Quadrata Std Medium;
 }
 
-.search{
+.search {
     width: 40%;
 }
 
@@ -276,7 +281,7 @@ input {
     align-items: center;
 }
 
-.item-show p{
+.item-show p {
     font-family: Friz Quadrata Std Medium;
     text-decoration: none;
     padding: 0.5em;
@@ -298,7 +303,7 @@ input {
 }
 
 /*TOCAR ESTO PARA PONER LA BARRA JUNTO LA IMAGEN*/
-.gear-left .item input{
+.gear-left .item input {
     left: auto;
 }
 
@@ -314,7 +319,7 @@ input {
 
 .gear-left .item-show {
     display: grid;
-    grid-template-columns: min-content auto ;
+    grid-template-columns: min-content auto;
     padding: 0.5em;
     column-gap: 0.5em;
     align-items: center;
@@ -323,7 +328,7 @@ input {
 
 .gear-right .item-show {
     display: grid;
-    grid-template-columns: auto min-content ;
+    grid-template-columns: auto min-content;
     padding: 0.5em;
     column-gap: 0.5em;
     align-items: center;
@@ -376,23 +381,27 @@ input {
     text-align: right;
 }
 
-.empty{
+.empty {
     color: rgb(150, 148, 148);
 }
 
-.imgUser{
+.imgUser {
     width: 70%;
 }
 
 select {
-    background-color: #211916; /* Cambia este valor al color que desees */
-    padding: 5px; /* Agrega un poco de espacio para mejorar la apariencia */
-    border: 1px solid #ccc; /* Agrega un borde para resaltar el campo */
-    border-radius: 4px; /* Agrega esquinas redondeadas */
+    background-color: #211916;
+    /* Cambia este valor al color que desees */
+    padding: 5px;
+    /* Agrega un poco de espacio para mejorar la apariencia */
+    border: 1px solid #ccc;
+    /* Agrega un borde para resaltar el campo */
+    border-radius: 4px;
+    /* Agrega esquinas redondeadas */
     color: white;
 }
 
-#searchItem{
+#searchItem {
     width: 55%;
 }
 
@@ -400,25 +409,68 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vh; /* Toma el 100% de la altura de la ventana */
-  }
-  
-  /* Estilos para el botón */
-  .btn-center {
+    height: 40vh;
+    /* Toma el 100% de la altura de la ventana */
+}
+
+/* Estilos para el botón */
+.btn-center {
     padding: 15px 20px;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
+}
 
-  #nombreTransfiguracion{
-    width: 37%;
-  }
-  #guardarTransfiguracion{
-    display: flex;
+#nombreTransfiguracion {
+    width: 50%;
+}
+
+#guardarTransfiguracion {
+    max-width: 800px;
+    margin: 30px auto;
     justify-content: center;
     align-items: center;
-    padding-top: 1%;
-    padding-bottom: 2%;
-  }
+}
+
+.atras {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    ;
+}
+
+.atras>h1 {
+    font-size: 2rem;
+}
+
+.atras>a {
+    height: 100%;
+}
+
+.fromCreateTransmog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fromCreateTransmog>select {
+    margin: 10px;
+}
+
+.formSearhItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formSearhItem>select {
+    margin:10px;
+}
+
+.listado{
+    margin: 10px;
+}
+

@@ -27,8 +27,7 @@ public class APIController {
             // String token = "EUdtf1IPJJ2zgz1FnlJINlc1QQWYd288gA";
             String URL = "https://eu.api.blizzard.com/data/wow/media/item/" + id
                     + "?namespace=static-eu&locale=es_ES&access_token=" + token;
-            String jsonResponse = peticionHttpGet("https://eu.api.blizzard.com/data/wow/item/" + id
-                    + "?namespace=static-eu&locale=es_ES&access_token=" + token);
+            String jsonResponse = peticionHttpGet(URL);
 
             if (!jsonResponse.equals("")) {
                 Gson gson = new Gson();
@@ -65,7 +64,7 @@ public class APIController {
 
                 if (iir.getAssets() != null) {
                     ItemIcon ii = new ItemIcon(iir.getId(), iir.getAssets()[0].getValue());
-                    // saveItemIcon(ii);
+                    saveItemIcon(ii);
                 }
             }
 
@@ -106,7 +105,8 @@ public class APIController {
             String q = "INSERT INTO `items_icons`(`id`, `url`) VALUES ('" + it.getId() + "','" + it.getNombre() + "','"
                     + it.getRanura() + "','" + it.getTipo() + "','" + it.getQuality() + "')";
 
-            int rs = stmt.executeUpdate(q);
+            // int rs = stmt.executeUpdate(q);
+            stmt.executeUpdate(q);
 
             con.close();
         } catch (Exception e) {
@@ -121,7 +121,8 @@ public class APIController {
             Statement stmt = con.createStatement();
             String q = "INSERT INTO `items_icons`(`id`, `url`) VALUES ('" + ii.getId() + "','" + ii.getUrl() + "')";
 
-            int rs = stmt.executeUpdate(q);
+            // int rs = stmt.executeUpdate(q);
+            stmt.executeUpdate(q);
 
             con.close();
         } catch (Exception e) {

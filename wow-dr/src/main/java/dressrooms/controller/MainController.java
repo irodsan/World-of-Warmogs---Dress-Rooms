@@ -106,4 +106,9 @@ public class MainController {
         return "/userPanel";
     }
 
+    @GetMapping("/loadFromAPI")
+    public String mostrarLoadItems(Model model) {
+        return "/loadFromAPI";
+    }
+
 }

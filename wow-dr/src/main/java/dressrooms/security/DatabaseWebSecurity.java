@@ -43,7 +43,8 @@ public class DatabaseWebSecurity {
                 .permitAll()
 
                 // Asignar permisos a URLs por roles
-                .requestMatchers("/deleteUser", "/userPanel", "/deleteUser/delete").hasAnyAuthority("Admin")
+                .requestMatchers("/deleteUser", "/userPanel", "/loadFromAPI", "/deleteUser/delete")
+                .hasAnyAuthority("Admin")
 
                 // El resto de URLs requieren autenticacion
                 .anyRequest().authenticated()

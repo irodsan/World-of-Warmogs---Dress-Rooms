@@ -8,7 +8,7 @@ package dressrooms.API;
  *
  * @author ivanr
  */
-public class Item {
+public class ItemAPI {
 
     private int id;
     private String nombre;
@@ -16,7 +16,7 @@ public class Item {
     private String tipo;
     private String quality;
 
-    public Item(int id, String nombre, String ranura, String tipo, String quality) {
+    public ItemAPI(int id, String nombre, String ranura, String tipo, String quality) {
         this.id = id;
         this.ranura = ranura;
         this.nombre = nombre;
@@ -66,7 +66,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" + "id=" + id + ", nombre=" + nombre + ", ranura=" + ranura + ", tipo=" + tipo + ", quality="
+        return "ItemAPI{" + "id=" + id + ", nombre=" + nombre + ", ranura=" + ranura + ", tipo=" + tipo + ", quality="
                 + quality + '}';
     }
 

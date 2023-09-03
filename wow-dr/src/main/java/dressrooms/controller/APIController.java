@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import dressrooms.API.ItemIcon;
 import dressrooms.API.ItemIconResponse;
 import dressrooms.API.ItemResponse;
-import dressrooms.API.Item;
+import dressrooms.API.ItemAPI;
 
 import com.google.gson.Gson;
 import java.io.BufferedReader;
@@ -33,7 +33,7 @@ public class APIController {
                 Gson gson = new Gson();
                 ItemResponse ir = gson.fromJson(jsonResponse, ItemResponse.class);
 
-                Item it = new Item(ir.getId(), ir.getName(), ir.getInventory_type().getType(),
+                ItemAPI it = new ItemAPI(ir.getId(), ir.getName(), ir.getInventory_type().getType(),
                         ir.getItem_subclass().getName(), ir.getQuality().getType());
 
                 System.out.println(it);
@@ -97,7 +97,7 @@ public class APIController {
         return resultado.toString();
     }
 
-    public static void saveItem(Item it) {
+    public static void saveItem(ItemAPI it) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/wowdr", "root", "");

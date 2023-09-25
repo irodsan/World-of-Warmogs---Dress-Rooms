@@ -103,12 +103,12 @@ public class MainController {
 
     @GetMapping("/userPanel")
     public String mostrarUserPanel(Model model) {
-        return "/userPanel";
+        return "userPanel";
     }
 
     @GetMapping("/loadFromAPI")
     public String mostrarLoadItems(Model model) {
-        return "/loadFromAPI";
+        return "loadFromAPI";
     }
 
 }
